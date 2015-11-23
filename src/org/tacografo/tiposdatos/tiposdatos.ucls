@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.8" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <class id="1" language="java" name="org.tacografo.tiposdatos.Number" project="tachograph-card-structure" 
+    file="/tachograph-card-structure/src/org/tacografo/tiposdatos/Number.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="148" x="225" y="110"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="org.tacografo.tiposdatos.OdometerShort" project="tachograph-card-structure" 
+    file="/tachograph-card-structure/src/org/tacografo/tiposdatos/OdometerShort.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="163" x="413" y="110"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="org.tacografo.tiposdatos.EquipmentType" project="tachograph-card-structure" 
+    file="/tachograph-card-structure/src/org/tacografo/tiposdatos/EquipmentType.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="170" x="616" y="110"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="org.tacografo.tiposdatos.IA5String" project="tachograph-card-structure" 
+    file="/tachograph-card-structure/src/org/tacografo/tiposdatos/IA5String.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="144" x="826" y="110"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="org.tacografo.tiposdatos.RealTime" project="tachograph-card-structure" 
+    file="/tachograph-card-structure/src/org/tacografo/tiposdatos/RealTime.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="144" x="1010" y="110"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="org.tacografo.tiposdatos.Datef" project="tachograph-card-structure" 
+    file="/tachograph-card-structure/src/org/tacografo/tiposdatos/Datef.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="129" x="1194" y="110"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="org.tacografo.tiposdatos.OctetString" project="tachograph-card-structure" 
+    file="/tachograph-card-structure/src/org/tacografo/tiposdatos/OctetString.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="154" x="1363" y="110"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="org.tacografo.tiposdatos.BCDString" project="tachograph-card-structure" 
+    file="/tachograph-card-structure/src/org/tacografo/tiposdatos/BCDString.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="150" x="1557" y="110"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="org.tacografo.tiposdatos.Integer_32" project="tachograph-card-structure" 
+    file="/tachograph-card-structure/src/org/tacografo/tiposdatos/Integer_32.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="141" x="1747" y="110"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.8" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="true" nesting-relationships="true">  
+  <interface id="1" language="java" name="org.tacografo.file.cardblockdriver.CardBlock" 
+    project="TestLecturaArchivoBinario" 
+    file="/TestLecturaArchivoBinario/src/org/tacografo/file/cardblockdriver/CardBlock.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="149" x="2141" y="3015"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <enumeration id="2" language="java" name="org.tacografo.file.cardblockdriver.TipoDatos" 
+    project="TestLecturaArchivoBinario" 
+    file="/TestLecturaArchivoBinario/src/org/tacografo/file/cardblockdriver/TipoDatos.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="2241" width="339" x="1483" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="3" language="java" name="org.tacografo.file.cardblockdriver.CardBlockDriver" 
+    project="TestLecturaArchivoBinario" 
+    file="/TestLecturaArchivoBinario/src/org/tacografo/file/cardblockdriver/CardBlockDriver.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="279" width="149" x="2141" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="org.tacografo.file.cardblockdriver.CardEventData" 
+    project="TestLecturaArchivoBinario" 
+    file="/TestLecturaArchivoBinario/src/org/tacografo/file/cardblockdriver/CardEventData.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="276" x="3795" y="2498"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="org.tacografo.file.cardblockdriver.CardIdentification" 
+    project="TestLecturaArchivoBinario" 
+    file="/TestLecturaArchivoBinario/src/org/tacografo/file/cardblockdriver/CardIdentification.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="243" width="317" x="1270" y="2498"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="6" language="java" name="org.tacografo.file.cardblockdriver.Fid" project="TestLecturaArchivoBinario" 
+    file="/TestLecturaArchivoBinario/src/org/tacografo/file/cardblockdriver/Fid.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="441" width="210" x="954" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="7" language="java" name="org.tacografo.file.cardblockdriver.CardChipIdentification" 
+    project="TestLecturaArchivoBinario" 
+    file="/TestLecturaArchivoBinario/src/org/tacografo/file/cardblockdriver/CardChipIdentification.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="225" width="234" x="3202" y="2498"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="org.tacografo.file.cardblockdriver.CardDrivingLicenceInformation" 
+    project="TestLecturaArchivoBinario" 
+    file="/TestLecturaArchivoBinario/src/org/tacografo/file/cardblockdriver/CardDrivingLicenceInformation.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="249" x="510" y="2498"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="org.tacografo.file.cardblockdriver.CardPlaceDailyWorkPeriod" 
+    project="TestLecturaArchivoBinario" 
+    file="/TestLecturaArchivoBinario/src/org/tacografo/file/cardblockdriver/CardPlaceDailyWorkPeriod.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="216" x="41" y="2498"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="org.tacografo.file.cardblockdriver.LastCardDownload" 
+    project="TestLecturaArchivoBinario" 
+    file="/TestLecturaArchivoBinario/src/org/tacografo/file/cardblockdriver/LastCardDownload.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="185" x="1045" y="2498"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="org.tacografo.file.cardblockdriver.MemberStateCertificate" 
+    project="TestLecturaArchivoBinario" 
+    file="/TestLecturaArchivoBinario/src/org/tacografo/file/cardblockdriver/MemberStateCertificate.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="173" x="297" y="2498"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="org.tacografo.file.cardblockdriver.CardDriverActivity" 
+    project="TestLecturaArchivoBinario" 
+    file="/TestLecturaArchivoBinario/src/org/tacografo/file/cardblockdriver/CardDriverActivity.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="261" width="259" x="1627" y="2498"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="org.tacografo.file.cardblockdriver.CardVehiclesUsed" 
+    project="TestLecturaArchivoBinario" 
+    file="/TestLecturaArchivoBinario/src/org/tacografo/file/cardblockdriver/CardVehiclesUsed.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="207" width="279" x="3476" y="2498"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="14" language="java" name="org.tacografo.file.cardblockdriver.Sizes" 
+    project="TestLecturaArchivoBinario" 
+    file="/TestLecturaArchivoBinario/src/org/tacografo/file/cardblockdriver/Sizes.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="2421" width="318" x="318" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="15" language="java" name="org.tacografo.file.cardblockdriver.DriverCardApplicationIdentification" 
+    project="TestLecturaArchivoBinario" 
+    file="/TestLecturaArchivoBinario/src/org/tacografo/file/cardblockdriver/DriverCardApplicationIdentification.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="477" width="320" x="4111" y="2498"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="org.tacografo.file.cardblockdriver.CardFaultData" 
+    project="TestLecturaArchivoBinario" 
+    file="/TestLecturaArchivoBinario/src/org/tacografo/file/cardblockdriver/CardFaultData.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="204" x="4471" y="2498"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="org.tacografo.file.cardblockdriver.CardIccIdentification" 
+    project="TestLecturaArchivoBinario" 
+    file="/TestLecturaArchivoBinario/src/org/tacografo/file/cardblockdriver/CardIccIdentification.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="225" width="272" x="2526" y="2498"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="org.tacografo.file.cardblockdriver.CardControlActivityDataRecord" 
+    project="TestLecturaArchivoBinario" 
+    file="/TestLecturaArchivoBinario/src/org/tacografo/file/cardblockdriver/CardControlActivityDataRecord.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2091" y="2428"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="org.tacografo.file.cardblockdriver.SpecificConditionRecord" 
+    project="TestLecturaArchivoBinario" 
+    file="/TestLecturaArchivoBinario/src/org/tacografo/file/cardblockdriver/SpecificConditionRecord.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="207" width="206" x="799" y="2498"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="org.tacografo.file.cardblockdriver.CardCurrentUse" 
+    project="TestLecturaArchivoBinario" 
+    file="/TestLecturaArchivoBinario/src/org/tacografo/file/cardblockdriver/CardCurrentUse.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="207" width="324" x="2838" y="2498"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <generalization id="21">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="22">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="23">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="24">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="25">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="26">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="27">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <realization id="28">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <realization id="29">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <generalization id="30">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <realization id="31">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <realization id="32">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <realization id="33">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <realization id="34">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <realization id="35">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <generalization id="36">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="37">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <realization id="38">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <realization id="39">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <realization id="40">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <realization id="41">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <realization id="42">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <generalization id="43">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="44">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <realization id="45">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <generalization id="46">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="47">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <realization id="48">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <realization id="49">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <generalization id="50">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
