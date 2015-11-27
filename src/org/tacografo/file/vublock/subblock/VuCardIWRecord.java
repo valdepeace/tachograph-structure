@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.tacografo.file.vublock;
+package org.tacografo.file.vublock.subblock;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
@@ -10,7 +10,7 @@ import java.util.Date;
 
 import org.tacografo.file.cardblockdriver.subblock.FullCardNumber;
 import org.tacografo.file.cardblockdriver.subblock.HolderName;
-import org.tacografo.file.vublock.subblock.PreviousVehicleInfo;
+import org.tacografo.file.vublock.Sizes;
 import org.tacografo.tiposdatos.OdometerShort;
 import org.tacografo.tiposdatos.RealTime;
 import org.tacografo.tiposdatos.Number;

@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Date;
 
 import org.tacografo.file.cardblockdriver.Sizes;
+import org.tacografo.file.vublock.subblock.VuDataBlockCounter;
 import org.tacografo.tiposdatos.OdometerShort;
 import org.tacografo.tiposdatos.RealTime;
 
@@ -14,8 +15,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 /**
  * 2.30. CardVehicleRecord
- * Información almacenada en una tarjeta de conductor o en una tarjeta del centro de ensayo y relativa a un período de
- * uso de un vehículo durante un día civil (requisitos 197 y 217).
+ * Informaciï¿½n almacenada en una tarjeta de conductor o en una tarjeta del centro de ensayo y relativa a un perï¿½odo de
+ * uso de un vehï¿½culo durante un dï¿½a civil (requisitos 197 y 217).
  * CardVehicleRecord ::= SEQUENCE {
  * vehicleOdometerBegin OdometerShort,
  * vehicleOdometerEnd OdometerShort,
@@ -24,13 +25,13 @@ import com.fasterxml.jackson.annotation.JsonFormat;
  * vehicleRegistration VehicleRegistrationIdentification,
  * vuDataBlockCounter VuDataBlockCounter
  * }
- * vehicleOdometerBegin es la lectura del cuentakilómetros del vehículo al comenzar el período de uso del vehículo.
- * vehicleOdometerEnd es la lectura del cuentakilómetros del vehículo al terminar el período de uso del vehículo.
- * vehicleFirstUse es la fecha y la hora en que comienza el período de uso del vehículo.
- * vehicleLastUse es la fecha y la hora en que termina el período de uso del vehículo.
- * vehicleRegistration es el VRN y el Estado miembro donde se ha matriculado el vehículo.
- * vuDataBlockCounter es el valor del VuDataBlockCounter en el momento de extraer la tarjeta por última vez en el
- * período de uso del vehículo
+ * vehicleOdometerBegin es la lectura del cuentakilï¿½metros del vehï¿½culo al comenzar el perï¿½odo de uso del vehï¿½culo.
+ * vehicleOdometerEnd es la lectura del cuentakilï¿½metros del vehï¿½culo al terminar el perï¿½odo de uso del vehï¿½culo.
+ * vehicleFirstUse es la fecha y la hora en que comienza el perï¿½odo de uso del vehï¿½culo.
+ * vehicleLastUse es la fecha y la hora en que termina el perï¿½odo de uso del vehï¿½culo.
+ * vehicleRegistration es el VRN y el Estado miembro donde se ha matriculado el vehï¿½culo.
+ * vuDataBlockCounter es el valor del VuDataBlockCounter en el momento de extraer la tarjeta por ï¿½ltima vez en el
+ * perï¿½odo de uso del vehï¿½culo
  * 
  * @author Negrero
  *
@@ -70,7 +71,7 @@ public class CardVehicleRecord{
 
 
 	/**
-	 * Obtiene la lectura del cuentakilómetros del vehículo al comenzar el período de uso del vehículo.
+	 * Obtiene la lectura del cuentakilï¿½metros del vehï¿½culo al comenzar el perï¿½odo de uso del vehï¿½culo.
 	 * @return the vehicleOdometerBegin
 	 */
 	public int getVehicleOdometerBegin() {
@@ -79,7 +80,7 @@ public class CardVehicleRecord{
 
 
 	/**
-	 * Asigna la lectura del cuentakilómetros del vehículo al comenzar el período de uso del vehículo.
+	 * Asigna la lectura del cuentakilï¿½metros del vehï¿½culo al comenzar el perï¿½odo de uso del vehï¿½culo.
 	 * @param vehicleOdometerBegin the vehicleOdometerBegin to set
 	 */
 	public void setVehicleOdometerBegin(int vehicleOdometerBegin) {
@@ -88,7 +89,7 @@ public class CardVehicleRecord{
 
 
 	/**
-	 * Obtiene la lectura del cuentakilómetros del vehículo al terminar el período de uso del vehículo.
+	 * Obtiene la lectura del cuentakilï¿½metros del vehï¿½culo al terminar el perï¿½odo de uso del vehï¿½culo.
 	 * @return the vehicleOdometerEnd
 	 */
 	public int getVehicleOdometerEnd() {
@@ -97,7 +98,7 @@ public class CardVehicleRecord{
 
 
 	/**
-	 * Asigna la lectura del cuentakilómetros del vehículo al terminar el período de uso del vehículo.
+	 * Asigna la lectura del cuentakilï¿½metros del vehï¿½culo al terminar el perï¿½odo de uso del vehï¿½culo.
 	 * @param vehicleOdometerEnd the vehicleOdometerEnd to set
 	 */
 	public void setVehicleOdometerEnd(int vehicleOdometerEnd) {
@@ -106,7 +107,7 @@ public class CardVehicleRecord{
 
 
 	/**
-	 * Obtiene la fecha y la hora en que comienza el período de uso del vehículo.
+	 * Obtiene la fecha y la hora en que comienza el perï¿½odo de uso del vehï¿½culo.
 	 * @return the vehicleFirstUse
 	 */
 	public Date getVehicleFirstUse() {
@@ -115,7 +116,7 @@ public class CardVehicleRecord{
 
 
 	/**
-	 * Asigna la fecha y la hora en que comienza el período de uso del vehículo.
+	 * Asigna la fecha y la hora en que comienza el perï¿½odo de uso del vehï¿½culo.
 	 * @param vehicleFirstUse the vehicleFirstUse to set
 	 */
 	public void setVehicleFirstUse(Date vehicleFirstUse) {
@@ -124,7 +125,7 @@ public class CardVehicleRecord{
 
 
 	/**
-	 * Obtiene la fecha y la hora en que termina el período de uso del vehículo.
+	 * Obtiene la fecha y la hora en que termina el perï¿½odo de uso del vehï¿½culo.
 	 * @return the vehicleLastUse
 	 */
 	public Date getVehicleLastUse() {
@@ -133,7 +134,7 @@ public class CardVehicleRecord{
 
 
 	/**
-	 * Asigna la fecha y la hora en que termina el período de uso del vehículo.
+	 * Asigna la fecha y la hora en que termina el perï¿½odo de uso del vehï¿½culo.
 	 * @param vehicleLastUse the vehicleLastUse to set
 	 */
 	public void setVehicleLastUse(Date vehicleLastUse) {
@@ -142,7 +143,7 @@ public class CardVehicleRecord{
 
 
 	/**
-	 * Obtiene el VRN y el Estado miembro donde se ha matriculado el vehículo.
+	 * Obtiene el VRN y el Estado miembro donde se ha matriculado el vehï¿½culo.
 	 * @return the vehicleRegistration
 	 */
 	public VehicleRegistrationIdentification getVehicleRegistration() {
@@ -151,7 +152,7 @@ public class CardVehicleRecord{
 
 
 	/**
-	 * Asigna el VRN y el Estado miembro donde se ha matriculado el vehículo.
+	 * Asigna el VRN y el Estado miembro donde se ha matriculado el vehï¿½culo.
 	 * @param vehicleRegistration the vehicleRegistration to set
 	 */
 	public void setVehicleRegistration(
@@ -161,8 +162,8 @@ public class CardVehicleRecord{
 
 
 	/**
-	 * Obtiene el valor del VuDataBlockCounter en el momento de extraer la tarjeta por última vez en el
-	 * período de uso del vehículo
+	 * Obtiene el valor del VuDataBlockCounter en el momento de extraer la tarjeta por ï¿½ltima vez en el
+	 * perï¿½odo de uso del vehï¿½culo
 	 * @return the vuDataBlockCounter
 	 */
 	public Integer getVuDataBlockCounter() {
@@ -171,8 +172,8 @@ public class CardVehicleRecord{
 
 
 	/**
-	 * Asigna el valor del VuDataBlockCounter en el momento de extraer la tarjeta por última vez en el
-	 * período de uso del vehículo
+	 * Asigna el valor del VuDataBlockCounter en el momento de extraer la tarjeta por ï¿½ltima vez en el
+	 * perï¿½odo de uso del vehï¿½culo
 	 * @param vuDataBlockCounter the vuDataBlockCounter to set
 	 */
 	public void setVuDataBlockCounter(Integer vuDataBlockCounter) {

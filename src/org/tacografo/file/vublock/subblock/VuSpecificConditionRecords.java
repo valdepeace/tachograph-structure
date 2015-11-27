@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.tacografo.file.vublock;
+package org.tacografo.file.vublock.subblock;
 
 /**
  * @author negrero

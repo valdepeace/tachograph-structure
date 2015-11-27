@@ -112,8 +112,8 @@ public class VuCalibrationRecord {
 	public VuCalibrationRecord(byte[] bytes) throws UnsupportedEncodingException {
 		int start=0;
 		this.calibrationPurpose=CalibrationPurpose.getCalibrationPurpose(Arrays.copyOfRange(bytes, start, start+=Sizes.CALIBRATIONPURPOSE.getSize()));
-		Name n=new Name(Arrays.copyOfRange(bytes, start, start+=Sizes.WORKSHOPNAME_VUCALIBRATIONDATA.getSize()));
-		this.workshopName=n.getName();
+		Name n=new Name(Arrays.copyOfRange(bytes, start, start+=Sizes.WORKSHOPNAME_VUCALIBRATIONDATA.getSize()));				
+
 		n=new Name(Arrays.copyOfRange(bytes, start, start+=Sizes.WORKSHOPNAME_VUCALIBRATIONDATA.getSize()));
 		this.workshopAddress=n.getName();
 		this.workshopCardNumber=new FullCardNumber(Arrays.copyOfRange(bytes, start, start+=Sizes.WORKSHOPCARDNUMBER_VUCALIBRATIONDATA.getSize()));

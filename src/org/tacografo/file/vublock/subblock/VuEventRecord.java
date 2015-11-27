@@ -1,12 +1,11 @@
-package org.tacografo.file.vublock;
+package org.tacografo.file.vublock.subblock;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import java.util.Date;
 
 import org.tacografo.file.cardblockdriver.subblock.FullCardNumber;
-import org.tacografo.file.vublock.subblock.EventFaultRecordPurpose;
-import org.tacografo.file.vublock.subblock.EventFaulType;
+import org.tacografo.file.vublock.Sizes;
 import org.tacografo.tiposdatos.RealTime;
 import org.tacografo.tiposdatos.Number;
 
@@ -63,7 +62,7 @@ public class VuEventRecord {
 		this.cardNumberDriverSlotBegin=new FullCardNumber(Arrays.copyOfRange(bytes,start, start+=Sizes.CARDNUMBERDRIVERSLOTBEGIN_EVENT.getSize()));
 		this.cardNumberCoDriverSlotBegin=new FullCardNumber(Arrays.copyOfRange(bytes,start, start+=Sizes.CARDNUMBERCODRIVERSLOTBEGIN_EVENT.getSize()));
 		this.cardNumberDriverSlotEnd=new FullCardNumber(Arrays.copyOfRange(bytes,start, start+=Sizes.CARDNUMBERDRIVERSLOTEND_EVENT.getSize()));
-		this.cardNumberDriverSlotEnd=new FullCardNumber(Arrays.copyOfRange(bytes,start, start+=Sizes.CARDNUMBERCODRIVERSLOTEND_EVENT.getSize()));
+		this.cardNumberCoDriverSlotEnd=new FullCardNumber(Arrays.copyOfRange(bytes,start, start+=Sizes.CARDNUMBERCODRIVERSLOTEND_EVENT.getSize()));
 		this.similarEventsNumber=Number.getNumber(Arrays.copyOfRange(bytes, start, start+=Sizes.SIMILAREVENTSNUMBER.getSize()));
 	}
 

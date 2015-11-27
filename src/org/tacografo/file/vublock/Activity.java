@@ -9,8 +9,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 
+import org.tacografo.file.Block;
 import org.tacografo.file.cardblockdriver.SpecificConditionRecord;
 import org.tacografo.file.cardblockdriver.subblock.ActivityChangeInfo;
+import org.tacografo.file.vublock.subblock.VuCardIWRecord;
+import org.tacografo.file.vublock.subblock.VuPlaceDailyWorkPeriodRecord;
 import org.tacografo.tiposdatos.RealTime;
 import org.tacografo.tiposdatos.Number;
 import org.tacografo.tiposdatos.OctetString;
@@ -22,7 +25,7 @@ import org.tacografo.tiposdatos.OctetString;
  * @version 0.0.1
  *
  */
-public class Activity {
+public class Activity extends Block{
 	
 	private Date timeReal;
 	

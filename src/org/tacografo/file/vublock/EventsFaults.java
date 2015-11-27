@@ -7,6 +7,9 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import org.tacografo.file.Block;
+import org.tacografo.file.vublock.subblock.VuEventRecord;
+import org.tacografo.file.vublock.subblock.VuFaultRecord;
 import org.tacografo.file.vublock.subblock.VuOverSpeedingControlData;
 import org.tacografo.file.vublock.subblock.VuOverSpeedingEventRecord;
 import org.tacografo.file.vublock.subblock.VuTimeAdjustmentRecord;
@@ -17,7 +20,7 @@ import org.tacografo.tiposdatos.OctetString;
  * @author Andres Carmona Gil
  *
  */
-public class VuEventsFaults {
+public class EventsFaults extends Block{
 	
 	/**
 	 * 2.133.   VuFaultData
@@ -87,33 +90,40 @@ public class VuEventsFaults {
 	private String signature;
 	private int size;
 	
-	public VuEventsFaults(byte[] bytes) throws Exception{
+	public EventsFaults(byte[] bytes) throws Exception{
 		int start=0;
-		this.noOfVuFaults=Number.getShort_16(Arrays.copyOfRange(bytes, start, start+=Sizes.NOOFVUFAULTS.getSize()));
-		this.setListVuFaultData(Arrays.copyOfRange(bytes, start, start+=Sizes.VUFAULTRECORD.getSize()*this.noOfVuFaults));
 		
-		this.noOfVuEvents=Number.getShort_16(Arrays.copyOfRange(bytes, start, start+=Sizes.NOOFVUEVENTS.getSize()));
+		this.noOfVuFaults=Number.getNumber(Arrays.copyOfRange(bytes, start, start+=Sizes.NOOFVUFAULTS.getSize()));
+		if (this.noOfVuFaults>0){
+			this.setListVuFaultData(Arrays.copyOfRange(bytes, start, start+=Sizes.VUFAULTRECORD.getSize()*this.noOfVuFaults));	
+		}
+		
+		
+		this.noOfVuEvents=Number.getNumber(Arrays.copyOfRange(bytes, start, start+=Sizes.NOOFVUEVENTS.getSize()));
+		
+		if(this.noOfVuEvents>0)
 		this.setListVuEventData(Arrays.copyOfRange(bytes, start, start+=Sizes.VUEVENTRECORD.getSize()*this.noOfVuEvents));
 		
 		this.vuOverSpeedingControlData=new VuOverSpeedingControlData(Arrays.copyOfRange(bytes, start, start+=Sizes.VUOVERSPEEDINGCONTROLDATA.getSize()));
 		
-		this.noOfVuOverSpeedingEvents=Number.getShort_16(Arrays.copyOfRange(bytes, start, start+=Sizes.NOOFVUOVERSPEEDINGEVENTS.getSize()));
+		this.noOfVuOverSpeedingEvents=Number.getNumber(Arrays.copyOfRange(bytes, start, start+=Sizes.NOOFVUOVERSPEEDINGEVENTS.getSize()));
+		if(this.noOfVuOverSpeedingEvents>0)
 		this.setListVuOverSpeedingEventData(Arrays.copyOfRange(bytes, start, start+=Sizes.VUOVERSPEEDINGEVENTRECORD.getSize()*this.noOfVuOverSpeedingEvents));
 		
-		this.noOfVuTimeAdjRecords=Number.getShort_16(Arrays.copyOfRange(bytes, start, start+=Sizes.NOOFVUTIMEADJRECORDS.getSize()));
+		this.noOfVuTimeAdjRecords=Number.getNumber(Arrays.copyOfRange(bytes, start, start+=Sizes.NOOFVUTIMEADJRECORDS.getSize()));
+		if(this.noOfVuTimeAdjRecords>0)
 		this.setListvuTimeAdjustmentData(Arrays.copyOfRange(bytes, start, start+=Sizes.VUTIMEADJUSTMENTRECORD.getSize()*this.noOfVuTimeAdjRecords));
-		this.signature=OctetString.getHexString(Arrays.copyOfRange(bytes, start, start+=Sizes.SIGNATURE_TREP1.getSize()));
+		this.signature=OctetString.getHexString(Arrays.copyOfRange(bytes, start, start+=Sizes.SIGNATURE_TREP3.getSize()));
 		this.size=start;			
 	}
 
 	
 
 	private void setListVuFaultData(byte[] bytes) throws UnsupportedEncodingException {
-		this.vuFaultData=new ArrayList();
-		int end=bytes.length/Sizes.VUFAULTRECORD.getSize();
+		this.vuFaultData=new ArrayList();		
 		int start=0;
 		VuFaultRecord vfr;
-		for (int i=0;i<end;i++){
+		for (int i=0;i<this.noOfVuFaults;i++){
 			vfr=new VuFaultRecord(Arrays.copyOfRange(bytes, start, start+=Sizes.VUFAULTRECORD.getSize()));
 			this.vuFaultData.add(vfr);
 		}
@@ -122,32 +132,29 @@ public class VuEventsFaults {
 	
 	private void setListVuEventData(byte[]bytes) throws UnsupportedEncodingException {
 		this.vuEventData=new ArrayList();
-		int end=bytes.length/Sizes.VUEVENTRECORD.getSize();
 		int start=0;
 		VuEventRecord ver;
-		for (int i=0;i<end;i++){
+		for (int i=0;i<this.noOfVuEvents;i++){
 			ver=new VuEventRecord(Arrays.copyOfRange(bytes, start, start+=Sizes.VUEVENTRECORD.getSize()));
 			this.vuEventData.add(ver);
 		}
 		
 	}
-	private void setListVuOverSpeedingEventData(byte[] bytes) {
-		this.vuOverSpeedingEventData=new ArrayList();
-		int end=bytes.length/Sizes.VUOVERSPEEDINGEVENTRECORD.getSize();
+	private void setListVuOverSpeedingEventData(byte[] bytes) throws UnsupportedEncodingException {
+		this.vuOverSpeedingEventData=new ArrayList();		
 		int start=0;
 		VuOverSpeedingEventRecord voser;
-		for (int i=0;i<end;i++){
+		for (int i=0;i<this.noOfVuOverSpeedingEvents;i++){
 			voser=new VuOverSpeedingEventRecord(Arrays.copyOfRange(bytes, start, start+=Sizes.VUOVERSPEEDINGEVENTRECORD.getSize()));
 			this.vuOverSpeedingEventData.add(voser);
 		}
 	}
 	
 	private void setListvuTimeAdjustmentData(byte[] bytes) throws UnsupportedEncodingException {
-		this.vuTimeAdjustmentData=new ArrayList();
-		int end=bytes.length/Sizes.VUTIMEADJUSTMENTRECORD.getSize();
+		this.vuTimeAdjustmentData=new ArrayList();		
 		int start=0;
 		VuTimeAdjustmentRecord vtar;
-		for (int i=0;i<end;i++){
+		for (int i=0;i<this.noOfVuTimeAdjRecords;i++){
 			vtar=new VuTimeAdjustmentRecord(Arrays.copyOfRange(bytes, start, start+=Sizes.VUTIMEADJUSTMENTRECORD.getSize()));
 			this.vuTimeAdjustmentData.add(vtar);
 		}

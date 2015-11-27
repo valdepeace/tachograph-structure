@@ -42,7 +42,7 @@ public class VuOverSpeedingControlData {
 		int start=0;
 		this.lastOverspeedControlTime=RealTime.getRealTime(Arrays.copyOfRange(bytes, start, start+=Sizes.LASTOVERSPEEDCONTROLTIME.getSize()));
 		this.firstOverspeedSince=RealTime.getRealTime(Arrays.copyOfRange(bytes, start, start+=Sizes.FIRSTOVERSPEEDSINCE.getSize()));
-		this.numberOfOverspeedSince=Number.getNumber(Arrays.copyOfRange(bytes, start, start+=Sizes.FIRSTOVERSPEEDSINCE.getSize()));
+		this.numberOfOverspeedSince=Number.getNumber(Arrays.copyOfRange(bytes, start, start+=Sizes.NUMBEROFOVERSPEEDSINCE.getSize()));
 	}
 
 	/**

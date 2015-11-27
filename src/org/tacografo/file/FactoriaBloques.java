@@ -26,13 +26,20 @@ import org.tacografo.file.cardblockdriver.Fid;
 import org.tacografo.file.cardblockdriver.LastCardDownload;
 import org.tacografo.file.cardblockdriver.MemberStateCertificate;
 import org.tacografo.file.cardblockdriver.SpecificConditionRecord;
+import org.tacografo.file.vublock.Activity;
+import org.tacografo.file.vublock.EventsFaults;
+import org.tacografo.file.vublock.Resumen;
+import org.tacografo.file.vublock.Sid;
+import org.tacografo.file.vublock.Speed;
+import org.tacografo.file.vublock.Technical;
+
 
 
 /**
  * Factoria de bloques devuelve el fichero elemental del tacografo mapeado
  * a la clase java correspondiendo segun el fid(idendificador de fichero)
  *  
- * @author Andrés Carmona Gil
+ * @author Andrï¿½s Carmona Gil
  * @version 0.0.1
  *
  */
@@ -41,10 +48,11 @@ public class FactoriaBloques {
 	
 	/**
 	 * CardBlock segun fid(identificador de fichero
+	 * @throws Exception 
 	 */
-	public static CardBlock getFactoria(int word,byte[] datos) throws UnsupportedEncodingException  {
+	public static CardBlock getFactoria(int word,byte[] datos) throws Exception  {
 		CardBlockDriver bloque = null;
-		
+		Block block=null;
 		switch (word) {	
 			case 0x0002:	
 				
@@ -116,19 +124,29 @@ public class FactoriaBloques {
 				bloque.setFID(Fid.EF_SPECIFIC_CONDITIONS.toString());				
 				break;
 			case 0x7601:
+				block=new Resumen(datos);
+				block.setTRED(Sid.VU_ACTIVITY.toString());
 				System.out.println("Resumen");
 				break;
 			case 0x7602:
+				block=new Activity(datos);
+				block.setTRED(Sid.VU_ACTIVITY.toString());
 				System.out.println("Actividades");
 				break;
 			case 0x7603:
+				block=new EventsFaults(datos);
+				block.setTRED(Sid.VU_EVENT_FAULT.toString());				
 				System.out.println("Incidentes y fallos");
 				break;
 			case 0x7604:
+				block=new Speed(datos);
+				block.setTRED(Sid.VU_SPEED.toString());
 				System.out.println("Datos pormenorizados de la velocidad");
 				break;
 			case 0x7605:
-				System.out.println("Datos técnicos");
+				block=new Technical(datos);
+				block.setTRED(Sid.VU_TECHNICAL.toString());
+				System.out.println("Datos tï¿½cnicos");
 				break;
 			default:
 			break;
@@ -138,8 +156,7 @@ public class FactoriaBloques {
 			bloque.setDatos(datos);
 			bloque.setSize(datos.length);
 		}
-		return (CardBlock) bloque;
-		
+		return (CardBlock) bloque;		
 	}
 
 }

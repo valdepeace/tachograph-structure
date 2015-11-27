@@ -5,16 +5,19 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 
+import org.tacografo.file.Block;
 import org.tacografo.file.cardblockdriver.subblock.Certificate;
 import org.tacografo.file.cardblockdriver.subblock.FullCardNumber;
 import org.tacografo.file.cardblockdriver.subblock.Name;
 import org.tacografo.file.cardblockdriver.subblock.VehicleRegistrationIdentification;
+import org.tacografo.file.vublock.subblock.VuCompanyLocksRecord;
+import org.tacografo.file.vublock.subblock.VuControlActivityRecord;
 import org.tacografo.tiposdatos.IA5String;
 import org.tacografo.tiposdatos.OctetString;
 import org.tacografo.tiposdatos.RealTime;
 import org.tacografo.tiposdatos.Number;
 
-public class Resumen {
+public class Resumen extends Block{
 
 	// 2.68. MemberStateCertificate
 	// El certificado de la clave p�blica de un Estado miembro, expedido por la autoridad de certificaci�n europea.

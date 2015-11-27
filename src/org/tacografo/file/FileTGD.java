@@ -19,7 +19,7 @@ import org.tacografo.file.vublock.Activity;
 import org.tacografo.file.vublock.Resumen;
 import org.tacografo.file.vublock.Speed;
 import org.tacografo.file.vublock.Technical;
-import org.tacografo.file.vublock.VuEventsFaults;
+import org.tacografo.file.vublock.EventsFaults;
 import org.tacografo.tiposdatos.Number;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -85,9 +85,10 @@ public class FileTGD {
 	/**
 	 * Constructor que leera los bytes del fichero pasado como array de bytes para interpretar los
 	 * datos y asignarlo a los bloque correspondientes
+	 * @throws Exception 
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public FileTGD(byte[] bytes) {
+	public FileTGD(byte[] bytes) throws Exception {
 		this.lista_bloque = new HashMap();		
 		this.lista_bloque = factorizar_bloques(bytes);		
 	
@@ -105,57 +106,88 @@ public class FileTGD {
 		
 		byte[] datos = new byte[entrada.available()];// = new byte[longitud];				
 		entrada.read(datos,0,entrada.available());
-		//int salto=100;
-		//for (int i=0;i<datos.length;i++){
-			//System.out.printf(Integer.toHexString(datos[i]));
-			//System.out.printf(" ");
-			//System.out.println(Integer.toBinaryString(bytes[i]));
-			//if(datos[i]==0x76){
-			//	System.out.println("index: "+(i+1) +"Trep: "+Integer.toHexString(datos[i+1])+" index 76: "+i);
-				
-			//}
-		//}
+		
 		int start=0;
 		while(start<datos.length){	
 					
 			if(datos[start]==0x76){		
-					start+=1;					
+					start+=1;
+					byte num=0;
+					if(datos[start]<0){					
+						//num=Byte.toUnsignedInt(datos[start]);
+						num=(byte) (256-datos[start]&0xFF);
+						System.out.println("trep :"+datos[start-1]+"  num: "+num+" start ("+datos[start]+"): "+start);
+					}{
+						num=datos[start];
+						
+					}
+					if (datos[start]==0xb4)
+						System.out.println("-76");
+					
 					switch (datos[start]) {
 					case 0x1:
 						Resumen r=new Resumen(Arrays.copyOfRange(datos, start+1, datos.length));
 						start+=r.getSize();
-						System.out.println("trep 1");
+						System.out.println("trep 1 :"+start);
 						break;
 					case 0x2:
 						Activity a=new Activity(Arrays.copyOfRange(datos, start+1, datos.length));						
 						start+=a.getSize();
-						System.out.println("trep 2");
+						System.out.println("trep 2 :"+start);
 						break;
-					case 0x3:
-						VuEventsFaults ef=new VuEventsFaults(Arrays.copyOfRange(datos, start+1, datos.length));
-						System.out.println("trep 3");
+					case 0x3:					
+						EventsFaults ef=new EventsFaults(Arrays.copyOfRange(datos, start+1, datos.length));																								
 						start+=ef.getSize();
+						System.out.println("trep 3 :"+start);
 						break;
-					case 0x4:
+					case 0x4:						
 						Speed s=new Speed(Arrays.copyOfRange(datos, start+1, datos.length));
-						System.out.println("trep 4");
+						System.out.println("trep 4 :"+start);
 						start+=s.getSize();
 						break;
-					case 0x5:
-						Technical t=new Technical(Arrays.copyOfRange(datos, start+1, datos.length));
-						System.out.println("trep 5");
+					case 0x5:						
+						Technical t=new Technical(Arrays.copyOfRange(datos, start+1, datos.length));					
 						start+=t.getSize();
-						break;
-					default:
-						start+=1;
-						break;
-					}				    				
+						System.out.println("trep 5 :"+start);
+						break;	
+					
+					}
+					
 			}else{
+				
+				//System.out.println(start);
 				start+=1;	
 				
 			}
 			
 		}
+		//Activity a=new Activity(Arrays.copyOfRange(datos, start+1, datos.length));
+		//Speed s=new Speed(Arrays.copyOfRange(datos, 15302, datos.length));
+		//System.out.println(s.toString());
+		int salto=25;
+		String c;
+				for (int i=1045;i<datos.length;i++){
+					if(Character.isValidCodePoint(datos[i])){
+						c=String.format("%c", datos[i]);					
+							
+					}else{
+						c="\n no char";
+					}
+					System.out.print(c);
+					if (salto==i){
+						System.out.println("");
+						salto+=25;
+					}					
+				//	if(datos[i]==0x76 || datos[i]==0xb4)
+					//System.out.println("i= "+i+"  datos: "+Integer.toHexString(datos[i]));
+				//		if (datos[i+1]==0x4)
+				//	System.out.println("i= "+i+"  datos: "+Integer.toHexString(datos[i])+" trep: "+datos[i+1]);
+					//System.out.println(Integer.toBinaryString(bytes[i]));
+					//if(datos[i]==0x76){
+					//	System.out.println("index: "+(i+1) +"Trep: "+Integer.toHexString(datos[i+1])+" index 76: "+i);
+						
+					//}
+				}
 		
 	}
 
@@ -246,9 +278,10 @@ public class FileTGD {
 	 * Se encarga de leer los bytes del fichero he introducirlo en un
 	 * hasmap<FID,array bytes> los bloques bienen formado por TLV =
 	 * tag-longitud-value
+	 * @throws Exception 
 	 */
 	@SuppressWarnings("rawtypes")
-	private HashMap factorizar_bloques(byte[] bytes) {
+	private HashMap factorizar_bloques(byte[] bytes) throws Exception {
 		@SuppressWarnings("unchecked")
 		HashMap<String, CardBlock> lista = new HashMap();
 
@@ -260,8 +293,7 @@ public class FileTGD {
 				// los fid c108 y c100
 				// los detecta con signo y me los rellenas como ffffc108 y
 				// ffffc100
-				int fid = Number.getShort_16(Arrays.copyOfRange(bytes, start,
-						start += 2));
+				int fid = Number.getShort_16(Arrays.copyOfRange(bytes, start, start += 2));
 				// tipo de archivo 0 = bloque de dato -- 1 = certificado
 				
 				byte tipo = bytes[start];

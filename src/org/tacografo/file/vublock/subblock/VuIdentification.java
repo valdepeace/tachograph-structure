@@ -109,6 +109,7 @@ public class VuIdentification {
 		this.VuManufacturingDate=RealTime.getRealTime(Arrays.copyOfRange(bytes, start, start+=Sizes.VUMANUFATURINGDATE.getSize()));
 		ia5s=new IA5String(Arrays.copyOfRange(bytes, start, start+=Sizes.VUAPPROVALNUMBER.getSize()));
 		this.vuApprovalNumber=ia5s.getiA5String();
+		
 	}
 
 

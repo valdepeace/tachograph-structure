@@ -32,8 +32,9 @@ public class VuDetailedSpeedBlock {
 	
 	public VuDetailedSpeedBlock(byte[] bytes){
 		int start=0;
+		this.speedsPerSecond=new int[bytes.length];
 		this.speedBlockBeginDate=RealTime.getRealTime(Arrays.copyOfRange(bytes, start, start+=Sizes.SPEEDBLOCKBEGINDATE.getSize()));
-		for(int i=start;i<bytes.length;i++){
+		for(int i=start;i<bytes.length;i++){			
 			this.speedsPerSecond[i]=Number.getNumber(Arrays.copyOfRange(bytes, start, start+=1));
 		}
 	}
@@ -71,7 +72,7 @@ public class VuDetailedSpeedBlock {
 	 */
 	@Override
 	public String toString() {
-		return "VuDetailedSpeedBlock [speedBlockBeginDate=" + speedBlockBeginDate + ", speedsPerSecond="
+		return "\nVuDetailedSpeedBlock [speedBlockBeginDate=" + speedBlockBeginDate + ", speedsPerSecond="
 				+ Arrays.toString(speedsPerSecond) + "]";
 	}
 	

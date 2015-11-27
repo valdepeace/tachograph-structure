@@ -1,15 +1,14 @@
 /**
  * 
  */
-package org.tacografo.file.vublock;
+package org.tacografo.file.vublock.subblock;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import java.util.Date;
 
 import org.tacografo.file.cardblockdriver.subblock.FullCardNumber;
-import org.tacografo.file.vublock.subblock.EventFaulType;
-import org.tacografo.file.vublock.subblock.EventFaultRecordPurpose;
+import org.tacografo.file.vublock.Sizes;
 import org.tacografo.tiposdatos.RealTime;
 
 /**

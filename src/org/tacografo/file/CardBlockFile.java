@@ -40,7 +40,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * Clase encargada de interpretar los bytes de los ficheros de una tarjeta del tacografo
- * he interpretarlo segun REGLAMENTO (CE) No 1360/2002 DE LA COMISIÓN de 13 de junio de 2002
+ * he interpretarlo segun REGLAMENTO (CE) No 1360/2002 DE LA COMISIï¿½N de 13 de junio de 2002
  * en los diferentes bloques de datos segun dicho reglamento.
  * 
  * Nota:Donde podemos obtener directamente los bloques de memoria como propiedades de esta clase
@@ -102,10 +102,10 @@ public class CardBlockFile {
 	/**
 	 * Constructor que leera los bytes del fichero pasado para interpretar los
 	 * datos y asignarlo a los bloque correspondientes
-	 * @throws ErrorFile 
+	 * @throws Exception 
 	 **/
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public CardBlockFile(String nombre_fichero) throws ErrorFile {
+	public CardBlockFile(String nombre_fichero) throws Exception {
 		this.nameFile=nombre_fichero;
 		this.lista_bloque = new HashMap();		
 		factorizar_bloques(nombre_fichero);				
@@ -118,9 +118,10 @@ public class CardBlockFile {
 	/**
 	 * Constructor que leera los bytes del fichero pasado como un inpurtStream para interpretar los
 	 * datos y asignarlo a los bloque correspondientes
+	 * @throws Exception 
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public CardBlockFile(InputStream is, int sizeFile, String filename) throws ErrorFile{
+	public CardBlockFile(InputStream is, int sizeFile, String filename) throws Exception{
 		this.nameFile=filename;
 		this.lista_bloque = new HashMap();
 		factorizar_bloques(is, sizeFile);
@@ -134,9 +135,10 @@ public class CardBlockFile {
 	/**
 	 * Constructor que leera los bytes del fichero pasado como array de bytes para interpretar los
 	 * datos y asignarlo a los bloque correspondientes
+	 * @throws Exception 
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public CardBlockFile(byte[] bytes) {
+	public CardBlockFile(byte[] bytes) throws Exception {
 		this.lista_bloque = new HashMap();		
 		this.lista_bloque = factorizar_bloques(bytes);
 		if (!sid)
@@ -190,11 +192,9 @@ public class CardBlockFile {
 	 * Lectura de los bloques con formato :tag(fid)-longitud-value
 	 * 
 	 * @param entrada
-	 * @throws IOException
-	 * @throws ErrorFile ocurrido cuando no es un fichero tgd o falla en la lectura de algun bloque
-	 * porque no encuentre el tag(fid)
+	 * @throws Exception 
 	 */
-	private void lectura_bloque(DataInputStream entrada) throws IOException, ErrorFile{
+	private void lectura_bloque(DataInputStream entrada) throws Exception{
 		boolean existe_fid=true;
 		while (existe_fid) {
 			// la lectura tiene que ser con readUnsignedShort debido a que
@@ -230,10 +230,9 @@ public class CardBlockFile {
 	 * Se encarga de leer los bytes del fichero he introducirlo en un
 	 * hasmap<FID,array bytes> los bloques bienen formado por TLV =
 	 * tag(FID)-longitud-value
-	 * @throws ErrorFile ocurrido cuando no es un fichero tgd o falla en la lectura de algun bloque
-	 * porque no encuentre el tag(fid)
+	 * @throws Exception 
 	 */
-	private void factorizar_bloques(String nombre_fichero) throws ErrorFile {
+	private void factorizar_bloques(String nombre_fichero) throws Exception {
 		FileInputStream fis = null;		
 		DataInputStream entrada = null;						
 		try {
@@ -268,10 +267,10 @@ public class CardBlockFile {
 	 * Se encarga de leer los bytes del fichero he introducirlo en un
 	 * hasmap<FID,array bytes> los bloques bienen formado por TLV =
 	 * tag-longitud-value
-	 * @throws ErrorFile 
+	 * @throws Exception 
 	 **/
 	@SuppressWarnings("unchecked")
-	private void factorizar_bloques(InputStream is, int sizeFile) throws ErrorFile {
+	private void factorizar_bloques(InputStream is, int sizeFile) throws Exception {
 				
 		DataInputStream entrada = null;
 		@SuppressWarnings({ "unused", "rawtypes" })
@@ -320,9 +319,10 @@ public class CardBlockFile {
 	 * Se encarga de leer los bytes del fichero he introducirlo en un
 	 * hasmap<FID,array bytes> los bloques bienen formado por TLV =
 	 * tag-longitud-value
+	 * @throws Exception 
 	 */
 	@SuppressWarnings("rawtypes")
-	private HashMap factorizar_bloques(byte[] bytes) {
+	private HashMap factorizar_bloques(byte[] bytes) throws Exception {
 		@SuppressWarnings("unchecked")
 		HashMap<String, CardBlock> lista = new HashMap();
 		

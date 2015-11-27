@@ -42,7 +42,7 @@ public class VuSoftwareIdentification {
 		int start=0;
 		IA5String ia5s=new IA5String(Arrays.copyOfRange(bytes,start, start+=Sizes.VUSOFTWAREVERSION.getSize()));
 		this.vuSoftwareVersion=ia5s.getiA5String();
-		this.vuSoftInstallationDate=RealTime.getRealTime(Arrays.copyOfRange(bytes,start, start+=Sizes.VUSOFTWAREVERSION.getSize()));
+		this.vuSoftInstallationDate=RealTime.getRealTime(Arrays.copyOfRange(bytes,start, start+=Sizes.VUSOFTWAREINSTALLATIONDATE.getSize()));
 	}
 
 	/**

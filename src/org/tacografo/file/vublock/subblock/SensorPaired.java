@@ -60,10 +60,62 @@ public class SensorPaired {
 	public SensorPaired(byte[] bytes) throws IOException {
 		int start=0;
 		this.sensorSerialNumber=new ExtendedSerialNumber(Arrays.copyOfRange(bytes, start, start+=Sizes.SENSORSERIALNUMBER.getSize()));
-		System.out.println("sensorSerialNumber: "+this.sensorSerialNumber);
+		
 		IA5String ia5s=new IA5String(Arrays.copyOfRange(bytes, start, start+=Sizes.SENSORAPPROVALNUMBER.getSize()));
-		this.sensorApprovalNumber=ia5s.getiA5String();
+		this.sensorApprovalNumber=ia5s.getiA5String();		
 		this.sensorPairingDateFirst=RealTime.getRealTime(Arrays.copyOfRange(bytes, start, start+=Sizes.SENSORPAIRINGDATEFIRST.getSize()));
 	}
 
+	/**
+	 * @return the sensorSerialNumber
+	 */
+	public ExtendedSerialNumber getSensorSerialNumber() {
+		return sensorSerialNumber;
+	}
+
+	/**
+	 * @param sensorSerialNumber the sensorSerialNumber to set
+	 */
+	public void setSensorSerialNumber(ExtendedSerialNumber sensorSerialNumber) {
+		this.sensorSerialNumber = sensorSerialNumber;
+	}
+
+	/**
+	 * @return the sensorApprovalNumber
+	 */
+	public String getSensorApprovalNumber() {
+		return sensorApprovalNumber;
+	}
+
+	/**
+	 * @param sensorApprovalNumber the sensorApprovalNumber to set
+	 */
+	public void setSensorApprovalNumber(String sensorApprovalNumber) {
+		this.sensorApprovalNumber = sensorApprovalNumber;
+	}
+
+	/**
+	 * @return the sensorPairingDateFirst
+	 */
+	public Date getSensorPairingDateFirst() {
+		return sensorPairingDateFirst;
+	}
+
+	/**
+	 * @param sensorPairingDateFirst the sensorPairingDateFirst to set
+	 */
+	public void setSensorPairingDateFirst(Date sensorPairingDateFirst) {
+		this.sensorPairingDateFirst = sensorPairingDateFirst;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "SensorPaired [sensorSerialNumber=" + sensorSerialNumber + ", sensorApprovalNumber="
+				+ sensorApprovalNumber + ", sensorPairingDateFirst=" + sensorPairingDateFirst + "]";
+	}
+
+	
 }

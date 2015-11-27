@@ -1,13 +1,14 @@
 /**
  * 
  */
-package org.tacografo.file.vublock;
+package org.tacografo.file.vublock.subblock;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 
 import org.tacografo.file.cardblockdriver.subblock.FullCardNumber;
 import org.tacografo.file.cardblockdriver.subblock.PlaceRecord;
+import org.tacografo.file.vublock.Sizes;
 
 /**
  * @author Andres Carmona Gil

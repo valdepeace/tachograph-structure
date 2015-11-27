@@ -3,9 +3,13 @@
  */
 package org.tacografo.file.vublock.subblock;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import java.util.Date;
 
+
+import org.tacografo.file.cardblockdriver.subblock.FullCardNumber;
+import org.tacografo.file.vublock.subblock.EventFaulType;
 import org.tacografo.file.vublock.Sizes;
 import org.tacografo.tiposdatos.RealTime;
 import org.tacografo.tiposdatos.Number;
@@ -13,76 +17,166 @@ import org.tacografo.tiposdatos.Number;
 /**
  * @author Andres Carmona Gil
  * @version 0.0.1
- * 2.139.   VuOverSpeedingControlData
- * Información almacenada en una unidad intravehicular y relativa a incidentes de exceso de velocidad ocurridos desde el último control del exceso de velocidad (requisito 095).
- * VuOverSpeedingControlData ::= SEQUENCE {
- * lastOverspeedControlTime TimeReal,
- * firstOverspeedSince TimeReal,
- * numberOfOverspeedSince OverspeedNumber
+ * 2.141.   VuOverSpeedingEventRecord
+ * 
+ * Información almacenada en una unidad intravehicular y relativa a incidentes de exceso de velocidad (requisito 094).
+ * VuOverSpeedingEventRecord ::= SEQUENCE {
+ * eventType EventFaultType,
+ * eventRecordPurpose EventFaultRecordPurpose,
+ * eventBeginTime TimeReal,
+ * eventEndTime TimeReal,
+ * maxSpeedValue SpeedMax,
+ * averageSpeedValue SpeedAverage,
+ * cardNumberDriverSlotBegin FullCardNumber,
+ * similarEventsNumber SimilarEventsNumber
  * }
- * lastOverspeedControlTime es la fecha y la hora del último control del exceso de velocidad.
- * firstOverspeedSince es la fecha y la hora del primer exceso de velocidad ocurrido tras este control.
- * numberOfOverspeedSince es el número de incidentes de exceso de velocidad ocurridos después del último control del exceso de velocidad.
- *
- * 2.83.   OverspeedNumber
- * Número de incidentes de exceso de velocidad ocurridos desde el último control del exceso de velocidad.
- * OverspeedNumber ::= INTEGER(0..255) 
- * Asignación de valor: 0 significa que no se ha producido ningún incidente de exceso de velocidad desde el último control, 1 significa que se ha producido un incidente 
- * de exceso de velocidad desde el último control … 255 significa que se han producido 255 o más incidentes de exceso de velocidad desde el último control.
+ * eventType es el tipo de incidente.
+ * eventRecordPurpose es el propósito con que se ha registrado ese incidente.
+ * eventBeginTime es la fecha y la hora de comienzo del incidente.
+ * eventEndTime es la fecha y la hora en que termina el incidente.
+ * maxSpeedValue es la velocidad máxima medida durante el incidente.
+ * averageSpeedValue es la media aritmética de las velocidades medidas durante el incidente.
+ * cardNumberDriverSlotBegin identifica la tarjeta que estaba insertada en la ranura del conductor en el momento en que comenzó el incidente.
+ * similarEventsNumber es el número de incidentes similares ocurridos ese día.
  */
 public class VuOverSpeedingEventRecord {
 	
-	private Date lastOverspeedControlTime;
-	private Date firstOverspeedSince;
-	private int numberOfOverspeedSince;
+	private String eventType; //EventFaultType
+	private String eventRecordPurpose ;//EventFaultRecordPurpose
+	private Date eventBeginTime;// TimeReal
+	private Date eventEndTime;// TimeReal
+	private int maxSpeedValue;// SpeedMax
+	private int averageSpeedValue; //SpeedAverage
+	private FullCardNumber cardNumberDriverSlotBegin;
+	private int similarEventsNumber;// SimilarEventsNumber
 	
-	public VuOverSpeedingEventRecord(byte[] bytes) {
+	public VuOverSpeedingEventRecord(byte[] bytes) throws UnsupportedEncodingException {
 		int start=0;
-		this.lastOverspeedControlTime=RealTime.getRealTime(Arrays.copyOfRange(bytes, start, start+=Sizes.LASTOVERSPEEDCONTROLTIME.getSize()));
-		this.firstOverspeedSince=RealTime.getRealTime(Arrays.copyOfRange(bytes, start, start+=Sizes.FIRSTOVERSPEEDSINCE.getSize()));
-		this.numberOfOverspeedSince=Number.getNumber(Arrays.copyOfRange(bytes, start, start+=Sizes.NUMBEROFOVERSPEEDSINCE.getSize()));
+		
+		this.eventType=EventFaulType.getEventFaultType(bytes[start]);  
+		start+=Sizes.EVENTTYPE.getSize();
+		this.eventRecordPurpose=EventFaultRecordPurpose.getEventFaultRecordPurpose(bytes[start]);
+		start+=Sizes.EVENTRECORDPURPOSE.getSize();
+		this.eventBeginTime=RealTime.getRealTime(Arrays.copyOfRange(bytes, start, start+=Sizes.EVENTBEGINTIME_VUOVERSPEED.getSize()));
+		this.eventEndTime=RealTime.getRealTime(Arrays.copyOfRange(bytes, start, start+=Sizes.EVENTENDTIME_VUOVERSPEED.getSize()));
+		this.maxSpeedValue=Number.getNumber(Arrays.copyOfRange(bytes, start, start+=Sizes.MAXSPEEDVALUE.getSize()));
+		this.averageSpeedValue=Number.getNumber(Arrays.copyOfRange(bytes, start, start+=Sizes.AVARAGESPEEDVALUE.getSize()));
+		this.cardNumberDriverSlotBegin=new FullCardNumber(Arrays.copyOfRange(bytes, start, start+=Sizes.CARDNUMBERDRIVERSLOTBEGIN_VUOVERSPEED.getSize()));
+		this.similarEventsNumber=Number.getNumber(Arrays.copyOfRange(bytes,start, start+=Sizes.SIMILAREVENTSNUMBER.getSize()));
+		
+		
 	}
 
 	/**
-	 * @return the lastOverspeedControlTime
+	 * @return the eventType
 	 */
-	public Date getLastOverspeedControlTime() {
-		return lastOverspeedControlTime;
+	public String getEventType() {
+		return eventType;
 	}
 
 	/**
-	 * @param lastOverspeedControlTime the lastOverspeedControlTime to set
+	 * @param eventType the eventType to set
 	 */
-	public void setLastOverspeedControlTime(Date lastOverspeedControlTime) {
-		this.lastOverspeedControlTime = lastOverspeedControlTime;
+	public void setEventType(String eventType) {
+		this.eventType = eventType;
 	}
 
 	/**
-	 * @return the firstOverspeedSince
+	 * @return the eventRecordPurpose
 	 */
-	public Date getFirstOverspeedSince() {
-		return firstOverspeedSince;
+	public String getEventRecordPurpose() {
+		return eventRecordPurpose;
 	}
 
 	/**
-	 * @param firstOverspeedSince the firstOverspeedSince to set
+	 * @param eventRecordPurpose the eventRecordPurpose to set
 	 */
-	public void setFirstOverspeedSince(Date firstOverspeedSince) {
-		this.firstOverspeedSince = firstOverspeedSince;
+	public void setEventRecordPurpose(String eventRecordPurpose) {
+		this.eventRecordPurpose = eventRecordPurpose;
 	}
 
 	/**
-	 * @return the numberOfOverspeedSince
+	 * @return the eventBeginTime
 	 */
-	public int getNumberOfOverspeedSince() {
-		return numberOfOverspeedSince;
+	public Date getEventBeginTime() {
+		return eventBeginTime;
 	}
 
 	/**
-	 * @param numberOfOverspeedSince the numberOfOverspeedSince to set
+	 * @param eventBeginTime the eventBeginTime to set
 	 */
-	public void setNumberOfOverspeedSince(int numberOfOverspeedSince) {
-		this.numberOfOverspeedSince = numberOfOverspeedSince;
+	public void setEventBeginTime(Date eventBeginTime) {
+		this.eventBeginTime = eventBeginTime;
+	}
+
+	/**
+	 * @return the eventEndTime
+	 */
+	public Date getEventEndTime() {
+		return eventEndTime;
+	}
+
+	/**
+	 * @param eventEndTime the eventEndTime to set
+	 */
+	public void setEventEndTime(Date eventEndTime) {
+		this.eventEndTime = eventEndTime;
+	}
+
+	/**
+	 * @return the maxSpeedValue
+	 */
+	public int getMaxSpeedValue() {
+		return maxSpeedValue;
+	}
+
+	/**
+	 * @param maxSpeedValue the maxSpeedValue to set
+	 */
+	public void setMaxSpeedValue(int maxSpeedValue) {
+		this.maxSpeedValue = maxSpeedValue;
+	}
+
+	/**
+	 * @return the averageSpeedValue
+	 */
+	public int getAverageSpeedValue() {
+		return averageSpeedValue;
+	}
+
+	/**
+	 * @param averageSpeedValue the averageSpeedValue to set
+	 */
+	public void setAverageSpeedValue(int averageSpeedValue) {
+		this.averageSpeedValue = averageSpeedValue;
+	}
+
+	/**
+	 * @return the cardNumberDriverSlotBegin
+	 */
+	public FullCardNumber getCardNumberDriverSlotBegin() {
+		return cardNumberDriverSlotBegin;
+	}
+
+	/**
+	 * @param cardNumberDriverSlotBegin the cardNumberDriverSlotBegin to set
+	 */
+	public void setCardNumberDriverSlotBegin(FullCardNumber cardNumberDriverSlotBegin) {
+		this.cardNumberDriverSlotBegin = cardNumberDriverSlotBegin;
+	}
+
+	/**
+	 * @return the similarEventsNumber
+	 */
+	public int getSimilarEventsNumber() {
+		return similarEventsNumber;
+	}
+
+	/**
+	 * @param similarEventsNumber the similarEventsNumber to set
+	 */
+	public void setSimilarEventsNumber(int similarEventsNumber) {
+		this.similarEventsNumber = similarEventsNumber;
 	}
 
 	/* (non-Javadoc)
@@ -90,10 +184,13 @@ public class VuOverSpeedingEventRecord {
 	 */
 	@Override
 	public String toString() {
-		return "VuOverSpeedingEventRecord [lastOverspeedControlTime=" + lastOverspeedControlTime
-				+ ", firstOverspeedSince=" + firstOverspeedSince + ", numberOfOverspeedSince=" + numberOfOverspeedSince
-				+ "]";
+		return "VuOverSpeedingEventRecord [eventType=" + eventType + ", eventRecordPurpose=" + eventRecordPurpose
+				+ ", eventBeginTime=" + eventBeginTime + ", eventEndTime=" + eventEndTime + ", maxSpeedValue="
+				+ maxSpeedValue + ", averageSpeedValue=" + averageSpeedValue + ", cardNumberDriverSlotBegin="
+				+ cardNumberDriverSlotBegin + ", similarEventsNumber=" + similarEventsNumber + "]";
 	}
+	
+	
 	
 
 }

@@ -66,6 +66,7 @@ public class EventFaulType {
 				
 	}
 	
+	
 	public static final String getEventFaultType(byte bite){
 		String str="";
 		switch (bite) {

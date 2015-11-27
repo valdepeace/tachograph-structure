@@ -48,18 +48,16 @@ public class ExtendedSerialNumber {
 	public ExtendedSerialNumber(byte[] datos) throws IOException {
 		//start indice
 		int start=0;
-		this.serialNumber=String.format("%d",Number.getInteger_32(Arrays.copyOfRange(datos, start, start+4)));
-		start+=4;
-		System.out.println(this.serialNumber);		
-		this.monthYear= BCDString.BCDtoString(Arrays.copyOfRange(datos, start, start+2));
-		start+=2;
-		System.out.println(this.monthYear);
-		OctetString os=new OctetString(Arrays.copyOfRange(datos, start, start+1));		
+		this.serialNumber=String.format("%d",Number.getInteger_32(Arrays.copyOfRange(datos, start, start+=4)));
+		
+				
+		this.monthYear= BCDString.BCDtoString(Arrays.copyOfRange(datos, start, start+=2));
+		
+		OctetString os=new OctetString(Arrays.copyOfRange(datos, start, start+=1));		
 		this.type=(os.getOctetString().equals("ff"))?"valor reservado":os.getOctetString();
-		start+=1;
-		System.out.println(this.type);
-		this.manufacturerCode=new ManufacturerCode(Arrays.copyOfRange(datos,start,start+1));
-		System.out.println(this.manufacturerCode);
+		
+		this.manufacturerCode=new ManufacturerCode(Arrays.copyOfRange(datos,start,start+=1));
+		
 		
 	}
 	public ExtendedSerialNumber(){}

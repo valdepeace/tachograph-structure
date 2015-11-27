@@ -64,13 +64,13 @@ public class Number {
 			n=getShort_8(bytes);
 			break;
 		case 2:
-			n=getInteger_24(bytes);
+			n=getShort_16(bytes);
 			break;
 		case 3:
-			n=getInteger_32(bytes);
+			n=getInteger_24(bytes);
 			break;
 		case 4:
-			n=getShort_8(bytes);
+			n=getInteger_32(bytes);
 			break;
 		default:
 			n=0;

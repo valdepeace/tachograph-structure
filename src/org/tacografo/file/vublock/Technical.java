@@ -8,6 +8,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import org.tacografo.file.Block;
 import org.tacografo.file.vublock.subblock.SensorPaired;
 import org.tacografo.file.vublock.subblock.VuCalibrationRecord;
 import org.tacografo.file.vublock.subblock.VuDetailedSpeedBlock;
@@ -19,7 +20,7 @@ import org.tacografo.tiposdatos.Number;
  * 
  *
  */
-public class Technical {
+public class Technical extends Block{
 
 	private VuIdentification vuIdentification;
 	private SensorPaired sensosrPaired;
@@ -45,9 +46,13 @@ public class Technical {
 	public Technical(byte[] bytes) throws IOException{
 		int start=0;
 		this.vuIdentification=new VuIdentification(Arrays.copyOfRange(bytes, start, start+=Sizes.VUIDENTIFICATION.getSize()));
-		//System.out.println(this.vuIdentification);
+		
+	
 		this.sensosrPaired=new SensorPaired(Arrays.copyOfRange(bytes, start, start+=Sizes.SENSORPAIRED.getSize()));
+		
+		
 		this.noOfVuCalibrationRecords=Number.getNumber(Arrays.copyOfRange(bytes, start, start+=Sizes.NOOFVUCALIBRATIONRECORDS.getSize()));
+		
 		this.setListVuCalibrationData(Arrays.copyOfRange(bytes, start, start+=Sizes.VUCALIBRATIONRECORD.getSize()*this.noOfVuCalibrationRecords));
 	}
 

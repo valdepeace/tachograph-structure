@@ -109,6 +109,7 @@ public enum Sizes {
 						CARDNUMBERCODRIVERSLOTBEGIN_EVENT(18),
 						CARDNUMBERDRIVERSLOTEND_EVENT(18),
 						CARDNUMBERCODRIVERSLOTEND_EVENT(18),
+						//SIMILAREVENTSNUMBER(1),
 				VUOVERSPEEDINGCONTROLDATA(9),	//Datos relativos al ultimo control del exceso de velocidad(si no hay datos 
 					LASTOVERSPEEDCONTROLTIME(4),//se indica un valor por defecto)
 					FIRSTOVERSPEEDSINCE(4),
@@ -125,7 +126,7 @@ public enum Sizes {
 						CARDNUMBERDRIVERSLOTBEGIN_VUOVERSPEED(18),
 						SIMILAREVENTSNUMBER(1),
 				VUTIMEADJUSTMENTDATA(99),		//Todos los ajustes de hora almacenados en la VU(fuera del marco de un calibrado
-					NOOFVUTIMEADJRECORDS(98),	//completo). Si la seccion esta vacia, tan solo se envia noOfVuTimeAdjRecors=0
+					NOOFVUTIMEADJRECORDS(1),	//completo). Si la seccion esta vacia, tan solo se envia noOfVuTimeAdjRecors=0
 						VUTIMEADJUSTMENTRECORD(98),
 							OLDTIMEVALUE_VUTIMEADJUSTMENTDATA(4),
 							NEWTIMEVALUE_VUTIMEADJUSTMENTDATA(4),
@@ -135,7 +136,7 @@ public enum Sizes {
 				SIGNATURE_TREP3(128),
 				
 				TREP_4(0), 						//Velocidad
-					VUDETAILEDSPEEDDATA(2),
+					VUDETAILEDSPEEDDATA(66),
 						NOOFSPEEDBLOCKS(2),		//Todos los datos pormenorizados almacenados en la Vu y relativos a la velociad del
 						VUDETAILEDSPEEDBLOCK(64),//vehiculo (un bloque de datos por cad minuto que haya estado el vehiculo en 
 							SPEEDBLOCKBEGINDATE(4),//movimiento) 60 valores de velocidad por cada minuto(un valor por segundo)
@@ -144,7 +145,7 @@ public enum Sizes {
 												//ultimo bloque con datos de velocidad
 										
 				TREP_5(208),						//Datos tecnicos
-					VUIDENTIFICATION(152),
+					VUIDENTIFICATION(116),
 						VUMANUFACTURERNAME(36),
 						VUMANUFACTURERADDRESS(36),						
 						VUPARTNUMBER(16),

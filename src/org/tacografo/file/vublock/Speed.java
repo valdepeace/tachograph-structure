@@ -7,14 +7,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.tacografo.tiposdatos.OctetString;
+import org.tacografo.file.Block;
 import org.tacografo.file.vublock.subblock.VuDetailedSpeedBlock;
 import org.tacografo.tiposdatos.Number;
 
 /**
  * @author Andres Carmona Gil
- *
+ *@version 0.0.1
  */
-public class Speed {
+public class Speed extends Block{
 	
 	/**
 	 * 2.128.   VuDetailedSpeedData
@@ -35,19 +36,22 @@ public class Speed {
 	public Speed(byte[] bytes) throws Exception{
 		int start=0;
 		this.noOfSpeedBlocks=Number.getNumber(Arrays.copyOfRange(bytes, start, start+=Sizes.NOOFSPEEDBLOCKS.getSize()));
+		
+		if(this.noOfSpeedBlocks>0)
 		this.setVuDetailedData(Arrays.copyOfRange(bytes, start, start+=Sizes.VUDETAILEDSPEEDBLOCK.getSize()*this.noOfSpeedBlocks));
 		this.signature=OctetString.getHexString(Arrays.copyOfRange(bytes, start, start+=Sizes.SIGNATURE_TREP1.getSize()));
 		this.size=start;	
+		
 	}
 
 
 	private void setVuDetailedData(byte[] bytes) {
 		this.vuDetailedData=new ArrayList();
-		int end=bytes.length/Sizes.VUDETAILEDSPEEDBLOCK.getSize();
+		int end=bytes.length/Sizes.VUDETAILEDSPEEDBLOCK.getSize();		
 		int start=0;
 		VuDetailedSpeedBlock vdsb;
-		for (int i=0;i<end;i++){
-			vdsb=new VuDetailedSpeedBlock(Arrays.copyOfRange(bytes, start, start+=Sizes.VUDETAILEDSPEEDBLOCK.getSize()));
+		for (int i=0;i<this.noOfSpeedBlocks;i++){			
+			vdsb=new VuDetailedSpeedBlock(Arrays.copyOfRange(bytes, start, start+=Sizes.VUDETAILEDSPEEDBLOCK.getSize()));			
 			this.vuDetailedData.add(vdsb);
 		}
 		

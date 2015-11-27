@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.tacografo.file.cardblockdriver.subblock;
+package org.tacografo.file.vublock.subblock;
 
 import org.tacografo.tiposdatos.BCDString;
 
@@ -9,7 +9,7 @@ import org.tacografo.tiposdatos.BCDString;
  * 
  * 2.126. VuDataBlockCounter
  * 
- * Contador, almacenado en una tarjeta, que identifica secuencialmente los ciclos de inserción/extracción de la tarjeta en unidades intravehiculares.
+ * Contador, almacenado en una tarjeta, que identifica secuencialmente los ciclos de inserciï¿½n/extracciï¿½n de la tarjeta en unidades intravehiculares.
  *
  * VuDataBlockCounter::= BCDString(SIZE(2))
  * @author Andres Carmona Gil

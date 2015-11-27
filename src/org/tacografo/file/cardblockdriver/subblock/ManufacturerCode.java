@@ -6,37 +6,37 @@ package org.tacografo.file.cardblockdriver.subblock;
 
 
 /**
- * 2.67. ManufacturerCode Código que identifica a un fabricante.
- * ManufacturerCode ::= INTEGER(0..255) Asignación de valor: ¡00¡H No hay
- * información disponible ¡01¡H Valor reservado ¡02¡H .. ¡0F¡H Reservado para
- * uso futuro ¡10¡H ACTIA ¡11¡H .. ¡17¡H Reservado para fabricantes cuyo nombre
- * comience por ¡A¡ ¡18¡H .. ¡1F¡H Reservado para fabricantes cuyo nombre
- * comience por ¡B¡ ¡20¡H .. ¡27¡H Reservado para fabricantes cuyo nombre
- * comience por ¡C¡ ¡28¡H .. ¡2F¡H Reservado para fabricantes cuyo nombre
- * comience por ¡D¡ ¡30¡H .. ¡37¡H Reservado para fabricantes cuyo nombre
- * comience por ¡E¡ ¡38¡H .. ¡3F¡H Reservado para fabricantes cuyo nombre
- * comience por ¡F¡ ¡40¡H Giesecke & Devrient GmbH ¡41¡H GEM plus ¡42¡H .. ¡47¡H
- * Reservado para fabricantes cuyo nombre comience por ¡G¡ ¡48¡H .. ¡4F¡H
- * Reservado para fabricantes cuyo nombre comience por ¡H¡ ¡50¡H .. ¡57¡H
- * Reservado para fabricantes cuyo nombre comience por ¡I¡ ¡58¡H .. ¡5F¡H
- * Reservado para fabricantes cuyo nombre comience por ¡J¡ ¡60¡H .. ¡67¡H
- * Reservado para fabricantes cuyo nombre comience por ¡K¡ ¡68¡H .. ¡6F¡H
- * Reservado para fabricantes cuyo nombre comience por ¡L¡ ¡70¡H .. ¡77¡H
- * Reservado para fabricantes cuyo nombre comience por ¡M¡ ¡78¡H .. ¡7F¡H
- * Reservado para fabricantes cuyo nombre comience por ¡N¡ ¡80¡H OSCARD ¡81¡H ..
- * ¡87¡H Reservado para fabricantes cuyo nombre comience por ¡O¡ ¡88¡H .. ¡8F¡H
- * Reservado para fabricantes cuyo nombre comience por ¡P¡ ¡90¡H .. ¡97¡H
- * Reservado para fabricantes cuyo nombre comience por ¡Q¡ ¡98¡H .. ¡9F¡H
- * Reservado para fabricantes cuyo nombre comience por ¡R¡ ¡A0¡H SETEC ¡A1¡H
- * SIEMENS VDO ¡A2¡H STONERIDGE ¡A3¡H .. ¡A7¡H Reservado para fabricantes cuyo
- * nombre comience por ¡S¡ ¡AA¡H TACHOCONTROL ¡AB¡H .. ¡AF¡H Reservado para
- * fabricantes cuyo nombre comience por ¡T¡ ¡B0¡H .. ¡B7¡H Reservado para
- * fabricantes cuyo nombre comience por ¡U¡ ¡B8¡H .. ¡BF¡H Reservado para
- * fabricantes cuyo nombre comience por ¡V¡ ¡C0¡H .. ¡C7¡H Reservado para
- * fabricantes cuyo nombre comience por ¡W¡ ¡C8¡H .. ¡CF¡H Reservado para
- * fabricantes cuyo nombre comience por ¡X¡ ¡D0¡H .. ¡D7¡H Reservado para
- * fabricantes cuyo nombre comience por ¡Y¡ ¡D8¡H .. ¡DF¡H Reservado para
- * fabricantes cuyo nombre comience por ¡Z¡
+ * 2.67. ManufacturerCode Cï¿½digo que identifica a un fabricante.
+ * ManufacturerCode ::= INTEGER(0..255) Asignaciï¿½n de valor: ï¿½00ï¿½H No hay
+ * informaciï¿½n disponible ï¿½01ï¿½H Valor reservado ï¿½02ï¿½H .. ï¿½0Fï¿½H Reservado para
+ * uso futuro ï¿½10ï¿½H ACTIA ï¿½11ï¿½H .. ï¿½17ï¿½H Reservado para fabricantes cuyo nombre
+ * comience por ï¿½Aï¿½ ï¿½18ï¿½H .. ï¿½1Fï¿½H Reservado para fabricantes cuyo nombre
+ * comience por ï¿½Bï¿½ ï¿½20ï¿½H .. ï¿½27ï¿½H Reservado para fabricantes cuyo nombre
+ * comience por ï¿½Cï¿½ ï¿½28ï¿½H .. ï¿½2Fï¿½H Reservado para fabricantes cuyo nombre
+ * comience por ï¿½Dï¿½ ï¿½30ï¿½H .. ï¿½37ï¿½H Reservado para fabricantes cuyo nombre
+ * comience por ï¿½Eï¿½ ï¿½38ï¿½H .. ï¿½3Fï¿½H Reservado para fabricantes cuyo nombre
+ * comience por ï¿½Fï¿½ ï¿½40ï¿½H Giesecke & Devrient GmbH ï¿½41ï¿½H GEM plus ï¿½42ï¿½H .. ï¿½47ï¿½H
+ * Reservado para fabricantes cuyo nombre comience por ï¿½Gï¿½ ï¿½48ï¿½H .. ï¿½4Fï¿½H
+ * Reservado para fabricantes cuyo nombre comience por ï¿½Hï¿½ ï¿½50ï¿½H .. ï¿½57ï¿½H
+ * Reservado para fabricantes cuyo nombre comience por ï¿½Iï¿½ ï¿½58ï¿½H .. ï¿½5Fï¿½H
+ * Reservado para fabricantes cuyo nombre comience por ï¿½Jï¿½ ï¿½60ï¿½H .. ï¿½67ï¿½H
+ * Reservado para fabricantes cuyo nombre comience por ï¿½Kï¿½ ï¿½68ï¿½H .. ï¿½6Fï¿½H
+ * Reservado para fabricantes cuyo nombre comience por ï¿½Lï¿½ ï¿½70ï¿½H .. ï¿½77ï¿½H
+ * Reservado para fabricantes cuyo nombre comience por ï¿½Mï¿½ ï¿½78ï¿½H .. ï¿½7Fï¿½H
+ * Reservado para fabricantes cuyo nombre comience por ï¿½Nï¿½ ï¿½80ï¿½H OSCARD ï¿½81ï¿½H ..
+ * ï¿½87ï¿½H Reservado para fabricantes cuyo nombre comience por ï¿½Oï¿½ ï¿½88ï¿½H .. ï¿½8Fï¿½H
+ * Reservado para fabricantes cuyo nombre comience por ï¿½Pï¿½ ï¿½90ï¿½H .. ï¿½97ï¿½H
+ * Reservado para fabricantes cuyo nombre comience por ï¿½Qï¿½ ï¿½98ï¿½H .. ï¿½9Fï¿½H
+ * Reservado para fabricantes cuyo nombre comience por ï¿½Rï¿½ ï¿½A0ï¿½H SETEC ï¿½A1ï¿½H
+ * SIEMENS VDO ï¿½A2ï¿½H STONERIDGE ï¿½A3ï¿½H .. ï¿½A7ï¿½H Reservado para fabricantes cuyo
+ * nombre comience por ï¿½Sï¿½ ï¿½AAï¿½H TACHOCONTROL ï¿½ABï¿½H .. ï¿½AFï¿½H Reservado para
+ * fabricantes cuyo nombre comience por ï¿½Tï¿½ ï¿½B0ï¿½H .. ï¿½B7ï¿½H Reservado para
+ * fabricantes cuyo nombre comience por ï¿½Uï¿½ ï¿½B8ï¿½H .. ï¿½BFï¿½H Reservado para
+ * fabricantes cuyo nombre comience por ï¿½Vï¿½ ï¿½C0ï¿½H .. ï¿½C7ï¿½H Reservado para
+ * fabricantes cuyo nombre comience por ï¿½Wï¿½ ï¿½C8ï¿½H .. ï¿½CFï¿½H Reservado para
+ * fabricantes cuyo nombre comience por ï¿½Xï¿½ ï¿½D0ï¿½H .. ï¿½D7ï¿½H Reservado para
+ * fabricantes cuyo nombre comience por ï¿½Yï¿½ ï¿½D8ï¿½H .. ï¿½DFï¿½H Reservado para
+ * fabricantes cuyo nombre comience por ï¿½Zï¿½
  * 
  * @author Andres Carmona Gil
  * @version 0.0.1
@@ -53,13 +53,18 @@ public class ManufacturerCode {
 	 * @param bytes
 	 */
 	public ManufacturerCode(byte[] bytes) {
-		this.code =(int) bytes[0];			
+		if (bytes[0]<0){
+			this.code =(int) bytes[0]&0xff;
+		}else{
+			this.code =(int) bytes[0];	
+		}
+					
 
 	}
 	
 	public ManufacturerCode(){}
 	/**
-	 * Obtiene el fabricante de tacógrafo.
+	 * Obtiene el fabricante de tacï¿½grafo.
 	 * @return manufactureCode
 	 */
 	public String getManufactureCode() {
@@ -83,11 +88,11 @@ public class ManufacturerCode {
 			return "RUE Cryptotech";
 		case 0x30:
 			return String.format("%s (formerly %s)", "Sdu Identification B.V.",
-					"Enschedé/Sdu B.V.");
+					"Enschedï¿½/Sdu B.V.");
 		case 0x32:
 			return "EFKON AG.";
 		case 0x38:
-			return "Fábrica Nacional de Moneda y Timbre";
+			return "Fï¿½brica Nacional de Moneda y Timbre";
 		case 0x40:
 			return "Giesecke & Devrient GmbH";
 		case 0x43:
@@ -112,7 +117,7 @@ public class ManufacturerCode {
 			return String.format("%s (formerly %s)",
 					"Asseco Czech Republic a.s.", "PVT a.s.");
 		case 0x89:
-			return "Polska Wytwórnia Papierów Wartosciowych S.A. - PWPW S.A.";
+			return "Polska Wytwï¿½rnia Papierï¿½w Wartosciowych S.A. - PWPW S.A.";
 		case 0xA1:
 			return String.format("%s (formerly %s)",
 					"Continental Automotive GmbH",
@@ -129,16 +134,16 @@ public class ManufacturerCode {
 		case 0xAB:
 			return "T-Systems International GmbH";
 		case 0xAC:
-			return "Trüb AG";
+			return "Trï¿½b AG";
 		case 0xAD:
-			return "Trüb Baltic AS";
+			return "Trï¿½b Baltic AS";
 		case 0xAE:
 			return "TEMPEST a.s.";
 		case 0xAF:
 			return "Trueb - DEMAX PLC";
 		}
 		return String.format(
-				"Unknown Manufacturer %s or equipment not type approved", code);
+				"Unknown Manufacturer %h or equipment not type approved", code);
 
 	}
 	
