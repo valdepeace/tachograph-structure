@@ -26,6 +26,7 @@ import org.tacografo.tiposdatos.OctetString;
  *
  */
 public class Activity extends Block{
+		
 	
 	private Date timeReal;
 	

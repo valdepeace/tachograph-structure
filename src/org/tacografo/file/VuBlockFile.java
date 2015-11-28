@@ -3,14 +3,20 @@
  */
 package org.tacografo.file;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
+import org.tacografo.file.cardblockdriver.CardIccIdentification;
+import org.tacografo.file.cardblockdriver.Fid;
 import org.tacografo.file.vublock.Activity;
 import org.tacografo.file.vublock.EventsFaults;
+import org.tacografo.file.vublock.ListActivity;
 import org.tacografo.file.vublock.Resumen;
 import org.tacografo.file.vublock.Speed;
 import org.tacografo.file.vublock.Technical;
+import org.tacografo.file.vublock.Trep;
+import org.tacografo.tiposdatos.Number;
 
 
 /**
@@ -22,59 +28,132 @@ public class VuBlockFile {
 	
 	private HashMap<String,Block> listBlock;
 	
-	
+	private Resumen resumen=null; // VU_RESUMEN(0X7601),
+	private ListActivity activity=null; //VU_ACTIVITY(0X7602),
+	private EventsFaults eventFault=null; //VU_EVENT_FAULT(0X7603),
+	private Speed speed=null; //VU_SPEED(0X7604),
+	private Technical technical=null; //VU_TECHNICAL(0X7605);
+		
 	public VuBlockFile(byte[] datos) throws Exception{
 		int start=0;
+		ListActivity listActivity=new ListActivity();
 		while(start<datos.length){	
 					
-			if(datos[start]==0x76){		
+			if(datos[start]==0x76){
+					
 					start+=1;
-					byte num=0;
-					if(datos[start]<0){											
-						num=(byte) (256-datos[start]&0xFF);
-						System.out.println("trep :"+datos[start-1]+"  num: "+num+" start ("+datos[start]+"): "+start);
-					}{
-						num=datos[start];					
-					}
-					if (datos[start]==0xb4)
-						System.out.println("-76");
+					if(datos[start]>0x00 && datos[start]<0x06){						
+						
+						int word = Number.getNumber(Arrays.copyOfRange(datos, start-1, start+1));
+						String str=Integer.toHexString(word);
+						Block b=(Block) FactoriaBloques.getFactoria(word, Arrays.copyOfRange(datos, start+1, datos.length));
+						if(b.getTRED()==Trep.VU_ACTIVITY.toString()){
+							listActivity.add(b);
+						}else{
+							this.listBlock.put(b.getTRED().toString(), b);
+						}
+						start+=b.getSize();
+						
+					}					
 					
-					switch (datos[start]) {
-					case 0x1:
-						Resumen r=new Resumen(Arrays.copyOfRange(datos, start+1, datos.length));
-						start+=r.getSize();
-						System.out.println("trep 1 :"+start);
-						break;
-					case 0x2:
-						Activity a=new Activity(Arrays.copyOfRange(datos, start+1, datos.length));						
-						start+=a.getSize();
-						System.out.println("trep 2 :"+start);
-						break;
-					case 0x3:					
-						EventsFaults ef=new EventsFaults(Arrays.copyOfRange(datos, start+1, datos.length));																								
-						start+=ef.getSize();
-						System.out.println("trep 3 :"+start);
-						break;
-					case 0x4:						
-						Speed s=new Speed(Arrays.copyOfRange(datos, start+1, datos.length));
-						System.out.println("trep 4 :"+start);
-						start+=s.getSize();
-						break;
-					case 0x5:						
-						Technical t=new Technical(Arrays.copyOfRange(datos, start+1, datos.length));					
-						start+=t.getSize();
-						System.out.println("trep 5 :"+start);
-						break;	
-					
-					}
-					
-			}else{
-				
-				//System.out.println(start);
+			}else{				
+
 				start+=1;	
 				
 			}
 			
 		}
+		this.listBlock.put("VU_ACTIVITY", listActivity);
+		setTrep();
 	}
+	private void setTrep(){
+		
+		this.resumen=(Resumen)this.listBlock.get(Trep.VU_RESUMEN.toString());
+		this.activity=(ListActivity) this.listBlock.get(Trep.VU_ACTIVITY.toString());
+		this.eventFault=(EventsFaults) this.listBlock.get(Trep.VU_EVENT_FAULT.toString());
+		this.speed=(Speed) this.listBlock.get(Trep.VU_SPEED.toString());
+		this.technical=(Technical) this.listBlock.get(Trep.VU_TECHNICAL.toString());
+	}
+	/**
+	 * @return the listBlock
+	 */
+	public HashMap<String, Block> getListBlock() {
+		return listBlock;
+	}
+	/**
+	 * @param listBlock the listBlock to set
+	 */
+	public void setListBlock(HashMap<String, Block> listBlock) {
+		this.listBlock = listBlock;
+	}
+	/**
+	 * @return the resumen
+	 */
+	public Resumen getResumen() {
+		return resumen;
+	}
+	/**
+	 * @param resumen the resumen to set
+	 */
+	public void setResumen(Resumen resumen) {
+		this.resumen = resumen;
+	}
+	/**
+	 * @return the activity
+	 */
+	public ListActivity getActivity() {
+		return activity;
+	}
+	/**
+	 * @param activity the activity to set
+	 */
+	public void setActivity(ListActivity activity) {
+		this.activity = activity;
+	}
+	/**
+	 * @return the eventFault
+	 */
+	public EventsFaults getEventFault() {
+		return eventFault;
+	}
+	/**
+	 * @param eventFault the eventFault to set
+	 */
+	public void setEventFault(EventsFaults eventFault) {
+		this.eventFault = eventFault;
+	}
+	/**
+	 * @return the speed
+	 */
+	public Speed getSpeed() {
+		return speed;
+	}
+	/**
+	 * @param speed the speed to set
+	 */
+	public void setSpeed(Speed speed) {
+		this.speed = speed;
+	}
+	/**
+	 * @return the technical
+	 */
+	public Technical getTechnical() {
+		return technical;
+	}
+	/**
+	 * @param technical the technical to set
+	 */
+	public void setTechnical(Technical technical) {
+		this.technical = technical;
+	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "VuBlockFile [listBlock=" + listBlock + ", resumen=" + resumen + ", activity=" + activity
+				+ ", eventFault=" + eventFault + ", speed=" + speed + ", technical=" + technical + "]";
+	}
+	
+	
 }

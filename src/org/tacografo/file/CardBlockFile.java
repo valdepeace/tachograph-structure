@@ -31,7 +31,6 @@ import org.tacografo.file.cardblockdriver.LastCardDownload;
 import org.tacografo.file.cardblockdriver.MemberStateCertificate;
 import org.tacografo.file.cardblockdriver.SpecificConditionRecord;
 import org.tacografo.file.error.ErrorFile;
-import org.tacografo.file.vublock.Sid;
 import org.tacografo.tiposdatos.Number;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -93,45 +92,14 @@ public class CardBlockFile {
 	/**
 	 * Listado de <key,value> donde key=fid, value=cardBlock
 	 */
-	private HashMap<String, CardBlock> lista_bloque;
+	private HashMap<String, CardBlock> listBlock;
 
 	public CardBlockFile() {
 
 	}
 
-	/**
-	 * Constructor que leera los bytes del fichero pasado para interpretar los
-	 * datos y asignarlo a los bloque correspondientes
-	 * @throws Exception 
-	 **/
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public CardBlockFile(String nombre_fichero) throws Exception {
-		this.nameFile=nombre_fichero;
-		this.lista_bloque = new HashMap();		
-		factorizar_bloques(nombre_fichero);				
-		this.asignarBloques();
-		if (this.getLista_bloque().isEmpty()){		
-			throw new ErrorFile("error archivo no tgd");
-		}
-	}
-
-	/**
-	 * Constructor que leera los bytes del fichero pasado como un inpurtStream para interpretar los
-	 * datos y asignarlo a los bloque correspondientes
-	 * @throws Exception 
-	 */
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public CardBlockFile(InputStream is, int sizeFile, String filename) throws Exception{
-		this.nameFile=filename;
-		this.lista_bloque = new HashMap();
-		factorizar_bloques(is, sizeFile);
-		this.asignarBloques();
-		if (this.getLista_bloque().isEmpty()){
-			throw new ErrorFile("error archivo no tgd");
-		}
-
-	}
-
+	
+	
 	/**
 	 * Constructor que leera los bytes del fichero pasado como array de bytes para interpretar los
 	 * datos y asignarlo a los bloque correspondientes
@@ -139,10 +107,41 @@ public class CardBlockFile {
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public CardBlockFile(byte[] bytes) throws Exception {
-		this.lista_bloque = new HashMap();		
-		this.lista_bloque = factorizar_bloques(bytes);
-		if (!sid)
-		this.asignarBloques();
+		HashMap<String, CardBlock> lista = new HashMap();
+
+		try {
+			for (int start = 0; start < bytes.length; start++) {
+
+				int fid = Number.getShort_16(Arrays.copyOfRange(bytes, start, start += 2));
+				
+				if(this.existe_Fid(fid)){
+					byte tipo = bytes[start];
+					start += 1;
+					Integer longitud = (int) Number.getShort_16(Arrays.copyOfRange(bytes, start, start += 2));
+					byte[] datos = new byte[longitud];
+					datos = Arrays.copyOfRange(bytes, start, start += longitud);
+					// tipo de archivo 0 = bloque de dato -- 1 = certificado
+					if (tipo == 0) {
+						CardBlock block = (CardBlock) FactoriaBloques.getFactoria(fid, datos);
+						if (block != null) {
+							lista.put(block.getFID(), block);
+							if (!sid)
+								this.asignarBloques();
+						}
+
+					}
+	
+				}else{
+					throw new Error("Block not found");
+				}
+				
+			}
+
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
+		
+		
 	}
 	/**
 	 * Metodo encargado de asignar a cada propiedad que seran los diferentes bloques que 
@@ -151,221 +150,65 @@ public class CardBlockFile {
 	 */
 	private void asignarBloques() {
 		
-		this.icc = (CardIccIdentification) this.lista_bloque.get(Fid.EF_ICC
+		this.icc = (CardIccIdentification) this.listBlock.get(Fid.EF_ICC
 				.toString());
-		this.ic = (CardChipIdentification) this.lista_bloque.get(Fid.EF_IC
+		this.ic = (CardChipIdentification) this.listBlock.get(Fid.EF_IC
 				.toString());				
-		this.application_identification = (DriverCardApplicationIdentification) this.lista_bloque
+		this.application_identification = (DriverCardApplicationIdentification) this.listBlock
 				.get(Fid.EF_APPLICATION_IDENTIFICATION.toString());				
-		this.card_certificate = (CardCertificate) this.lista_bloque
+		this.card_certificate = (CardCertificate) this.listBlock
 				.get(Fid.EF_CARD_CERTIFICATE.toString());
-		this.ca_certificate = (MemberStateCertificate) this.lista_bloque
+		this.ca_certificate = (MemberStateCertificate) this.listBlock
 				.get(Fid.EF_CA_CERTIFICATE.toString());
-		this.identification = (CardIdentification) this.lista_bloque
+		this.identification = (CardIdentification) this.listBlock
 				.get(Fid.EF_IDENTIFICATION.toString());
-		this.card_download = (LastCardDownload) this.lista_bloque
+		this.card_download = (LastCardDownload) this.listBlock
 				.get(Fid.EF_CARD_DOWNLOAD.toString());
-		this.driving_lincense_info = (CardDrivingLicenceInformation) this.lista_bloque
+		this.driving_lincense_info = (CardDrivingLicenceInformation) this.listBlock
 				.get(Fid.EF_DRIVING_LICENSE_INFO.toString());
-		this.event_data = (CardEventData) this.lista_bloque
+		this.event_data = (CardEventData) this.listBlock
 				.get(Fid.EF_EVENTS_DATA.toString());
-		this.fault_data = (CardFaultData) this.lista_bloque
+		this.fault_data = (CardFaultData) this.listBlock
 				.get(Fid.EF_FAULTS_DATA.toString());
-		this.driver_activity_data = (CardDriverActivity) this.lista_bloque
+		this.driver_activity_data = (CardDriverActivity) this.listBlock
 				.get(Fid.EF_DRIVER_ACTIVITY_DATA.toString());		
-		this.vehicles_used = (CardVehiclesUsed) this.lista_bloque
+		this.vehicles_used = (CardVehiclesUsed) this.listBlock
 				.get(Fid.EF_VEHICLES_USED.toString());
 		this.vehicles_used.setNoOfCardVehicleRecords(this.application_identification.getNoOfCardVehicleRecords().getNoOfCardVehicleRecords());
-		this.places = (CardPlaceDailyWorkPeriod) this.lista_bloque
+		this.places = (CardPlaceDailyWorkPeriod) this.listBlock
 				.get(Fid.EF_PLACES.toString());		
 		if (this.places!=null)
 		this.places.setNoOfCArdPlaceRecords(this.application_identification
 				.getNoOfCardPlaceRecords().getNoOfCardPlaceRecords());
-		this.current_usage = (CardCurrentUse) this.lista_bloque
+		this.current_usage = (CardCurrentUse) this.listBlock
 				.get(Fid.EF_CURRENT_USAGE.toString());
-		this.control_activity_data = (CardControlActivityDataRecord) this.lista_bloque
+		this.control_activity_data = (CardControlActivityDataRecord) this.listBlock
 				.get(Fid.EF_CONTROL_ACTIVITY_DATA.toString());
-		this.specific_conditions = (SpecificConditionRecord) this.lista_bloque
+		this.specific_conditions = (SpecificConditionRecord) this.listBlock
 				.get(Fid.EF_SPECIFIC_CONDITIONS.toString());
 	}
-	/**
-	 * Lectura de los bloques con formato :tag(fid)-longitud-value
-	 * 
-	 * @param entrada
-	 * @throws Exception 
-	 */
-	private void lectura_bloque(DataInputStream entrada) throws Exception{
-		boolean existe_fid=true;
-		while (existe_fid) {
-			// la lectura tiene que ser con readUnsignedShort debido a que
-			// los fid c108 y c100
-			// los detecta con signo y me los rellenas como ffffc108 y
-			// ffffc100
-			int fid = entrada.readUnsignedShort();	
-			System.out.printf("%h\n",fid);
-			existe_fid=this.existe_Fid(fid);			
-			if (existe_fid) {
-				// tipo de archivo 0 = bloque de dato -- 1 = certificado
-				byte tipo = entrada.readByte();
-				Integer longitud = Integer.valueOf(entrada.readChar());
-				byte[] datos = new byte[longitud];
-				
-				entrada.read(datos, 0, longitud);
-				// tipo de bloque
-				if (tipo == 0) {
-					CardBlock block = FactoriaBloques.getFactoria(fid,
-							datos);
-					if (block != null) {
-						this.lista_bloque.put(block.getFID(), block);
-					}
 
-				}
-			}else{
-				throw new ErrorFile();
-			}
-		}
-	}
 
-	/**
-	 * Se encarga de leer los bytes del fichero he introducirlo en un
-	 * hasmap<FID,array bytes> los bloques bienen formado por TLV =
-	 * tag(FID)-longitud-value
-	 * @throws Exception 
-	 */
-	private void factorizar_bloques(String nombre_fichero) throws Exception {
-		FileInputStream fis = null;		
-		DataInputStream entrada = null;						
-		try {
-			fis = new FileInputStream(nombre_fichero);
-			entrada = new DataInputStream(fis);
-			//lectura de bloques siempre y cuando la lectura del fid exista
-			this.lectura_bloque(entrada);
-			
-		} catch (FileNotFoundException e) {
-			System.out.println(e.getMessage());
-		} catch (EOFException e) {
-			// se produce cuando se llega al final del fichero
-			//System.out.println(e.getMessage());
-		} catch (IOException e) {
-			System.out.println(e.getMessage());
-		} finally {
-			try {
-				if (fis != null) {
-					fis.close();
-				}
-				if (entrada != null) {
-					entrada.close();
-				}
-			} catch (IOException e) {
-				System.out.println(e.getMessage());
-			}
-		}
-		
-	}
 
-	/**
-	 * Se encarga de leer los bytes del fichero he introducirlo en un
-	 * hasmap<FID,array bytes> los bloques bienen formado por TLV =
-	 * tag-longitud-value
-	 * @throws Exception 
-	 **/
-	@SuppressWarnings("unchecked")
-	private void factorizar_bloques(InputStream is, int sizeFile) throws Exception {
-				
-		DataInputStream entrada = null;
-		@SuppressWarnings({ "unused", "rawtypes" })
-		HashMap<String, CardBlock> lista = new HashMap();
-
-		try {
-			entrada = new DataInputStream(is);
-			this.lectura_bloque(entrada);
-			
-
-		} catch (FileNotFoundException e) {
-			System.out.println(e.getMessage());
-		} catch (EOFException e) {
-
-		} catch (IOException e) {
-			System.out.println(e.getMessage());		 
-		}
-		
-	}
 	
 	/**
 	 * Comprueba si el identificador de fichero existe
 	 * @param fid
 	 * @return the boolean
 	 */
-	private boolean existe_Fid(int fid){
-		Fid[] list_fid=Fid.values();
-		Sid[] list_sid=Sid.values();
-		
-		boolean ok=false;				
-		for (int i=0;i<list_fid.length;i++) {
-				if (list_fid[i].getId()==fid){
-					ok=true;
-					i=list_fid.length;
-				}				
-		}
-		for (int i=0;i<list_sid.length;i++) {
-			if (list_sid[i].getId()==fid){
-				ok=true;
-				i=list_sid.length;
-			}				
-	}
-		return ok; 
-	}
-	/**
-	 * Se encarga de leer los bytes del fichero he introducirlo en un
-	 * hasmap<FID,array bytes> los bloques bienen formado por TLV =
-	 * tag-longitud-value
-	 * @throws Exception 
-	 */
-	@SuppressWarnings("rawtypes")
-	private HashMap factorizar_bloques(byte[] bytes) throws Exception {
-		@SuppressWarnings("unchecked")
-		HashMap<String, CardBlock> lista = new HashMap();
-		
-		try {
-
-			for (int start = 0; start < bytes.length; start++) {
-				// bloque fijo 76 de del SID de los archivo de vehiculos
-				if (bytes[start]==76){
-					this.sid=true;
-					int sid= Number.getShort_16(Arrays.copyOfRange(bytes, start,
-							start += 2));	
-					System.out.println(sid);
-					FactoriaBloques.getFactoria(sid, bytes);
-				}else{
-					// la lectura tiene que ser con readUnsignedShort debido a que
-					// los fid c108 y c100
-					// los detecta con signo y me los rellenas como ffffc108 y
-					// ffffc100
-					int fid = Number.getShort_16(Arrays.copyOfRange(bytes, start,
-							start += 2));				
-					// tipo de archivo 0 = bloque de dato -- 1 = certificado				
-					byte tipo = bytes[start];
-					start += 1;
-					Integer longitud = (int) Number.getShort_16(Arrays.copyOfRange(
-							bytes, start, start += 2));
-					byte[] datos = new byte[longitud];
-					datos = Arrays.copyOfRange(bytes, start, start += longitud);
-	
-					if (tipo == 0) {
-						CardBlock block = FactoriaBloques.getFactoria(fid, datos);
-						if (block != null) {
-							lista.put(block.getFID(), block);
-						}
-	
-					}
-				}
+	private boolean existe_Fid(int fid) {
+		Fid[] list_fid = Fid.values();
+		boolean ok = false;
+		for (int i = 0; i < list_fid.length; i++) {
+			if (list_fid[i].getId() == fid) {
+				ok = true;
+				i = list_fid.length;
 			}
-
-		} catch (IOException e) {
-			System.out.println(e.getMessage());
 		}
-		return lista;
+
+		return ok;
 	}
+	
 
 	/**
 	 * @return the icc
@@ -616,7 +459,7 @@ public class CardBlockFile {
 	 * @return the lista_bloque
 	 */
 	public HashMap<String, CardBlock> getLista_bloque() {
-		return lista_bloque;
+		return listBlock;
 	}
 
 	/**
@@ -625,7 +468,7 @@ public class CardBlockFile {
 	 *            the lista_bloque to set
 	 */
 	public void setLista_bloque(HashMap<String, CardBlock> lista_bloque) {
-		this.lista_bloque = lista_bloque;
+		this.listBlock = lista_bloque;
 	}
 
 	

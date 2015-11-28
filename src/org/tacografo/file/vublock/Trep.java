@@ -5,7 +5,7 @@ package org.tacografo.file.vublock;
  * @author Andres Carmona Gil
  *
  */
-public enum Sid {
+public enum Trep {
 
 	VU_RESUMEN(0X7601),
 	VU_ACTIVITY(0X7602),
@@ -15,7 +15,7 @@ public enum Sid {
 	
 	private final int id;
 	
-	Sid(int id){
+	Trep(int id){
 		this.id=id;
 	}
 	

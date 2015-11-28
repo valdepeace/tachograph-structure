@@ -29,7 +29,7 @@ import org.tacografo.file.cardblockdriver.SpecificConditionRecord;
 import org.tacografo.file.vublock.Activity;
 import org.tacografo.file.vublock.EventsFaults;
 import org.tacografo.file.vublock.Resumen;
-import org.tacografo.file.vublock.Sid;
+import org.tacografo.file.vublock.Trep;
 import org.tacografo.file.vublock.Speed;
 import org.tacografo.file.vublock.Technical;
 
@@ -50,12 +50,12 @@ public class FactoriaBloques {
 	 * CardBlock segun fid(identificador de fichero
 	 * @throws Exception 
 	 */
-	public static CardBlock getFactoria(int word,byte[] datos) throws Exception  {
+	public static Block getFactoria(int word,byte[] datos) throws Exception  {
 		CardBlockDriver bloque = null;
 		Block block=null;
 		switch (word) {	
 			case 0x0002:	
-				
+			
 				try {
 					bloque=new CardIccIdentification(datos);
 				} catch (IOException e) {				
@@ -125,38 +125,45 @@ public class FactoriaBloques {
 				break;
 			case 0x7601:
 				block=new Resumen(datos);
-				block.setTRED(Sid.VU_ACTIVITY.toString());
+				block.setTRED(Trep.VU_ACTIVITY.toString());
 				System.out.println("Resumen");
 				break;
 			case 0x7602:
 				block=new Activity(datos);
-				block.setTRED(Sid.VU_ACTIVITY.toString());
+				block.setTRED(Trep.VU_ACTIVITY.toString());
 				System.out.println("Actividades");
 				break;
 			case 0x7603:
 				block=new EventsFaults(datos);
-				block.setTRED(Sid.VU_EVENT_FAULT.toString());				
+				block.setTRED(Trep.VU_EVENT_FAULT.toString());				
 				System.out.println("Incidentes y fallos");
 				break;
 			case 0x7604:
 				block=new Speed(datos);
-				block.setTRED(Sid.VU_SPEED.toString());
+				block.setTRED(Trep.VU_SPEED.toString());
 				System.out.println("Datos pormenorizados de la velocidad");
 				break;
 			case 0x7605:
 				block=new Technical(datos);
-				block.setTRED(Sid.VU_TECHNICAL.toString());
+				block.setTRED(Trep.VU_TECHNICAL.toString());
 				System.out.println("Datos t�cnicos");
 				break;
 			default:
 			break;
 
 		}
-		if (bloque!=null){
+		if (bloque!=null){			
 			bloque.setDatos(datos);
 			bloque.setSize(datos.length);
+			//return (CardBlock) bloque;
 		}
-		return (CardBlock) bloque;		
+		if (block!=null){
+				block.setDatos(datos);
+		
+			}
+		
+		return block;
+				
 	}
 
 }
