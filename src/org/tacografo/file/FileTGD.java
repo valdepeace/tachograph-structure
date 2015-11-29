@@ -9,18 +9,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Arrays;
-import java.util.HashMap;
-
-import org.tacografo.file.cardblockdriver.*;
-import org.tacografo.file.cardblockdriver.subblock.ExtendedSerialNumber;
-import org.tacografo.file.error.ErrorFile;
-import org.tacografo.file.vublock.Activity;
-import org.tacografo.file.vublock.Resumen;
-import org.tacografo.file.vublock.Speed;
-import org.tacografo.file.vublock.Technical;
-import org.tacografo.file.vublock.EventsFaults;
-import org.tacografo.tiposdatos.Number;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -174,6 +162,36 @@ public class FileTGD {
 		
 	}
 	
+	
+	
+	/**
+	 * @return the vuBlockFile
+	 */
+	public VuBlockFile getVuBlockFile() {
+		return vuBlockFile;
+	}
+
+	/**
+	 * @param vuBlockFile the vuBlockFile to set
+	 */
+	public void setVuBlockFile(VuBlockFile vuBlockFile) {
+		this.vuBlockFile = vuBlockFile;
+	}
+
+	/**
+	 * @return the cardBlockFile
+	 */
+	public CardBlockFile getCardBlockFile() {
+		return cardBlockFile;
+	}
+
+	/**
+	 * @param cardBlockFile the cardBlockFile to set
+	 */
+	public void setCardBlockFile(CardBlockFile cardBlockFile) {
+		this.cardBlockFile = cardBlockFile;
+	}
+
 	/**
 	 * Devuelve el Nombre de fichero
 	 * @return the nameFile
@@ -192,6 +210,15 @@ public class FileTGD {
 		this.nameFile = nameFile;
 	}
 
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "FileTGD [nameFile=" + nameFile + ", vuBlockFile=" + vuBlockFile + ", cardBlockFile=" + cardBlockFile
+				+ "]";
+	}
 
 	/**
 	 * Mapeamos la clase fileTGD a json solo con las propiedades nameFile y lista_bloque

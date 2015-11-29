@@ -4,6 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.Date;
 import java.util.Arrays;
 
+import org.tacografo.file.Block;
 import org.tacografo.file.cardblockdriver.subblock.ControlType;
 import org.tacografo.file.cardblockdriver.subblock.FullCardNumber;
 import org.tacografo.file.cardblockdriver.subblock.VehicleRegistrationIdentification;
@@ -13,7 +14,7 @@ import org.tacografo.tiposdatos.RealTime;
 /**
  * 
  * 2.11. CardControlActivityDataRecord
- * Información almacenada en una tarjeta de conductor o en una tarjeta del centro de ensayo y relativa al último control
+ * Informaciï¿½n almacenada en una tarjeta de conductor o en una tarjeta del centro de ensayo y relativa al ï¿½ltimo control
  * que ha pasado el conductor (requisitos 210 y 225).
  * CardControlActivityDataRecord ::= SEQUENCE {
  * controlType controlType,
@@ -30,16 +31,16 @@ import org.tacografo.tiposdatos.RealTime;
  * 
  * controlCardNumber es el FullCardNumber del funcionario que ha realizado el control.
  * 
- * controlVehicleRegistration es el VRN y el nombre del Estado miembro donde se matriculó el vehículo que ha sido
+ * controlVehicleRegistration es el VRN y el nombre del Estado miembro donde se matriculï¿½ el vehï¿½culo que ha sido
  * objeto del control.
  * 
- * controlDownloadPeriodBegin y controlDownloadPeriodEnd es el período transferido, en caso de transferencia.
+ * controlDownloadPeriodBegin y controlDownloadPeriodEnd es el perï¿½odo transferido, en caso de transferencia.
  * 
- * @author Andrés Carmona Gil
+ * @author Andrï¿½s Carmona Gil
  * @version 0.0.1
  *
  */
-public class CardControlActivityDataRecord extends CardBlockDriver implements
+public class CardControlActivityDataRecord extends Block implements
 		CardBlock {
 
 	
@@ -114,7 +115,7 @@ public class CardControlActivityDataRecord extends CardBlockDriver implements
 		this.controlCardNumber = controlCardNumber;
 	}
 	/**
-	 * Obetemos el VRN y el nombre del Estado miembro donde se matriculó el vehículo que ha sido
+	 * Obetemos el VRN y el nombre del Estado miembro donde se matriculï¿½ el vehï¿½culo que ha sido
 	 * objeto del control.
 	 * @return VehicleRegistrationIdentification
 	 */
@@ -122,7 +123,7 @@ public class CardControlActivityDataRecord extends CardBlockDriver implements
 		return controlVehicleRegistration;
 	}
 	/**
-	 * Asignamos el VRN y el nombre del Estado miembro donde se matriculó el vehículo que ha sido
+	 * Asignamos el VRN y el nombre del Estado miembro donde se matriculï¿½ el vehï¿½culo que ha sido
 	 * objeto del control.
 	 * @param controlVehicleRegistration
 	 */

@@ -3,12 +3,26 @@
  */
 package org.tacografo.file;
 
-import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.HashMap;
 
+import org.tacografo.file.cardblockdriver.CardCertificate;
+import org.tacografo.file.cardblockdriver.CardChipIdentification;
+import org.tacografo.file.cardblockdriver.CardControlActivityDataRecord;
+import org.tacografo.file.cardblockdriver.CardCurrentUse;
+import org.tacografo.file.cardblockdriver.CardDriverActivity;
+import org.tacografo.file.cardblockdriver.CardDrivingLicenceInformation;
+import org.tacografo.file.cardblockdriver.CardEventData;
+import org.tacografo.file.cardblockdriver.CardFaultData;
 import org.tacografo.file.cardblockdriver.CardIccIdentification;
-import org.tacografo.file.cardblockdriver.Fid;
+import org.tacografo.file.cardblockdriver.CardIdentification;
+import org.tacografo.file.cardblockdriver.CardPlaceDailyWorkPeriod;
+import org.tacografo.file.cardblockdriver.CardVehiclesUsed;
+import org.tacografo.file.cardblockdriver.DriverCardApplicationIdentification;
+import org.tacografo.file.cardblockdriver.LastCardDownload;
+import org.tacografo.file.cardblockdriver.MemberStateCertificate;
+import org.tacografo.file.cardblockdriver.SpecificConditionRecord;
 import org.tacografo.file.vublock.Activity;
 import org.tacografo.file.vublock.EventsFaults;
 import org.tacografo.file.vublock.ListActivity;
@@ -18,11 +32,26 @@ import org.tacografo.file.vublock.Technical;
 import org.tacografo.file.vublock.Trep;
 import org.tacografo.tiposdatos.Number;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
+
 
 /**
  * @author Andres Carmona Gil
- *
+ * @version 0.0.1
  */
+
+@JsonTypeInfo(use=JsonTypeInfo.Id.NAME,
+include=JsonTypeInfo.As.PROPERTY,
+property="type")
+@JsonSubTypes({	
+@Type(value=Resumen.class, name="resumen"),
+@Type(value=ListActivity.class, name="activity"),
+@Type(value=EventsFaults.class, name="eventsFaults"),
+@Type(value=Speed.class, name="speed"),
+@Type(value=Technical.class, name="technical")
+})
 public class VuBlockFile {
 
 	
@@ -34,27 +63,38 @@ public class VuBlockFile {
 	private Speed speed=null; //VU_SPEED(0X7604),
 	private Technical technical=null; //VU_TECHNICAL(0X7605);
 		
+	public VuBlockFile(){
+		
+	}
+	
 	public VuBlockFile(byte[] datos) throws Exception{
 		int start=0;
 		ListActivity listActivity=new ListActivity();
+		this.listBlock=new HashMap();
 		while(start<datos.length){	
-					
+			//System.out.println(Integer.toHexString(datos[start])+" ====="+datos[start]);
 			if(datos[start]==0x76){
-					
-					start+=1;
-					if(datos[start]>0x00 && datos[start]<0x06){						
+				
+				
+					//start+=1;					
+				
+					//if(datos[start]>0x00 && datos[start]<0x06){						
 						
-						int word = Number.getNumber(Arrays.copyOfRange(datos, start-1, start+1));
+						//int word = Number.getNumber(Arrays.copyOfRange(datos, start-1, start+1));
+				
+					    int word = Number.getNumber(Arrays.copyOfRange(datos, start, start+2));
+					    
 						String str=Integer.toHexString(word);
-						Block b=(Block) FactoriaBloques.getFactoria(word, Arrays.copyOfRange(datos, start+1, datos.length));
+						Block b=(Block) FactoriaBloques.getFactoria(word, Arrays.copyOfRange(datos, start+2, datos.length));
 						if(b.getTRED()==Trep.VU_ACTIVITY.toString()){
-							listActivity.add(b);
+							listActivity.add((Activity)b);
 						}else{
-							this.listBlock.put(b.getTRED().toString(), b);
+							this.listBlock.put(b.getTRED(), b);
 						}
-						start+=b.getSize();
-						
-					}					
+						start+=b.getSize();			
+					//}
+							
+					 
 					
 			}else{				
 
@@ -64,6 +104,7 @@ public class VuBlockFile {
 			
 		}
 		this.listBlock.put("VU_ACTIVITY", listActivity);
+		
 		setTrep();
 	}
 	private void setTrep(){

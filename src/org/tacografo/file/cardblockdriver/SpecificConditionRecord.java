@@ -6,25 +6,26 @@ package org.tacografo.file.cardblockdriver;
 import java.util.Arrays;
 import java.util.Date;
 
+import org.tacografo.file.Block;
 import org.tacografo.file.cardblockdriver.subblock.SpecificConditionType;
 import org.tacografo.tiposdatos.RealTime;
 
 /**
  * 2.104. SpecificConditionRecord
- * Información almacenada en una tarjeta de conductor, una tarjeta del centro de ensayo o una unidad intravehicular y
- * relativa a una condición específica (requisitos 105a, 212a y 230a).
+ * Informaciï¿½n almacenada en una tarjeta de conductor, una tarjeta del centro de ensayo o una unidad intravehicular y
+ * relativa a una condiciï¿½n especï¿½fica (requisitos 105a, 212a y 230a).
  * SpecificConditionRecord ::= SEQUENCE {
  * entryTime TimeReal,
  * specificConditionType SpecificConditionType
  * }
  * entryTime es la fecha y la hora de la entrada.
- * specificConditionType es el código que identifica a la condición específica.
+ * specificConditionType es el cï¿½digo que identifica a la condiciï¿½n especï¿½fica.
  * 
- * @author Andrés Carmona Gil
+ * @author Andrï¿½s Carmona Gil
  * @version 0.0.1
  *
  */
-public class SpecificConditionRecord extends CardBlockDriver implements
+public class SpecificConditionRecord extends Block implements
 		CardBlock {
 	private Date entryTime;
 	private  String specificConditionType;
@@ -58,14 +59,14 @@ public class SpecificConditionRecord extends CardBlockDriver implements
 		this.entryTime = entryTime;
 	}
 	/**
-	 * Obtiene el código que identifica a la condición específica.
+	 * Obtiene el cï¿½digo que identifica a la condiciï¿½n especï¿½fica.
 	 * @return String
 	 */
 	public String getSpecificConditionType() {
 		return specificConditionType;
 	}
 	/**
-	 * Asigna el código que identifica a la condición específica.
+	 * Asigna el cï¿½digo que identifica a la condiciï¿½n especï¿½fica.
 	 * @param specificConditionType
 	 */
 	public void setSpecificConditionType(String specificConditionType) {

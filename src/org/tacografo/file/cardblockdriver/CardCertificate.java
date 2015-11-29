@@ -1,21 +1,22 @@
 package org.tacografo.file.cardblockdriver;
 
+import org.tacografo.file.Block;
 import org.tacografo.file.cardblockdriver.subblock.Certificate;
 
 
 /**
  * 
  * 2.8. CardCertificate
- * Certificado de la clave pública de una tarjeta.
+ * Certificado de la clave pï¿½blica de una tarjeta.
  * CardCertificate ::= Certificate
  * 
- * @author Andrés Carmona Gil
+ * @author Andrï¿½s Carmona Gil
  * @version 0.0.1
  *
  */
 
 
-public class CardCertificate extends CardBlockDriver implements CardBlock {
+public class CardCertificate extends Block implements CardBlock {
 	
 	
 	private Certificate certificate;

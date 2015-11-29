@@ -92,7 +92,7 @@ public class CardBlockFile {
 	/**
 	 * Listado de <key,value> donde key=fid, value=cardBlock
 	 */
-	private HashMap<String, CardBlock> listBlock;
+	private HashMap<String, Block> listBlock;
 
 	public CardBlockFile() {
 
@@ -107,30 +107,27 @@ public class CardBlockFile {
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public CardBlockFile(byte[] bytes) throws Exception {
-		HashMap<String, CardBlock> lista = new HashMap();
-
+		HashMap<String, Block> lista = new HashMap();
+		this.listBlock=new HashMap();
 		try {
-			for (int start = 0; start < bytes.length; start++) {
-
-				int fid = Number.getShort_16(Arrays.copyOfRange(bytes, start, start += 2));
-				
+			int start=0;
+			while( start < bytes.length){
+				int fid = Number.getNumber(Arrays.copyOfRange(bytes, start, start += 2));				
+				System.out.println(Integer.toHexString(fid));
 				if(this.existe_Fid(fid)){
 					byte tipo = bytes[start];
 					start += 1;
-					Integer longitud = (int) Number.getShort_16(Arrays.copyOfRange(bytes, start, start += 2));
+					Integer longitud = (int) Number.getNumber(Arrays.copyOfRange(bytes, start, start += 2));
 					byte[] datos = new byte[longitud];
 					datos = Arrays.copyOfRange(bytes, start, start += longitud);
 					// tipo de archivo 0 = bloque de dato -- 1 = certificado
 					if (tipo == 0) {
-						CardBlock block = (CardBlock) FactoriaBloques.getFactoria(fid, datos);
+						Block block = (Block) FactoriaBloques.getFactoria(fid, datos);
 						if (block != null) {
-							lista.put(block.getFID(), block);
-							if (!sid)
-								this.asignarBloques();
+							this.listBlock.put(block.getFID(), (Block) block);							
+							
 						}
-
 					}
-	
 				}else{
 					throw new Error("Block not found");
 				}
@@ -141,6 +138,7 @@ public class CardBlockFile {
 			System.out.println(e.getMessage());
 		}
 		
+		this.asignarBloques();	
 		
 	}
 	/**
@@ -458,7 +456,7 @@ public class CardBlockFile {
 	 * Devuelve la lista_bloque <fid, cardblock>
 	 * @return the lista_bloque
 	 */
-	public HashMap<String, CardBlock> getLista_bloque() {
+	public HashMap<String, Block> getLista_bloque() {
 		return listBlock;
 	}
 
@@ -467,32 +465,30 @@ public class CardBlockFile {
 	 * @param lista_bloque
 	 *            the lista_bloque to set
 	 */
-	public void setLista_bloque(HashMap<String, CardBlock> lista_bloque) {
+	public void setLista_bloque(HashMap<String, Block> lista_bloque) {
 		this.listBlock = lista_bloque;
 	}
 
 	
 
-	/**
-	 * (non-Javadoc)
-	 * 
+
+	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "FileTGD [icc=" + icc + ", ic=" + ic
-				+ ", application_identification=" + application_identification
-				+ ", card_certificate=" + card_certificate
-				+ ", ca_certificate=" + ca_certificate + ", identification="
-				+ identification + ", card_download=" + card_download
-				+ ", driving_lincense_info=" + driving_lincense_info
-				+ ", event_data=" + event_data + ", fault_data=" + fault_data
-				+ ", driver_activity_data=" + driver_activity_data
-				+ ", vehicles_used=" + vehicles_used + ", places=" + places
-				+ ", current_usage=" + current_usage
-				+ ", control_activity_data=" + control_activity_data
-				+ ", specific_conditions=" + specific_conditions + "]";
+		return "CardBlockFile [nameFile=" + nameFile + ", icc=" + icc + ", ic=" + ic + ", application_identification="
+				+ application_identification + ", card_certificate=" + card_certificate + ", ca_certificate="
+				+ ca_certificate + ", identification=" + identification + ", card_download=" + card_download
+				+ ", driving_lincense_info=" + driving_lincense_info + ", event_data=" + event_data + ", fault_data="
+				+ fault_data + ", driver_activity_data=" + driver_activity_data + ", vehicles_used=" + vehicles_used
+				+ ", places=" + places + ", current_usage=" + current_usage + ", control_activity_data="
+				+ control_activity_data + ", specific_conditions=" + specific_conditions + ", sid=" + sid
+				+ ", listBlock=" + listBlock + "]";
 	}
+
+
+
 	/**
 	 * Devuelve el Nombre de fichero
 	 * @return the nameFile
@@ -510,6 +506,44 @@ public class CardBlockFile {
 	public void setNameFile(String nameFile) {
 		this.nameFile = nameFile;
 	}
+	
+	
+	/**
+	 * @return the sid
+	 */
+	public boolean isSid() {
+		return sid;
+	}
+
+
+
+	/**
+	 * @param sid the sid to set
+	 */
+	public void setSid(boolean sid) {
+		this.sid = sid;
+	}
+
+
+
+	/**
+	 * @return the listBlock
+	 */
+	public HashMap<String, Block> getListBlock() {
+		return listBlock;
+	}
+
+
+
+	/**
+	 * @param listBlock the listBlock to set
+	 */
+	public void setListBlock(HashMap<String, Block> listBlock) {
+		this.listBlock = listBlock;
+	}
+
+
+
 	/**
 	 * Mapeamos la clase fileTGD a json solo con las propiedades nameFile y lista_bloque
 	 * @return the string json

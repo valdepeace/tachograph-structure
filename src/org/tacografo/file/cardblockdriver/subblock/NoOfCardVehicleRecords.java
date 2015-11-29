@@ -7,10 +7,10 @@ import org.tacografo.tiposdatos.Number;
 
 /**
  * 2.76. NoOfCardVehicleRecords
- * Número de registros sobre vehículos usados que puede almacenar una tarjeta de conductor o una tarjeta del centro de
+ * Nï¿½mero de registros sobre vehï¿½culos usados que puede almacenar una tarjeta de conductor o una tarjeta del centro de
  * ensayo.
  * NoOfCardVehicleRecords ::= INTEGER(0..216-1)
- * Asignación de valor: min->84 max->200
+ * Asignaciï¿½n de valor: min->84 max->200
  * 
  * @author Andres Carmona Gil
  * @version 0.0.1
@@ -18,7 +18,7 @@ import org.tacografo.tiposdatos.Number;
  */
 public class NoOfCardVehicleRecords {
 	
-	private short noOfCardVehicleRecords;
+	private int noOfCardVehicleRecords;
 
 	
 	public NoOfCardVehicleRecords() {}
@@ -32,16 +32,16 @@ public class NoOfCardVehicleRecords {
 	}
 
 	/**
-	 * Obtiene Número de registros sobre vehículos usados que puede almacenar una tarjeta de conductor o una tarjeta del centro de
+	 * Obtiene Nï¿½mero de registros sobre vehï¿½culos usados que puede almacenar una tarjeta de conductor o una tarjeta del centro de
 	 * ensayo.
 	 * @return the noOfCardVehicleRecords
 	 */
-	public short getNoOfCardVehicleRecords() {
+	public int getNoOfCardVehicleRecords() {
 		return noOfCardVehicleRecords;
 	}
 
 	/**
-	 * Asigna Número de registros sobre vehículos usados que puede almacenar una tarjeta de conductor o una tarjeta del centro de
+	 * Asigna Nï¿½mero de registros sobre vehï¿½culos usados que puede almacenar una tarjeta de conductor o una tarjeta del centro de
 	 * ensayo.
 	 * @param noOfCardVehicleRecords the noOfCardVehicleRecords to set
 	 */

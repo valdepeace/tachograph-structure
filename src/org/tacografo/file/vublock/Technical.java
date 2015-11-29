@@ -54,6 +54,8 @@ public class Technical extends Block{
 		this.noOfVuCalibrationRecords=Number.getNumber(Arrays.copyOfRange(bytes, start, start+=Sizes.NOOFVUCALIBRATIONRECORDS.getSize()));
 		
 		this.setListVuCalibrationData(Arrays.copyOfRange(bytes, start, start+=Sizes.VUCALIBRATIONRECORD.getSize()*this.noOfVuCalibrationRecords));
+		
+		this.size=start;
 	}
 
 	private void setListVuCalibrationData(byte[] bytes) throws UnsupportedEncodingException {		

@@ -6,28 +6,29 @@ package org.tacografo.file.cardblockdriver;
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 
+import org.tacografo.file.Block;
 import org.tacografo.file.cardblockdriver.subblock.Name;
 import org.tacografo.file.cardblockdriver.subblock.NationNumeric;
 import org.tacografo.tiposdatos.IA5String;
 
 /**
  * 2.14. CardDrivingLicenceInformation
- * Información almacenada en una tarjeta de conductor y relativa a los datos correspondientes al permiso de conducir del
+ * Informaciï¿½n almacenada en una tarjeta de conductor y relativa a los datos correspondientes al permiso de conducir del
  * titular de la tarjeta (requisito 196).
  * CardDrivingLicenceInformation ::= SEQUENCE {
  * drivingLicenceIssuingAuthority Name,
  * drivingLicenceIssuingNation NationNumeric,
  * drivingLicenceNumber IA5String(SIZE(16))
  * }
- * drivingLicenceIssuingAuthority es la autoridad que expidió el permiso de conducir.
- * drivingLicenceIssuingNation es la nacionalidad de la autoridad que expidió el permiso de conducir.
- * drivingLicenceNumber es el número del permiso de conducir.
+ * drivingLicenceIssuingAuthority es la autoridad que expidiï¿½ el permiso de conducir.
+ * drivingLicenceIssuingNation es la nacionalidad de la autoridad que expidiï¿½ el permiso de conducir.
+ * drivingLicenceNumber es el nï¿½mero del permiso de conducir.
  * 
- * @author Andrés Carmona Gil
+ * @author Andrï¿½s Carmona Gil
  * @version 0.0.1
  *
  */
-public class CardDrivingLicenceInformation extends CardBlockDriver implements
+public class CardDrivingLicenceInformation extends Block implements
 		CardBlock {
 
 	
@@ -67,7 +68,7 @@ public class CardDrivingLicenceInformation extends CardBlockDriver implements
 
 
 	/**
-	 * Obtenemos la autoridad que expidió el permiso de conducir.
+	 * Obtenemos la autoridad que expidiï¿½ el permiso de conducir.
 	 * @return the drivingLicenceIssuingAuthority
 	 */
 	public String getDrivingLicenceIssuingAuthority() {
@@ -75,7 +76,7 @@ public class CardDrivingLicenceInformation extends CardBlockDriver implements
 	}
 
 	/**
-	 * Asignamos la autoridad que expidió el permiso de conducir.
+	 * Asignamos la autoridad que expidiï¿½ el permiso de conducir.
 	 * @param drivingLicenceIssuingAuthority the drivingLicenceIssuingAuthority to set
 	 */
 	public void setDrivingLicenceIssuingAuthority(
@@ -84,7 +85,7 @@ public class CardDrivingLicenceInformation extends CardBlockDriver implements
 	}
 
 	/**
-	 * Obtenemos la nacionalidad de la autoridad que expidió el permiso de conducir.
+	 * Obtenemos la nacionalidad de la autoridad que expidiï¿½ el permiso de conducir.
 	 * @return the drivingLicenceIssuingNation
 	 */
 	public String getDrivingLicenceIssuingNation() {
@@ -92,7 +93,7 @@ public class CardDrivingLicenceInformation extends CardBlockDriver implements
 	}
 
 	/**
-	 * Asignamos la nacionalidad de la autoridad que expidió el permiso de conducir.
+	 * Asignamos la nacionalidad de la autoridad que expidiï¿½ el permiso de conducir.
 	 * @param drivingLicenceIssuingNation the drivingLicenceIssuingNation to set
 	 */
 	public void setDrivingLicenceIssuingNation(String drivingLicenceIssuingNation) {
@@ -100,7 +101,7 @@ public class CardDrivingLicenceInformation extends CardBlockDriver implements
 	}
 
 	/**
-	 * Obtenemos el número del permiso de conducir.
+	 * Obtenemos el nï¿½mero del permiso de conducir.
 	 * @return the drivingLicenceNumber
 	 */
 	public String getDrivingLicenceNumber() {
@@ -108,7 +109,7 @@ public class CardDrivingLicenceInformation extends CardBlockDriver implements
 	}
 
 	/**
-	 * Asignamos el número del permiso de conducir.
+	 * Asignamos el nï¿½mero del permiso de conducir.
 	 * @param drivingLicenceNumber the drivingLicenceNumber to set
 	 */
 	public void setDrivingLicenceNumber(String drivingLicenceNumber) {

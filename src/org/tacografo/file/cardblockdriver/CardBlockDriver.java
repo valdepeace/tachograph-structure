@@ -15,7 +15,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * Clase abstracta de los bloques de datos de un fichero de conductor. Todo bloque de datos se resumen
  * en tag(fid)-logitud(size)-value(datos)
  *  
- * @author Andrés Carmona Gil
+ * @author Andrï¿½s Carmona Gil
  * @version 0.0.1
  *
  */
@@ -40,7 +40,6 @@ property="type")
 @Type(value= CardCurrentUse.class, name="current_usage"),
 @Type(value= CardControlActivityDataRecord.class, name="control_activity_data"),
 @Type(value= SpecificConditionRecord.class, name="specific_conditions")
-
 })
 
 public abstract class CardBlockDriver {
@@ -52,7 +51,7 @@ public abstract class CardBlockDriver {
 	private byte[] datos;
 
 	/** 
-	 *  Identificador del bloque segun definido en REGLAMENTO (CE) No 1360/2002 DE LA COMISIÓN
+	 *  Identificador del bloque segun definido en REGLAMENTO (CE) No 1360/2002 DE LA COMISIï¿½N
 	 * de 13 de junio de 2002 hoja "L 207/119"
 	 * @return the fID
 	 */
@@ -61,7 +60,7 @@ public abstract class CardBlockDriver {
 	}
 
 	/**
-	 * Asigna Identificador del bloque segun definido en REGLAMENTO (CE) No 1360/2002 DE LA COMISIÓN
+	 * Asigna Identificador del bloque segun definido en REGLAMENTO (CE) No 1360/2002 DE LA COMISIï¿½N
 	 * de 13 de junio de 2002 hoja "L 207/119"
 	 * @param fID the fID to set
 	 */
@@ -72,7 +71,7 @@ public abstract class CardBlockDriver {
 
 
 	/**
-	 * Tamaño de cada bloque y sus propiedades segun definido en REGLAMENTO (CE) No 1360/2002 DE LA COMISIÓN
+	 * Tamaï¿½o de cada bloque y sus propiedades segun definido en REGLAMENTO (CE) No 1360/2002 DE LA COMISIï¿½N
 	 * de 13 de junio de 2002 hoja "L 207/119"
 	 * @return the size
 	 */
@@ -81,7 +80,7 @@ public abstract class CardBlockDriver {
 	}
 
 	/**
-	 * Asigna tamaño de cada bloque y sus propiedades segun definido en REGLAMENTO (CE) No 1360/2002 DE LA COMISIÓN
+	 * Asigna tamaï¿½o de cada bloque y sus propiedades segun definido en REGLAMENTO (CE) No 1360/2002 DE LA COMISIï¿½N
 	 * de 13 de junio de 2002 hoja "L 207/119"
 	 * @param size the size to set
 	 */

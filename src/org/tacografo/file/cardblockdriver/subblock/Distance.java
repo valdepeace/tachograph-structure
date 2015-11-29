@@ -8,21 +8,21 @@ import org.tacografo.tiposdatos.Number;
 /**
  * 2.48. Distance
  * 
- * Una distancia recorrida (resultado de calcular la diferencia en kilómetros entre dos lecturas del 
- * cuentakilómetros del vehículo).
+ * Una distancia recorrida (resultado de calcular la diferencia en kilï¿½metros entre dos lecturas del 
+ * cuentakilï¿½metros del vehï¿½culo).
  *
  * Distance::= INTEGER(0..216-1)
  *
- * Asignación de valor: número binario sin signo. Valor en km en el intervalo operativo de 0 a 9999 km.
+ * Asignaciï¿½n de valor: nï¿½mero binario sin signo. Valor en km en el intervalo operativo de 0 a 9999 km.
  * 
- * @author Andrés Carmona Gil
+ * @author Andrï¿½s Carmona Gil
  * @version 0.0.1
  *
  */
 public class Distance {
 	
 	
-	private short distance;
+	private int distance;
 	
 	
 	public Distance() {}
@@ -39,7 +39,7 @@ public class Distance {
 	 * Obtiene una distancia recorrida.
 	 * @return the distance
 	 */
-	public short getDistance() {
+	public int getDistance() {
 		return distance;
 	}
 

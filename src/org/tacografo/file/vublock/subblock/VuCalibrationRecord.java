@@ -7,6 +7,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import java.util.Date;
 
+import org.tacografo.file.Block;
 import org.tacografo.file.cardblockdriver.subblock.FullCardNumber;
 import org.tacografo.file.cardblockdriver.subblock.Name;
 import org.tacografo.file.cardblockdriver.subblock.VehicleRegistrationIdentification;
@@ -57,7 +58,7 @@ import org.tacografo.tiposdatos.Number;
  * nextCalibrationDate es la fecha del próximo calibrado del tipo especificado en CalibrationPurpose, a cargo de una autoridad de inspección autorizada.
  *
  */
-public class VuCalibrationRecord {
+public class VuCalibrationRecord extends Block {
 	
 	private String calibrationPurpose; //CalibrationPurpose 
 	private String workshopName;// Name,

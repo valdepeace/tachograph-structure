@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
  * 
  * 2.5. CardActivityDailyRecord
  *
- * Información almacenada en una tarjeta y relativa a las actividades del conductor en un día civil concreto. Este tipo de datos está relacionado con los requisitos 199 y 219.
+ * Informaciï¿½n almacenada en una tarjeta y relativa a las actividades del conductor en un dï¿½a civil concreto. Este tipo de datos estï¿½ relacionado con los requisitos 199 y 219.
  *
  * CardActivityDailyRecord::= SEQUENCE {
  *
@@ -34,20 +34,20 @@ import com.fasterxml.jackson.annotation.JsonFormat;
  * }
  * 
  * activityPreviousRecordLength es la longitud total del registro diario anterior, expresada en bytes. 
- * El valor máximo viene dado por la longitud de la CADENA DE OCTETOS que contiene dichos registros (véase CardActivityLengthRange, apartado 3). Cuando este registro es el registro diario más antiguo, el valor de activityPreviousRecordLength debe configurarse a 0. 
+ * El valor mï¿½ximo viene dado por la longitud de la CADENA DE OCTETOS que contiene dichos registros (vï¿½ase CardActivityLengthRange, apartado 3). Cuando este registro es el registro diario mï¿½s antiguo, el valor de activityPreviousRecordLength debe configurarse a 0. 
  * 
  * activityRecordLength es la longitud total de este registro, expresada en bytes. 
- * El valor máximo viene dado por la longitud de la CADENA DE OCTETOS que contiene dichos registros.
+ * El valor mï¿½ximo viene dado por la longitud de la CADENA DE OCTETOS que contiene dichos registros.
  * 
  * activityRecordDate es la fecha del registro. 
  *
- * activityDailyPresenceCounter es el contador de presencia diaria para esa tarjeta en ese día.
+ * activityDailyPresenceCounter es el contador de presencia diaria para esa tarjeta en ese dï¿½a.
  * 
- * activityDayDistance es la distancia total recorrida ese día.
+ * activityDayDistance es la distancia total recorrida ese dï¿½a.
  *
- * activityChangeInfo es el conjunto de datos de ActivityChangeInfo correspondientes al conductor en ese día. Puede contener 1440 valores como máximo (un cambio de actividad cada minuto). Este conjunto incluye siempre la ActivityChangeInfo que codifica el estado del conductor a las 00:00.
+ * activityChangeInfo es el conjunto de datos de ActivityChangeInfo correspondientes al conductor en ese dï¿½a. Puede contener 1440 valores como mï¿½ximo (un cambio de actividad cada minuto). Este conjunto incluye siempre la ActivityChangeInfo que codifica el estado del conductor a las 00:00.
  * 
- * @author Andrés Carmona Gil
+ * @author Andrï¿½s Carmona Gil
  * @version 0.0.1
  *
  */
@@ -56,8 +56,8 @@ public class CardActivityDailyRecord {
 	private int activityRecordLength; // 2 byte 
 	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm:ss", timezone="GMT")
 	private Date activityRecordDate; // 4 byte
-	private short activityDailyPresenceCounter; // 2 size
-	private short activityDayDistance; // 2 size
+	private int activityDailyPresenceCounter; // 2 size
+	private int activityDayDistance; // 2 size
 	private ArrayList <ActivityChangeInfo> activityChangeInfo; // size 2
 	
 	
@@ -137,15 +137,15 @@ public class CardActivityDailyRecord {
 	}
 
 	/**
-	 * Obtiene el contador de presencia diaria para esa tarjeta en ese día.
+	 * Obtiene el contador de presencia diaria para esa tarjeta en ese dï¿½a.
 	 * @return the activityDailyPresenceCounter
 	 */
-	public short getActivityDailyPresenceCounter() {
+	public int getActivityDailyPresenceCounter() {
 		return activityDailyPresenceCounter;
 	}
 
 	/**
-	 * Asigna el contador de presencia diaria para esa tarjeta en ese día.
+	 * Asigna el contador de presencia diaria para esa tarjeta en ese dï¿½a.
 	 * @param activityDailyPresenceCounter the activityDailyPresenceCounter to set
 	 */
 	public void setActivityDailyPresenceCounter(short activityDailyPresenceCounter) {
@@ -153,15 +153,15 @@ public class CardActivityDailyRecord {
 	}
 
 	/**
-	 * Obtiene la distancia total recorrida ese día.
+	 * Obtiene la distancia total recorrida ese dï¿½a.
 	 * @return the activityDayDistance
 	 */
-	public short getActivityDayDistance() {
+	public int getActivityDayDistance() {
 		return activityDayDistance;
 	}
 
 	/**
-	 * Asigna la distancia total recorrida ese día.
+	 * Asigna la distancia total recorrida ese dï¿½a.
 	 * @param activityDayDistance the activityDayDistance to set
 	 */
 	public void setActivityDayDistance(short activityDayDistance) {
@@ -169,8 +169,8 @@ public class CardActivityDailyRecord {
 	}
 
 	/**
-	 * Obtiene el conjunto de datos de ActivityChangeInfo correspondientes al conductor en ese día. 
-	 * Puede contener 1440 valores como máximo (un cambio de actividad cada minuto). 
+	 * Obtiene el conjunto de datos de ActivityChangeInfo correspondientes al conductor en ese dï¿½a. 
+	 * Puede contener 1440 valores como mï¿½ximo (un cambio de actividad cada minuto). 
 	 * Este conjunto incluye siempre la ActivityChangeInfo que codifica el estado del conductor a las 00:00.
 	 * @return the activityChangeInfo
 	 */
@@ -179,8 +179,8 @@ public class CardActivityDailyRecord {
 	}
 
 	/**
-	 * Asigna el conjunto de datos de ActivityChangeInfo correspondientes al conductor en ese día. 
-	 * Puede contener 1440 valores como máximo (un cambio de actividad cada minuto). 
+	 * Asigna el conjunto de datos de ActivityChangeInfo correspondientes al conductor en ese dï¿½a. 
+	 * Puede contener 1440 valores como mï¿½ximo (un cambio de actividad cada minuto). 
 	 * Este conjunto incluye siempre la ActivityChangeInfo que codifica el estado del conductor a las 00:00.
 	 * @param activityChangeInfo the activityChangeInfo to set
 	 */

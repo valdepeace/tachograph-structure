@@ -51,87 +51,85 @@ public class FactoriaBloques {
 	 * @throws Exception 
 	 */
 	public static Block getFactoria(int word,byte[] datos) throws Exception  {
-		CardBlockDriver bloque = null;
+		
 		Block block=null;
 		switch (word) {	
 			case 0x0002:	
 			
 				try {
-					bloque=new CardIccIdentification(datos);
+					block=new CardIccIdentification(datos);
 				} catch (IOException e) {				
 					e.printStackTrace();
 				}				
-				bloque.setFID(Fid.EF_ICC.toString());				
+				block.setFID(Fid.EF_ICC.toString());				
 				break;
 			case 0x0005:				
-				bloque=new CardChipIdentification(datos);				
-				bloque.setFID(Fid.EF_IC.toString());				
+				block=new CardChipIdentification(datos);				
+				block.setFID(Fid.EF_IC.toString());				
 				break;
 			case 0x0501:				
-				bloque= new DriverCardApplicationIdentification(datos);				
-				bloque.setFID(Fid.EF_APPLICATION_IDENTIFICATION.toString());
+				block= new DriverCardApplicationIdentification(datos);				
+				block.setFID(Fid.EF_APPLICATION_IDENTIFICATION.toString());
 				break;				
 			case 0xc100:	
-				bloque=new CardCertificate(datos);								
-				bloque.setFID(Fid.EF_CARD_CERTIFICATE.toString());
+				block=new CardCertificate(datos);								
+				block.setFID(Fid.EF_CARD_CERTIFICATE.toString());
 				break;
 			case 0xc108:
-				bloque=new MemberStateCertificate(datos);								
-				bloque.setFID(Fid.EF_CA_CERTIFICATE.toString());				
+				block=new MemberStateCertificate(datos);								
+				block.setFID(Fid.EF_CA_CERTIFICATE.toString());				
 				break;		
 			case 0x0520:
-				bloque=new CardIdentification(datos);								
-				bloque.setFID(Fid.EF_IDENTIFICATION.toString());								
+				block=new CardIdentification(datos);								
+				block.setFID(Fid.EF_IDENTIFICATION.toString());								
 				break;
 			case 0x050E:					
-				bloque = new LastCardDownload(datos);
-				bloque.setFID(Fid.EF_CARD_DOWNLOAD.toString());
+				block = new LastCardDownload(datos);
+				block.setFID(Fid.EF_CARD_DOWNLOAD.toString());
 				break;
 			case 0x0521:
-				bloque=new CardDrivingLicenceInformation(datos);
-				bloque.setFID(Fid.EF_DRIVING_LICENSE_INFO.toString());
+				block=new CardDrivingLicenceInformation(datos);
+				block.setFID(Fid.EF_DRIVING_LICENSE_INFO.toString());
 				break;
 			case 0x0502:
-				bloque=new CardEventData(datos);
-				bloque.setFID(Fid.EF_EVENTS_DATA.toString());				
+				block=new CardEventData(datos);
+				block.setFID(Fid.EF_EVENTS_DATA.toString());				
 				break;
 			case 0x0503: // Faults data
-				bloque=new CardFaultData(datos);
-				bloque.setFID(Fid.EF_FAULTS_DATA.toString());
+				block=new CardFaultData(datos);
+				block.setFID(Fid.EF_FAULTS_DATA.toString());
 				break;
 			case 0x0504: // Driver activity data
-				bloque=new CardDriverActivity(datos);
-				bloque.setFID(Fid.EF_DRIVER_ACTIVITY_DATA.toString());
+				block=new CardDriverActivity(datos);
+				block.setFID(Fid.EF_DRIVER_ACTIVITY_DATA.toString());
 				break;
 			case 0x0505:// vehicles uses
-				bloque=new CardVehiclesUsed(datos);
-				bloque.setFID(Fid.EF_VEHICLES_USED.toString());				
+				block=new CardVehiclesUsed(datos);
+				block.setFID(Fid.EF_VEHICLES_USED.toString());				
 				break;
 			case 0x0506: // Places
-				bloque=new CardPlaceDailyWorkPeriod(datos);
-				bloque.setFID(Fid.EF_PLACES.toString());
+				block=new CardPlaceDailyWorkPeriod(datos);
+				block.setFID(Fid.EF_PLACES.toString());
 				break;
 			case 0x0507: // Currents usage
-				bloque=new CardCurrentUse(datos);
-				bloque.setFID(Fid.EF_CURRENT_USAGE.toString());
+				block=new CardCurrentUse(datos);
+				block.setFID(Fid.EF_CURRENT_USAGE.toString());
 				break;
 			case 0x0508: // Control activity data
-				bloque=new CardControlActivityDataRecord(datos);
-				bloque.setFID(Fid.EF_CONTROL_ACTIVITY_DATA.toString());				
+				block=new CardControlActivityDataRecord(datos);
+				block.setFID(Fid.EF_CONTROL_ACTIVITY_DATA.toString());				
 				break;
 			case 0x0522:
-				bloque=new SpecificConditionRecord(datos);
-				bloque.setFID(Fid.EF_SPECIFIC_CONDITIONS.toString());				
+				block=new SpecificConditionRecord(datos);
+				block.setFID(Fid.EF_SPECIFIC_CONDITIONS.toString());				
 				break;
 			case 0x7601:
 				block=new Resumen(datos);
-				block.setTRED(Trep.VU_ACTIVITY.toString());
-				System.out.println("Resumen");
+				block.setTRED(Trep.VU_RESUMEN.toString());				
 				break;
 			case 0x7602:
 				block=new Activity(datos);
-				block.setTRED(Trep.VU_ACTIVITY.toString());
-				System.out.println("Actividades");
+				block.setTRED(Trep.VU_ACTIVITY.toString());				
 				break;
 			case 0x7603:
 				block=new EventsFaults(datos);
@@ -145,23 +143,18 @@ public class FactoriaBloques {
 				break;
 			case 0x7605:
 				block=new Technical(datos);
-				block.setTRED(Trep.VU_TECHNICAL.toString());
-				System.out.println("Datos t�cnicos");
+				block.setTRED(Trep.VU_TECHNICAL.toString());				
 				break;
 			default:
 			break;
-
 		}
-		if (bloque!=null){			
-			bloque.setDatos(datos);
-			bloque.setSize(datos.length);
-			//return (CardBlock) bloque;
-		}
-		if (block!=null){
-				block.setDatos(datos);
-		
+		if (block!=null){			
+			block.setDatos(datos);
+			if(block.getSize()==0){
+				block.setSize(datos.length);	
 			}
-		
+			
+		}
 		return block;
 				
 	}

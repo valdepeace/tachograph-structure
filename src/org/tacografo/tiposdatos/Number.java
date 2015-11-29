@@ -42,10 +42,19 @@ public class Number {
 	 * @param bytes
 	 * @return short
 	 */
-	public static short getShort_16(byte[] bytes){
-		short i=(short) ((bytes[0]<< 8)&0x0000ff00|
-			       (bytes[1]<< 0)&0x000000ff);
-		return i;
+	public static int getShort_16(byte[] bytes){
+		int num = 0;
+		short i=(short) ((bytes[0]<< 8)&0xff00|
+			       (bytes[1]<< 0)&0x00ff);
+		
+			if(i<0){
+				num=Short.toUnsignedInt(i);				
+			}else{
+				num=i;
+			}						
+		return num;
+		
+		//return i;
 	}
 	/**
 	 * Obtenemos un short a partir de 1 byte.
@@ -76,6 +85,7 @@ public class Number {
 			n=0;
 			break;
 		}
+		
 		return n;
 	}
 }

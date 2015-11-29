@@ -3,7 +3,9 @@ import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import java.util.Date;
 
+import org.tacografo.file.Block;
 import org.tacografo.file.cardblockdriver.subblock.CardNumber;
+import org.tacografo.file.cardblockdriver.subblock.DriverCardHolderIdentification;
 import org.tacografo.file.cardblockdriver.subblock.Name;
 import org.tacografo.file.cardblockdriver.subblock.NationNumeric;
 import org.tacografo.tiposdatos.RealTime;
@@ -16,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
  * 
  * 2.20. CardIdentification
  *
- * Información almacenada en una tarjeta y relativa a la identificación de la tarjeta (requisitos 194, 215, 231, 235).
+ * Informaciï¿½n almacenada en una tarjeta y relativa a la identificaciï¿½n de la tarjeta (requisitos 194, 215, 231, 235).
  * 
  * CardIdentification::= SEQUENCE
  * cardIssuingMemberState NationNumeric,
@@ -27,16 +29,16 @@ import com.fasterxml.jackson.annotation.JsonFormat;
  * cardExpiryDate TimeReal
  * }
  *
- * cardIssuingMemberState es el código del Estado miembro que expide la tarjeta.
- * cardNumber es el número de la tarjeta.
+ * cardIssuingMemberState es el cï¿½digo del Estado miembro que expide la tarjeta.
+ * cardNumber es el nï¿½mero de la tarjeta.
  * cardIssuingAuthorityName es el nombre de la autoridad que ha expedido la tarjeta.
- * cardIssueDate es la fecha en que se expidió la tarjeta al titular actual.
- * cardValidityBegin es la fecha correspondiente al primer día de validez de la tarjeta. 
+ * cardIssueDate es la fecha en que se expidiï¿½ la tarjeta al titular actual.
+ * cardValidityBegin es la fecha correspondiente al primer dï¿½a de validez de la tarjeta. 
  * cardExpiryDate es la fecha en que termina la validez de la tarjeta.
- * @author Andrés Carmona Gil
+ * @author Andrï¿½s Carmona Gil
  * @version 0.0.1
  */
-public class CardIdentification extends CardBlockDriver implements CardBlock{
+public class CardIdentification extends Block implements CardBlock{
 	
 	
 
@@ -52,7 +54,7 @@ public class CardIdentification extends CardBlockDriver implements CardBlock{
 	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm:ss", timezone="GMT")
 	private Date cardExpiryDate;
 			
-	
+	private DriverCardHolderIdentification driverCardHolderIdentification;
 	
 	
 	public CardIdentification() {}
@@ -84,14 +86,14 @@ public class CardIdentification extends CardBlockDriver implements CardBlock{
 		this.cardExpiryDate=new Date();
 		this.cardExpiryDate=RealTime.getRealTime(Arrays.copyOfRange(datos,start, start+=Sizes.CARDEXPIRYDATE.getMax()));
 		
-		
+		this.driverCardHolderIdentification=new DriverCardHolderIdentification(Arrays.copyOfRange(datos,start,start+=Sizes.DRIVERCARDHOLDERIDENTIFICATION.getMax()));
 		
 				
 	}
 	
 
 	/**
-	 * Obtiene el código del Estado miembro que expide la tarjeta.
+	 * Obtiene el cï¿½digo del Estado miembro que expide la tarjeta.
 	 * @return the cardIssuingMemberState
 	 */
 	public String getCardIssuingMemberState() {
@@ -103,16 +105,14 @@ public class CardIdentification extends CardBlockDriver implements CardBlock{
 	 */
 	@Override
 	public String toString() {
-		return "CardIdentification [cardIssuingMemberState="
-				+ cardIssuingMemberState + ", cardNumber=" + cardNumber
-				+ ", cardIssuingAuthorityName=" + cardIssuingAuthorityName
-				+ ", cardIssueDate=" + cardIssueDate + ", cardValidityBegin="
-				+ cardValidityBegin + ", cardExpiryDate=" + cardExpiryDate
-				+ "]";
+		return "CardIdentification [cardIssuingMemberState=" + cardIssuingMemberState + ", cardNumber=" + cardNumber
+				+ ", cardIssuingAuthorityName=" + cardIssuingAuthorityName + ", cardIssueDate=" + cardIssueDate
+				+ ", cardValidityBegin=" + cardValidityBegin + ", cardExpiryDate=" + cardExpiryDate
+				+ ", driverCardHolderIdentification=" + driverCardHolderIdentification + "]";
 	}
 
 	/**
-	 * Asigna el código del Estado miembro que expide la tarjeta.
+	 * Asigna el cï¿½digo del Estado miembro que expide la tarjeta.
 	 * @param cardIssuingMemberState the cardIssuingMemberState to set
 	 */
 	public void setCardIssuingMemberState(String cardIssuingMemberState) {
@@ -120,7 +120,7 @@ public class CardIdentification extends CardBlockDriver implements CardBlock{
 	}
 
 	/**
-	 * Obtiene el número de la tarjeta.
+	 * Obtiene el nï¿½mero de la tarjeta.
 	 * @return the cardNumber
 	 */
 	public CardNumber getCardNumber() {
@@ -128,7 +128,7 @@ public class CardIdentification extends CardBlockDriver implements CardBlock{
 	}
 
 	/**
-	 * Asigna el número de la tarjeta.
+	 * Asigna el nï¿½mero de la tarjeta.
 	 * @param cardNumber the cardNumber to set
 	 */
 	public void setCardNumber(CardNumber cardNumber) {
@@ -152,7 +152,7 @@ public class CardIdentification extends CardBlockDriver implements CardBlock{
 	}
 
 	/**
-	 * Obtiene la fecha en que se expidió la tarjeta al titular actual.
+	 * Obtiene la fecha en que se expidiï¿½ la tarjeta al titular actual.
 	 * @return the cardIssueDate
 	 */
 	public Date getCardIssueDate() {
@@ -160,7 +160,7 @@ public class CardIdentification extends CardBlockDriver implements CardBlock{
 	}
 
 	/**
-	 * Asigna la fecha en que se expidió la tarjeta al titular actual.
+	 * Asigna la fecha en que se expidiï¿½ la tarjeta al titular actual.
 	 * @param cardIssueDate the cardIssueDate to set
 	 */
 	public void setCardIssueDate(Date cardIssueDate) {
@@ -168,7 +168,7 @@ public class CardIdentification extends CardBlockDriver implements CardBlock{
 	}
 
 	/**
-	 * Obtiene la fecha correspondiente al primer día de validez de la tarjeta. 
+	 * Obtiene la fecha correspondiente al primer dï¿½a de validez de la tarjeta. 
 	 * @return the cardValidityBegin
 	 */
 	public Date getCardValidityBegin() {
@@ -176,7 +176,7 @@ public class CardIdentification extends CardBlockDriver implements CardBlock{
 	}
 
 	/**
-	 * Asigna la fecha correspondiente al primer día de validez de la tarjeta. 
+	 * Asigna la fecha correspondiente al primer dï¿½a de validez de la tarjeta. 
 	 * @param cardValidityBegin the cardValidityBegin to set
 	 */
 	public void setCardValidityBegin(Date cardValidityBegin) {

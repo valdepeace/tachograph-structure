@@ -6,11 +6,12 @@ package org.tacografo.file.cardblockdriver;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import org.tacografo.file.Block;
 import org.tacografo.file.cardblockdriver.subblock.CardFaultRecord;
 
 /**
  * 2.17. CardFaultData
- * Información almacenada en una tarjeta de conductor o en una tarjeta del centro de ensayo y relativa a los fallos asociados
+ * Informaciï¿½n almacenada en una tarjeta de conductor o en una tarjeta del centro de ensayo y relativa a los fallos asociados
  * al titular de la tarjeta (requisitos 207 y 223).
  * CardFaultData ::= SEQUENCE SIZE(2) OF {
  * cardFaultRecords SET SIZE(NoOfFaultsPerType) OF
@@ -19,14 +20,14 @@ import org.tacografo.file.cardblockdriver.subblock.CardFaultRecord;
  * CardFaultData es una secuencia integrada por un conjunto con los registros de los fallos del aparato de control,
  * seguido de un conjunto con los registros de los fallos de la tarjeta.
  * 
- * cardFaultRecords es un conjunto de registros de fallos de una categoría determinada (del aparato de control o de la
+ * cardFaultRecords es un conjunto de registros de fallos de una categorï¿½a determinada (del aparato de control o de la
  * tarjeta).
  * 
- * @author Andrés Carmona Gil
+ * @author Andrï¿½s Carmona Gil
  * @version 0.0.1
  *
  */
-public class CardFaultData extends CardBlockDriver implements CardBlock {
+public class CardFaultData extends Block implements CardBlock {
 	
 	@SuppressWarnings("rawtypes")
 	private ArrayList cardFaultRecords;
@@ -50,7 +51,7 @@ public class CardFaultData extends CardBlockDriver implements CardBlock {
 	}
 
 	/**
-	 * Obtiene un conjunto de registros de fallos de una categoría determinada (del aparato de control o de la
+	 * Obtiene un conjunto de registros de fallos de una categorï¿½a determinada (del aparato de control o de la
 	 *	tarjeta).
 	 * @return the cardFaultRecords
 	 */
@@ -60,7 +61,7 @@ public class CardFaultData extends CardBlockDriver implements CardBlock {
 	}
 
 	/**
-	 * Asigna un conjunto de registros de fallos de una categoría determinada (del aparato de control o de la
+	 * Asigna un conjunto de registros de fallos de una categorï¿½a determinada (del aparato de control o de la
 	 * tarjeta).
 	 * @param cardFaultRecords the cardFaultRecords to set
 	 */

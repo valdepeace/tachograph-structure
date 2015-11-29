@@ -2,23 +2,24 @@ package org.tacografo.file.cardblockdriver;
 
 import java.util.Arrays;
 
+import org.tacografo.file.Block;
 import org.tacografo.tiposdatos.OctetString;
 
 
 /**
  * 2.9. CardChipIdentification
- * Información almacenada en una tarjeta y relativa a la identificación del circuito integrado (CI) de dicha tarjeta (requisito 191).
+ * Informaciï¿½n almacenada en una tarjeta y relativa a la identificaciï¿½n del circuito integrado (CI) de dicha tarjeta (requisito 191).
  * CardChipIdentification::= SEQUENCE {
  * icSerialNumber OCTET STRING (SIZE(4)),
  * icManufacturingReferences OCTET STRING (SIZE(4))
  * }
  * 
- * @author Andrés Carmona Gil
+ * @author Andrï¿½s Carmona Gil
  * @version 0.0.1
  **/
 
 
-public class CardChipIdentification extends CardBlockDriver implements CardBlock{
+public class CardChipIdentification extends Block implements CardBlock{
 	
 
 	private String icSerialNumber;

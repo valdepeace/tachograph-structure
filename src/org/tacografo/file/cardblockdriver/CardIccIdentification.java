@@ -2,12 +2,7 @@ package org.tacografo.file.cardblockdriver;
 import java.io.IOException;
 import java.util.Arrays;
 
-
-
-
-
-
-
+import org.tacografo.file.Block;
 import org.tacografo.file.cardblockdriver.subblock.CardApprovalNumber;
 import org.tacografo.file.cardblockdriver.subblock.ExtendedSerialNumber;
 import org.tacografo.tiposdatos.OctetString;
@@ -18,7 +13,7 @@ import org.tacografo.tiposdatos.OctetString;
  *
  * 2.19. CardIccIdentification
  *
- * Información almacenada en una tarjeta y relativa a la identificación de la tarjeta con circuito integrado (CI) (requisito 192).
+ * Informaciï¿½n almacenada en una tarjeta y relativa a la identificaciï¿½n de la tarjeta con circuito integrado (CI) (requisito 192).
  *
  * CardIccIdentification::= SEQUENCE {
  * clockStop OCTET STRING (SIZE(1)),
@@ -30,16 +25,16 @@ import org.tacografo.tiposdatos.OctetString;
  * }
  * 
  * clockStop es el modo de paro de reloj, tal y como se define en la norma EN 726-3.
- * cardExtendedSerialNumber es el número de serie y la referencia de fabricación de la tarjeta CI, tal y como se definen en la norma EN 726-3. Esta información se completa con el tipo de datos ExtendedSerialNumber.
- * cardApprovalNumber es el número de homologación del modelo de tarjeta.
- * cardPersonaliserID es la identificación personal de la tarjeta, tal y como se define en la norma EN 726-3.
- * embedderIcAssemblerId es la identificación del fabricante de la tarjeta/encargado de integrar el CI, tal y como se define en la norma EN 726-3.
+ * cardExtendedSerialNumber es el nï¿½mero de serie y la referencia de fabricaciï¿½n de la tarjeta CI, tal y como se definen en la norma EN 726-3. Esta informaciï¿½n se completa con el tipo de datos ExtendedSerialNumber.
+ * cardApprovalNumber es el nï¿½mero de homologaciï¿½n del modelo de tarjeta.
+ * cardPersonaliserID es la identificaciï¿½n personal de la tarjeta, tal y como se define en la norma EN 726-3.
+ * embedderIcAssemblerId es la identificaciï¿½n del fabricante de la tarjeta/encargado de integrar el CI, tal y como se define en la norma EN 726-3.
  * icIdentifier es el identificador del CI que incorpora la tarjeta y del fabricante de dicho CI, tal y como se define en la norma EN 726-3.
  * 
- * @author Andrés Carmona Gil
+ * @author Andrï¿½s Carmona Gil
  * @version 0.0.1  	
  */
-public class CardIccIdentification extends CardBlockDriver implements CardBlock{
+public class CardIccIdentification extends Block implements CardBlock{
 	
 	public static final String FIDhex="0x0002";
 	
@@ -114,7 +109,7 @@ public class CardIccIdentification extends CardBlockDriver implements CardBlock{
 	}
 
 	/**
-	 * Obtiene el número de serie y la referencia de fabricación de la tarjeta CI, tal y como se definen en la norma EN 726-3. Esta información se completa con el tipo de datos ExtendedSerialNumber.
+	 * Obtiene el nï¿½mero de serie y la referencia de fabricaciï¿½n de la tarjeta CI, tal y como se definen en la norma EN 726-3. Esta informaciï¿½n se completa con el tipo de datos ExtendedSerialNumber.
 	 * @return the cardExtendedSerialNumber
 	 */
 	public ExtendedSerialNumber getCardExtendedSerialNumber() {
@@ -122,7 +117,7 @@ public class CardIccIdentification extends CardBlockDriver implements CardBlock{
 	}
 
 	/**
-	 * Asigna el número de serie y la referencia de fabricación de la tarjeta CI, tal y como se definen en la norma EN 726-3. Esta información se completa con el tipo de datos ExtendedSerialNumber.
+	 * Asigna el nï¿½mero de serie y la referencia de fabricaciï¿½n de la tarjeta CI, tal y como se definen en la norma EN 726-3. Esta informaciï¿½n se completa con el tipo de datos ExtendedSerialNumber.
 	 * @param cardExtendedSerialNumber the cardExtendedSerialNumber to set
 	 */
 	public void setCardExtendedSerialNumber(
@@ -131,7 +126,7 @@ public class CardIccIdentification extends CardBlockDriver implements CardBlock{
 	}
 
 	/**
-	 * Obtiene el número de homologación del modelo de tarjeta.
+	 * Obtiene el nï¿½mero de homologaciï¿½n del modelo de tarjeta.
 	 * @return the cardApprovalNumber
 	 */
 	public CardApprovalNumber getCardApprovalNumber() {
@@ -139,7 +134,7 @@ public class CardIccIdentification extends CardBlockDriver implements CardBlock{
 	}
 
 	/**
-	 * Asigna el número de homologación del modelo de tarjeta.
+	 * Asigna el nï¿½mero de homologaciï¿½n del modelo de tarjeta.
 	 * @param cardApprovalNumber the cardApprovalNumber to set
 	 */
 	public void setCardApprovalNumber(CardApprovalNumber cardApprovalNumber) {
@@ -147,7 +142,7 @@ public class CardIccIdentification extends CardBlockDriver implements CardBlock{
 	}
 
 	/**
-	 * Obtiene la identificación personal de la tarjeta, tal y como se define en la norma EN 726-3.
+	 * Obtiene la identificaciï¿½n personal de la tarjeta, tal y como se define en la norma EN 726-3.
 	 * @return the cardPersonaliserID
 	 */
 	public String getCardPersonaliserID() {
@@ -155,7 +150,7 @@ public class CardIccIdentification extends CardBlockDriver implements CardBlock{
 	}
 
 	/**
-	 * Asigna la identificación personal de la tarjeta, tal y como se define en la norma EN 726-3.
+	 * Asigna la identificaciï¿½n personal de la tarjeta, tal y como se define en la norma EN 726-3.
 	 * @param cardPersonaliserID the cardPersonaliserID to set
 	 */
 	public void setCardPersonaliserID(String cardPersonaliserID) {
@@ -163,7 +158,7 @@ public class CardIccIdentification extends CardBlockDriver implements CardBlock{
 	}
 
 	/**
-	 * Obtiene la identificación del fabricante de la tarjeta/encargado de integrar el CI, tal y como se define en la norma EN 726-3.
+	 * Obtiene la identificaciï¿½n del fabricante de la tarjeta/encargado de integrar el CI, tal y como se define en la norma EN 726-3.
 	 * @return the embedderIcAssemblerId
 	 */
 	public String getEmbedderIcAssemblerId() {
@@ -171,7 +166,7 @@ public class CardIccIdentification extends CardBlockDriver implements CardBlock{
 	}
 
 	/**
-	 * Asigna la identificación del fabricante de la tarjeta/encargado de integrar el CI, tal y como se define en la norma EN 726-3.
+	 * Asigna la identificaciï¿½n del fabricante de la tarjeta/encargado de integrar el CI, tal y como se define en la norma EN 726-3.
 	 * @param embedderIcAssemblerId the embedderIcAssemblerId to set
 	 */
 	public void setEmbedderIcAssemblerId(String embedderIcAssemblerId) {

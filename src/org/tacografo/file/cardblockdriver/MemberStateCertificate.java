@@ -3,17 +3,18 @@
  */
 package org.tacografo.file.cardblockdriver;
 
+import org.tacografo.file.Block;
 import org.tacografo.file.cardblockdriver.subblock.Certificate;
 
 /**
  * 
  * 2.68. MemberStateCertificate
- * El certificado de la clave pública de un Estado miembro, expedido por la autoridad de certificación europea.
+ * El certificado de la clave pï¿½blica de un Estado miembro, expedido por la autoridad de certificaciï¿½n europea.
  * MemberStateCertificate ::= Certificate
  * @author Negrero
  *
  */
-public class MemberStateCertificate extends CardBlockDriver implements
+public class MemberStateCertificate extends Block implements
 		CardBlock {
 	
 		private Certificate certificate;
@@ -36,7 +37,7 @@ public class MemberStateCertificate extends CardBlockDriver implements
 		}
 
 		/**
-		 * Obtiene el certificado de la clave pública de un Estado miembro, expedido por la autoridad de certificación europea.
+		 * Obtiene el certificado de la clave pï¿½blica de un Estado miembro, expedido por la autoridad de certificaciï¿½n europea.
 		 * @return the certificate
 		 */
 		public Certificate getCertificate() {
@@ -44,7 +45,7 @@ public class MemberStateCertificate extends CardBlockDriver implements
 		}
 
 		/**
-		 * Asigna el certificado de la clave pública de un Estado miembro, expedido por la autoridad de certificación europea.
+		 * Asigna el certificado de la clave pï¿½blica de un Estado miembro, expedido por la autoridad de certificaciï¿½n europea.
 		 * @param certificate the certificate to set
 		 */
 		public void setCertificate(Certificate certificate) {

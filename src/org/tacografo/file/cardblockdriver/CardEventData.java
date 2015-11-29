@@ -7,25 +7,26 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.tacografo.file.Block;
 import org.tacografo.file.cardblockdriver.subblock.CardEventRecord;
 
 /**
  * 
  * 2.15. CardEventData
  *
- * Información almacenada en una tarjeta de conductor o en una tarjeta del centro de ensayo y relativa a los incidentes asociados al titular de la tarjeta (requisitos 204 y 223).
+ * Informaciï¿½n almacenada en una tarjeta de conductor o en una tarjeta del centro de ensayo y relativa a los incidentes asociados al titular de la tarjeta (requisitos 204 y 223).
  * 
  * CardEventData::= SEQUENCE SIZE(6) OF {
  * cardEventRecords SET SIZE(NoOfEventsPerType) OF CardEventRecord
  * }
- * CardEventData es una secuencia de cardEventRecords ordenada por valor ascendente del código EventFaultType (excepto los registros relacionados con intentos de violación de la seguridad, que se incluyen en el último conjunto de la secuencia).
- * cardEventRecords es un conjunto de registros de incidentes de un tipo en particular (o de una categoría en particular, en el caso de los intentos de violación de la seguridad).
+ * CardEventData es una secuencia de cardEventRecords ordenada por valor ascendente del cï¿½digo EventFaultType (excepto los registros relacionados con intentos de violaciï¿½n de la seguridad, que se incluyen en el ï¿½ltimo conjunto de la secuencia).
+ * cardEventRecords es un conjunto de registros de incidentes de un tipo en particular (o de una categorï¿½a en particular, en el caso de los intentos de violaciï¿½n de la seguridad).
  * 
- * @author Andrés Carmona Gil
+ * @author Andrï¿½s Carmona Gil
  * @version 0.0.1 
  *
  */
-public class CardEventData extends CardBlockDriver implements CardBlock {
+public class CardEventData extends Block implements CardBlock {
 	
 
 	private Set<CardEventRecord> cardEventRecords;
@@ -69,7 +70,7 @@ public class CardEventData extends CardBlockDriver implements CardBlock {
 
 
 	/**
-	 * Obtiene un conjunto de registros de incidentes de un tipo en particular (o de una categoría en particular, en el caso de los intentos de violación de la seguridad).
+	 * Obtiene un conjunto de registros de incidentes de un tipo en particular (o de una categorï¿½a en particular, en el caso de los intentos de violaciï¿½n de la seguridad).
 	 * @return the cardEventRecords
 	 */
 	public Set<CardEventRecord> getCardEventRecords() {
@@ -77,7 +78,7 @@ public class CardEventData extends CardBlockDriver implements CardBlock {
 	}
 
 	/**
-	 * Asigna un conjunto de registros de incidentes de un tipo en particular (o de una categoría en particular, en el caso de los intentos de violación de la seguridad).
+	 * Asigna un conjunto de registros de incidentes de un tipo en particular (o de una categorï¿½a en particular, en el caso de los intentos de violaciï¿½n de la seguridad).
 	 * @param cardEventRecords the cardEventRecords to set
 	 */
 	public void setCardEventRecords(Set<CardEventRecord> cardEventRecords) {

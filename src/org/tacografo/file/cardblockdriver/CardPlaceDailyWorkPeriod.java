@@ -4,28 +4,29 @@ package org.tacografo.file.cardblockdriver;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import org.tacografo.file.Block;
 import org.tacografo.file.cardblockdriver.subblock.PlaceRecord;
 import org.tacografo.tiposdatos.Number;
 
 /**
  * CardPlaceDailyWorkPeriod
- * Información almacenada en una tarjeta de conductor o en una tarjeta del centro de ensayo y relativa a los lugares donde
- * comienzan y/o terminan los períodos de trabajo diarios (requisitos 202 y 221).
+ * Informaciï¿½n almacenada en una tarjeta de conductor o en una tarjeta del centro de ensayo y relativa a los lugares donde
+ * comienzan y/o terminan los perï¿½odos de trabajo diarios (requisitos 202 y 221).
  * CardPlaceDailyWorkPeriod ::= SEQUENCE {
  * placePointerNewestRecord INTEGER(0..NoOfCardPlaceRecords-1),
  * placeRecords SET SIZE(NoOfCardPlaceRecords) OF PlaceRecord
  * }
- * placePointerNewestRecord es el índice del último registro actualizado de un lugar.
- * Asignación de valor: número que corresponde al numerador del registro de un lugar. Al primer registro de la estructura
- * se le asigna el número '0'.
- * placeRecords es el conjunto de registros que contiene la información relativa a los lugares introducidos. 
+ * placePointerNewestRecord es el ï¿½ndice del ï¿½ltimo registro actualizado de un lugar.
+ * Asignaciï¿½n de valor: nï¿½mero que corresponde al numerador del registro de un lugar. Al primer registro de la estructura
+ * se le asigna el nï¿½mero '0'.
+ * placeRecords es el conjunto de registros que contiene la informaciï¿½n relativa a los lugares introducidos. 
  * 
- * @author Andrés Carmona Gil
+ * @author Andrï¿½s Carmona Gil
  * @version 0.0.1
  *
  */
 
-public class CardPlaceDailyWorkPeriod extends CardBlockDriver implements
+public class CardPlaceDailyWorkPeriod extends Block implements
 		CardBlock {
 	private Integer placePointerNewestRecord;
 	private ArrayList<PlaceRecord> placeRecords;
@@ -72,7 +73,7 @@ public class CardPlaceDailyWorkPeriod extends CardBlockDriver implements
 
 	
 	/**
-	 * Obtiene el índice del último registro actualizado de un lugar.
+	 * Obtiene el ï¿½ndice del ï¿½ltimo registro actualizado de un lugar.
 	 * @return the placePointerNewestRecord
 	 */
 	public Integer getPlacePointerNewestRecord() {
@@ -80,7 +81,7 @@ public class CardPlaceDailyWorkPeriod extends CardBlockDriver implements
 	}
 
 	/**
-	 * Asigna el índice del último registro actualizado de un lugar.
+	 * Asigna el ï¿½ndice del ï¿½ltimo registro actualizado de un lugar.
 	 * @param placePointerNewestRecord the placePointerNewestRecord to set
 	 */
 	public void setPlacePointerNewestRecord(Integer placePointerNewestRecord) {
@@ -88,7 +89,7 @@ public class CardPlaceDailyWorkPeriod extends CardBlockDriver implements
 	}
 
 	/**
-	 * Obtiene  el número de lugares que puede registrar la tarjeta.
+	 * Obtiene  el nï¿½mero de lugares que puede registrar la tarjeta.
 	 * @return the noOfCardPlaceRecords
 	 */
 	public int getNoOfCardPlaceRecords() {
@@ -96,7 +97,7 @@ public class CardPlaceDailyWorkPeriod extends CardBlockDriver implements
 	}
 
 	/**
-	 * Asigna  el número de lugares que puede registrar la tarjeta.
+	 * Asigna  el nï¿½mero de lugares que puede registrar la tarjeta.
 	 * @param noOfCardPlaceRecords the noOfCardPlaceRecords to set
 	 */
 	public void setNoOfCardPlaceRecords(int noOfCardPlaceRecords) {
@@ -104,7 +105,7 @@ public class CardPlaceDailyWorkPeriod extends CardBlockDriver implements
 	}
 
 	/**
-	 * Obtiene el conjunto de registros que contiene la información relativa a los lugares introducidos.
+	 * Obtiene el conjunto de registros que contiene la informaciï¿½n relativa a los lugares introducidos.
 	 * @param placeRecords the placeRecords to set
 	 */
 	public void setPlaceRecords(ArrayList<PlaceRecord> placeRecords) {
@@ -112,7 +113,7 @@ public class CardPlaceDailyWorkPeriod extends CardBlockDriver implements
 	}
 
 	/**
-	 * Asigna el conjunto de registros que contiene la información relativa a los lugares introducidos.
+	 * Asigna el conjunto de registros que contiene la informaciï¿½n relativa a los lugares introducidos.
 	 * @return the placeRecords
 	 */
 	public ArrayList<PlaceRecord> getPlaceRecords() {

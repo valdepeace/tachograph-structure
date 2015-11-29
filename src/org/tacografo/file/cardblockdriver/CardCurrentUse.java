@@ -6,6 +6,7 @@ package org.tacografo.file.cardblockdriver;
 import java.util.Arrays;
 import java.util.Date;
 
+import org.tacografo.file.Block;
 import org.tacografo.file.cardblockdriver.subblock.VehicleRegistrationIdentification;
 import org.tacografo.tiposdatos.RealTime;
 
@@ -13,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 /**
  * 2.12. CardCurrentUse
- * Información acerca del uso actual de la tarjeta (requisito 212).
+ * Informaciï¿½n acerca del uso actual de la tarjeta (requisito 212).
  * CardCurrentUse ::= SEQUENCE {
  * sessionOpenTime TimeReal,
  * sessionOpenVehicle VehicleRegistrationIdentification
@@ -22,14 +23,14 @@ import com.fasterxml.jackson.annotation.JsonFormat;
  * sessionOpenTime es la hora en que se inserta la tarjeta para el uso actual. Este elemento se pone a cero al extraer la
  * tarjeta.
  * 
- * sessionOpenVehicle es la identificación del vehículo que se está utilizando actualmente. Este elemento se configura al
+ * sessionOpenVehicle es la identificaciï¿½n del vehï¿½culo que se estï¿½ utilizando actualmente. Este elemento se configura al
  * insertar la tarjeta y se pone a cero al extraer la tarjeta.
  * 
- * @author Andrés Carmona Gil
+ * @author Andrï¿½s Carmona Gil
  * @version 0.0.1
  *
  */
-public class CardCurrentUse extends CardBlockDriver implements CardBlock {
+public class CardCurrentUse extends Block implements CardBlock {
 	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm:ss", timezone="GMT")
 	private Date sessionOpenTime; 
 	private VehicleRegistrationIdentification sessionOpenVehicle;
@@ -62,7 +63,7 @@ public class CardCurrentUse extends CardBlockDriver implements CardBlock {
 	}
 
 	/**
-	 * Obtenemos  la identificación del vehículo que se está utilizando actualmente
+	 * Obtenemos  la identificaciï¿½n del vehï¿½culo que se estï¿½ utilizando actualmente
 	 * @return the sessionOpenVehicle
 	 */
 	public VehicleRegistrationIdentification getSessionOpenVehicle() {
@@ -70,7 +71,7 @@ public class CardCurrentUse extends CardBlockDriver implements CardBlock {
 	}
 
 	/**
-	 * Asignamos  la identificación del vehículo que se está utilizando actualmente
+	 * Asignamos  la identificaciï¿½n del vehï¿½culo que se estï¿½ utilizando actualmente
 	 * @param sessionOpenVehicle the sessionOpenVehicle to set
 	 */
 	public void setSessionOpenVehicle(

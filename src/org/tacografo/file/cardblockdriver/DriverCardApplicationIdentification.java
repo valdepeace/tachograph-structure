@@ -5,6 +5,7 @@ package org.tacografo.file.cardblockdriver;
 
 import java.util.Arrays;
 
+import org.tacografo.file.Block;
 import org.tacografo.file.cardblockdriver.subblock.CardActivityLengthRange;
 import org.tacografo.file.cardblockdriver.subblock.CardStructureVersion;
 import org.tacografo.file.cardblockdriver.subblock.EquipmentType;
@@ -16,7 +17,7 @@ import org.tacografo.file.cardblockdriver.subblock.NoOfFaultsPerType;
 /**
  *	2.49. DriverCardApplicationIdentification
  *
- *	Información almacenada en una tarjeta de conductor y relativa a la identificación de la aplicación de la tarjeta (requisito
+ *	Informaciï¿½n almacenada en una tarjeta de conductor y relativa a la identificaciï¿½n de la aplicaciï¿½n de la tarjeta (requisito
  *	190).
  *
  *	DriverCardApplicationIdentification ::= SEQUENCE {
@@ -30,18 +31,18 @@ import org.tacografo.file.cardblockdriver.subblock.NoOfFaultsPerType;
  *	}
  *
  *	typeOfTachographCardId especifica el tipo de tarjeta utilizado(conductor,empresa,....).
- *	cardStructureVersion especifica la versión de la estructura que se utiliza en la tarjeta.
- *	noOfEventsPerType es el número de incidentes de cada tipo que puede registrar la tarjeta.
- *	noOfFaultsPerType es el número de fallos de cada tipo que puede registrar la tarjeta.
- *	activityStructureLength indica el número de bytes disponibles para almacenar registros de actividad.
- *	noOfCardVehicleRecords es el número de registros del vehículo que caben en la tarjeta.
- *	noOfCardPlaceRecords es el número de lugares que puede registrar la tarjeta.
+ *	cardStructureVersion especifica la versiï¿½n de la estructura que se utiliza en la tarjeta.
+ *	noOfEventsPerType es el nï¿½mero de incidentes de cada tipo que puede registrar la tarjeta.
+ *	noOfFaultsPerType es el nï¿½mero de fallos de cada tipo que puede registrar la tarjeta.
+ *	activityStructureLength indica el nï¿½mero de bytes disponibles para almacenar registros de actividad.
+ *	noOfCardVehicleRecords es el nï¿½mero de registros del vehï¿½culo que caben en la tarjeta.
+ *	noOfCardPlaceRecords es el nï¿½mero de lugares que puede registrar la tarjeta.
  * 	}
- * @author Andrés Carmona Gil
+ * @author Andrï¿½s Carmona Gil
  * @version 0.0.1
  *
  */
-public class DriverCardApplicationIdentification extends CardBlockDriver
+public class DriverCardApplicationIdentification extends Block
 		implements CardBlock {
 	
 	private EquipmentType typeOfTachographCardId ;
@@ -96,56 +97,56 @@ public class DriverCardApplicationIdentification extends CardBlockDriver
 		this.typeOfTachographCardId = typeOfTachographCardId;
 	}
 	/**
-	 * Obtiene la versión de la estructura que se utiliza en la tarjeta.
+	 * Obtiene la versiï¿½n de la estructura que se utiliza en la tarjeta.
 	 * @return the cardStructureVersion
 	 */
 	public CardStructureVersion getCardStructureVersion() {
 		return cardStructureVersion;
 	}
 	/**
-	 * Asigna la versión de la estructura que se utiliza en la tarjeta.
+	 * Asigna la versiï¿½n de la estructura que se utiliza en la tarjeta.
 	 * @param cardStructureVersion the cardStructureVersion to set
 	 */
 	public void setCardStructureVersion(CardStructureVersion cardStructureVersion) {
 		this.cardStructureVersion = cardStructureVersion;
 	}
 	/**
-	 * Obtiene el número de incidentes de cada tipo que puede registrar la tarjeta.
+	 * Obtiene el nï¿½mero de incidentes de cada tipo que puede registrar la tarjeta.
 	 * @return the noOfEventsPerType
 	 */
 	public NoOfEventsPerType getNoOfEventsPerType() {
 		return noOfEventsPerType;
 	}
 	/**
-	 * Asigna el número de incidentes de cada tipo que puede registrar la tarjeta.
+	 * Asigna el nï¿½mero de incidentes de cada tipo que puede registrar la tarjeta.
 	 * @param noOfEventsPerType the noOfEventsPerType to set
 	 */
 	public void setNoOfEventsPerType(NoOfEventsPerType noOfEventsPerType) {
 		this.noOfEventsPerType = noOfEventsPerType;
 	}
 	/**
-	 * Obtiene el número de fallos de cada tipo que puede registrar la tarjeta.
+	 * Obtiene el nï¿½mero de fallos de cada tipo que puede registrar la tarjeta.
 	 * @return the noOfFaultsPerType
 	 */
 	public NoOfFaultsPerType getNoOfFaultsPerType() {
 		return noOfFaultsPerType;
 	}
 	/**
-	 * Asigna el número de fallos de cada tipo que puede registrar la tarjeta.
+	 * Asigna el nï¿½mero de fallos de cada tipo que puede registrar la tarjeta.
 	 * @param noOfFaultsPerType the noOfFaultsPerType to set
 	 */
 	public void setNoOfFaultsPerType(NoOfFaultsPerType noOfFaultsPerType) {
 		this.noOfFaultsPerType = noOfFaultsPerType;
 	}
 	/**
-	 * Obtiene indica el número de bytes disponibles para almacenar registros de actividad.
+	 * Obtiene indica el nï¿½mero de bytes disponibles para almacenar registros de actividad.
 	 * @return the activityStructureLength
 	 */
 	public CardActivityLengthRange getActivityStructureLength() {
 		return activityStructureLength;
 	}
 	/**
-	 * Asigna indica el número de bytes disponibles para almacenar registros de actividad.
+	 * Asigna indica el nï¿½mero de bytes disponibles para almacenar registros de actividad.
 	 * @param activityStructureLength the activityStructureLength to set
 	 */
 	public void setActivityStructureLength(
@@ -153,14 +154,14 @@ public class DriverCardApplicationIdentification extends CardBlockDriver
 		this.activityStructureLength = activityStructureLength;
 	}
 	/**
-	 * Obtiene es el número de registros del vehículo que caben en la tarjeta.
+	 * Obtiene es el nï¿½mero de registros del vehï¿½culo que caben en la tarjeta.
 	 * @return the noOfCardVehicleRecords
 	 */
 	public NoOfCardVehicleRecords getNoOfCardVehicleRecords() {
 		return noOfCardVehicleRecords;
 	}
 	/**
-	 * Asigna es el número de registros del vehículo que caben en la tarjeta.
+	 * Asigna es el nï¿½mero de registros del vehï¿½culo que caben en la tarjeta.
 	 * @param noOfCardVehicleRecords the noOfCardVehicleRecords to set
 	 */
 	public void setNoOfCardVehicleRecords(
@@ -168,14 +169,14 @@ public class DriverCardApplicationIdentification extends CardBlockDriver
 		this.noOfCardVehicleRecords = noOfCardVehicleRecords;
 	}
 	/**
-	 * Obtiene el número de lugares que puede registrar la tarjeta.
+	 * Obtiene el nï¿½mero de lugares que puede registrar la tarjeta.
 	 * @return the noOfCardPlaceRecords
 	 */
 	public NoOfCardPlaceRecords getNoOfCardPlaceRecords() {
 		return noOfCardPlaceRecords;
 	}
 	/**
-	 * Asigna el número de lugares que puede registrar la tarjeta.
+	 * Asigna el nï¿½mero de lugares que puede registrar la tarjeta.
 	 * @param noOfCardPlaceRecords the noOfCardPlaceRecords to set
 	 */
 	public void setNoOfCardPlaceRecords(NoOfCardPlaceRecords noOfCardPlaceRecords) {
