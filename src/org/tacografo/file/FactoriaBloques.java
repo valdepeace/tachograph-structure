@@ -133,13 +133,11 @@ public class FactoriaBloques {
 				break;
 			case 0x7603:
 				block=new EventsFaults(datos);
-				block.setTRED(Trep.VU_EVENT_FAULT.toString());				
-				System.out.println("Incidentes y fallos");
+				block.setTRED(Trep.VU_EVENT_FAULT.toString());								
 				break;
 			case 0x7604:
 				block=new Speed(datos);
-				block.setTRED(Trep.VU_SPEED.toString());
-				System.out.println("Datos pormenorizados de la velocidad");
+				block.setTRED(Trep.VU_SPEED.toString());				
 				break;
 			case 0x7605:
 				block=new Technical(datos);

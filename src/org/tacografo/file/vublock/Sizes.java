@@ -69,7 +69,7 @@ public enum Sizes {
 			NOOFACTIVITYCHANGES(2),				//durante el dia cuyos datos se transfieren
 			ACTIVITYCHANGEINFO(2),
 		VUPLACEDAILYWORKPERIODDATA(29),			//Datos relativos a lugares y registros durante el dia cuyos datos se
-			NOOFPLACERECORDS(2),				//transfieren. Si la seccion esta vacia tan solo se envia noOfPlaceRecords=0
+			NOOFPLACERECORDS(1),				//transfieren. Si la seccion esta vacia tan solo se envia noOfPlaceRecords=0
 			VUPLACEDAILYWORKPERIODRECORD(28),
 				FULLCARDNUMBER_TREP2(18),
 				PLACERECORD(10),

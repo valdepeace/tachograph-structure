@@ -76,23 +76,23 @@ public class VuBlockFile {
 			if(datos[start]==0x76){
 				
 				
-					//start+=1;					
+					start+=1;					
 				
-					//if(datos[start]>0x00 && datos[start]<0x06){						
+					if(datos[start]>0x00 && datos[start]<0x06){						
 						
 						//int word = Number.getNumber(Arrays.copyOfRange(datos, start-1, start+1));
 				
-					    int word = Number.getNumber(Arrays.copyOfRange(datos, start, start+2));
+					    int word = Number.getNumber(Arrays.copyOfRange(datos, start-1, start+1));
 					    
 						String str=Integer.toHexString(word);
-						Block b=(Block) FactoriaBloques.getFactoria(word, Arrays.copyOfRange(datos, start+2, datos.length));
+						Block b=(Block) FactoriaBloques.getFactoria(word, Arrays.copyOfRange(datos, start+1, datos.length));
 						if(b.getTRED()==Trep.VU_ACTIVITY.toString()){
 							listActivity.add((Activity)b);
 						}else{
 							this.listBlock.put(b.getTRED(), b);
 						}
 						start+=b.getSize();			
-					//}
+					}
 							
 					 
 					

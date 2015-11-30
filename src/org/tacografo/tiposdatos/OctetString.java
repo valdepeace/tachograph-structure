@@ -53,7 +53,9 @@ public class OctetString {
 	 */
 	public OctetString(byte[] datos, short codePage) {
 		if (codePage>0 && codePage<16){
-			
+			if (codePage==12){
+				codePage=1;
+			}
 			Charset cs=Charset.forName("ISO-8859-"+codePage);
 			String so=new String(datos,cs);
 			this.octetString=so.toString();

@@ -55,13 +55,13 @@ public class VuFaultRecord {
 		start+=Sizes.FAULTTYPE.getSize();
 		this.faultRecordPurpose=EventFaultRecordPurpose.getEventFaultRecordPurpose(bytes[start]);
 		start+=Sizes.FAULTRECORDPURPOSE.getSize();
-		this.faultBeginTime=RealTime.getRealTime(Arrays.copyOfRange(bytes, start, Sizes.FAULTBEGINTIME.getSize()));
-		this.faultEndTime=RealTime.getRealTime(Arrays.copyOfRange(bytes, start, Sizes.FAULTENDTIME.getSize()));
+		this.faultBeginTime=RealTime.getRealTime(Arrays.copyOfRange(bytes, start, start+=Sizes.FAULTBEGINTIME.getSize()));
+		this.faultEndTime=RealTime.getRealTime(Arrays.copyOfRange(bytes, start, start+=Sizes.FAULTENDTIME.getSize()));
 		FullCardNumber fcn;
-		this.cardNumberDriverSlotBegin=new FullCardNumber(Arrays.copyOfRange(bytes, start, Sizes.CARDNUMBERDRIVERSLOTBEGIN_FAULT.getSize()));
-		this.cardNumberCoDriverSlotBegin=new FullCardNumber(Arrays.copyOfRange(bytes, start, Sizes.CARDNUMBERCODRIVERSLOTBEGIN_FAULT.getSize()));
-		this.cardNumberDriverSlotEnd=new FullCardNumber(Arrays.copyOfRange(bytes, start, Sizes.CARDNUMBERDRIVERSLOTEND_FAULT.getSize()));
-		this.cardNumberCoDriverSlotEnd=new FullCardNumber(Arrays.copyOfRange(bytes, start, Sizes.CARDNUMBERCODRIVERSLOTEND_FAULT.getSize()));
+		this.cardNumberDriverSlotBegin=new FullCardNumber(Arrays.copyOfRange(bytes, start, start+=Sizes.CARDNUMBERDRIVERSLOTBEGIN_FAULT.getSize()));
+		this.cardNumberCoDriverSlotBegin=new FullCardNumber(Arrays.copyOfRange(bytes, start, start+=Sizes.CARDNUMBERCODRIVERSLOTBEGIN_FAULT.getSize()));
+		this.cardNumberDriverSlotEnd=new FullCardNumber(Arrays.copyOfRange(bytes, start, start+=Sizes.CARDNUMBERDRIVERSLOTEND_FAULT.getSize()));
+		this.cardNumberCoDriverSlotEnd=new FullCardNumber(Arrays.copyOfRange(bytes, start, start+=Sizes.CARDNUMBERCODRIVERSLOTEND_FAULT.getSize()));
 	}
 
 

@@ -94,37 +94,26 @@ public class Activity extends Block{
 	public Activity(byte[] bytes) throws Exception{
 		int start=0;
 		this.timeReal=RealTime.getRealTime(Arrays.copyOfRange(bytes, start, start+=Sizes.TIMEREAL.getSize()));
-		//System.out.println(this.timeReal);
 		
 		this.OdometerValueMidnight=Number.getInteger_24(Arrays.copyOfRange(bytes, start, start+=Sizes.ODOMETERVALUEMINDNIGHT.getSize()));
-		//System.out.println(this.OdometerValueMidnight);
 				
 		this.noOfIWRecords=Number.getShort_16(Arrays.copyOfRange(bytes, start, start+=Sizes.NOOFVUCARDIWRECORDS.getSize()));
 		this.vuCardIWData = new ArrayList();
 		this.getListvuCardIWData(Arrays.copyOfRange(bytes, start, start+=Sizes.VUCARDIWRECORD.getSize()*this.noOfIWRecords));
-		//System.out.println(this.noOfIWRecords);
-		//System.out.println(this.vuCardIWData.toString());
-		
 		
 		this.noOfActivityChanges=Number.getShort_16(Arrays.copyOfRange(bytes, start, start+=Sizes.NOOFACTIVITYCHANGES.getSize()));
 		this.vuActivityDailyData = new ArrayList();
-		//System.out.println("start "+start);
-		this.getListVuActivityDailyData(Arrays.copyOfRange(bytes, start, start+=Sizes.ACTIVITYCHANGEINFO.getSize()*this.noOfActivityChanges-1));
-		//System.out.println(this.vuActivityDailyData.toString());
-		//System.out.println(this.noOfActivityChanges);
-		//System.out.println("start "+start);
-		
-		//System.out.println("byte 1:"+Integer.toBinaryString(bytes[start])+" byte 2: "+Integer.toBinaryString(bytes[start+1]));
-		this.noOfPlaceRecords=Number.getShort_16(Arrays.copyOfRange(bytes, start, start+=Sizes.NOOFPLACERECORDS.getSize()));
-		//System.out.println(this.noOfPlaceRecords);
+		this.getListVuActivityDailyData(Arrays.copyOfRange(bytes, start, start+=Sizes.ACTIVITYCHANGEINFO.getSize()*this.noOfActivityChanges));
+	
+		this.noOfPlaceRecords=Number.getNumber(Arrays.copyOfRange(bytes, start, start+=Sizes.NOOFPLACERECORDS.getSize()));
 		this.vuPlaceDailyWorkPeriodData = new ArrayList();
 		this.getListVuPlaceDailyWorkPeriodData(Arrays.copyOfRange(bytes, start, start+=Sizes.VUPLACEDAILYWORKPERIODRECORD.getSize()*this.noOfPlaceRecords));
-		//System.out.println(this.vuPlaceDailyWorkPeriodData.toString());
+		
 		
 		this.noOfSpecificConditionRecords=Number.getShort_16(Arrays.copyOfRange(bytes, start, start+=Sizes.NOOFSPECIFICCONDITIONSRECORDS.getSize()));
 		this.vuSpecificConditionData = new ArrayList();
 		this.getListVuSpecificConditionData(Arrays.copyOfRange(bytes, start, start+=Sizes.SPECIFICCONDITIONRECORD.getSize()*this.noOfSpecificConditionRecords));
-		//System.out.println(this.vuSpecificConditionData);
+	
 		
 		this.signature=OctetString.getHexString(Arrays.copyOfRange(bytes, start, start+=Sizes.SIGNATURE_TREP2.getSize()));
 		this.size=start;

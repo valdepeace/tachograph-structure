@@ -169,20 +169,18 @@ public class Resumen extends Block{
 		VuControlActivityRecord vcar=null;
 		int end=bytes.length/Sizes.VUCONTROLACTIVITYRECORD.getSize();
 		int start=0;
-				for (int i=0; i<end;i++){
-					vcar=new VuControlActivityRecord(Arrays.copyOfRange(bytes, start, start+=Sizes.VUCOMPANYLOCKSRECORD.getSize()));
+				for (int i=0; i<this.noOfControls;i++){
+					vcar=new VuControlActivityRecord(Arrays.copyOfRange(bytes, start, start+=Sizes.VUCONTROLACTIVITYRECORD.getSize()));
 					this.vuControlActivityRecord.add(vcar);
 				}
 		
 	}
 
 	private void getListVuCompanyLocksRecords(byte[] bytes) throws UnsupportedEncodingException {
-		
-		
-		VuCompanyLocksRecord vclr=null;
-		int end=bytes.length/Sizes.VUCOMPANYLOCKSRECORD.getSize();
+				
+		VuCompanyLocksRecord vclr=null;		
 		int start=0;
-		for(int i=0; i<end;i++){
+		for(int i=0; i<this.noOfControls; i++){
 			vclr=new VuCompanyLocksRecord(Arrays.copyOfRange(bytes, start, start+=Sizes.VUCOMPANYLOCKSRECORD.getSize()));
 			this.vuCompanyLocksRecords.add(vclr);
 		}
