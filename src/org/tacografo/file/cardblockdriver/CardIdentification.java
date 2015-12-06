@@ -199,6 +199,20 @@ public class CardIdentification extends Block implements CardBlock{
 		this.cardExpiryDate = cardExpiryDate;
 	}
 
+	/**
+	 * @return the driverCardHolderIdentification
+	 */
+	public DriverCardHolderIdentification getDriverCardHolderIdentification() {
+		return driverCardHolderIdentification;
+	}
+
+	/**
+	 * @param driverCardHolderIdentification the driverCardHolderIdentification to set
+	 */
+	public void setDriverCardHolderIdentification(DriverCardHolderIdentification driverCardHolderIdentification) {
+		this.driverCardHolderIdentification = driverCardHolderIdentification;
+	}
+
 	
 	
 	

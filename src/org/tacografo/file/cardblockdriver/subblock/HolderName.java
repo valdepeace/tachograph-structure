@@ -81,5 +81,13 @@ public class HolderName {
 	public void setHolderFirstNames(String holderFirstNames) {
 		this.holderFirstNames = holderFirstNames;
 	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "HolderName [holderSurname=" + holderSurname + ", holderFirstNames=" + holderFirstNames + "]";
+	}
+	
 	
 }

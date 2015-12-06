@@ -58,7 +58,7 @@ public class VuBlockFile {
 	private HashMap<String,Block> listBlock;
 	
 	private Resumen resumen=null; // VU_RESUMEN(0X7601),
-	private ListActivity activity=null; //VU_ACTIVITY(0X7602),
+	private ListActivity listActivity=null; //VU_ACTIVITY(0X7602),
 	private EventsFaults eventFault=null; //VU_EVENT_FAULT(0X7603),
 	private Speed speed=null; //VU_SPEED(0X7604),
 	private Technical technical=null; //VU_TECHNICAL(0X7605);
@@ -110,7 +110,7 @@ public class VuBlockFile {
 	private void setTrep(){
 		
 		this.resumen=(Resumen)this.listBlock.get(Trep.VU_RESUMEN.toString());
-		this.activity=(ListActivity) this.listBlock.get(Trep.VU_ACTIVITY.toString());
+		this.listActivity=(ListActivity) this.listBlock.get(Trep.VU_ACTIVITY.toString());
 		this.eventFault=(EventsFaults) this.listBlock.get(Trep.VU_EVENT_FAULT.toString());
 		this.speed=(Speed) this.listBlock.get(Trep.VU_SPEED.toString());
 		this.technical=(Technical) this.listBlock.get(Trep.VU_TECHNICAL.toString());
@@ -143,13 +143,13 @@ public class VuBlockFile {
 	 * @return the activity
 	 */
 	public ListActivity getActivity() {
-		return activity;
+		return listActivity;
 	}
 	/**
 	 * @param activity the activity to set
 	 */
 	public void setActivity(ListActivity activity) {
-		this.activity = activity;
+		this.listActivity = activity;
 	}
 	/**
 	 * @return the eventFault
@@ -192,7 +192,7 @@ public class VuBlockFile {
 	 */
 	@Override
 	public String toString() {
-		return "VuBlockFile [listBlock=" + listBlock + ", resumen=" + resumen + ", activity=" + activity
+		return "VuBlockFile [listBlock=" + listBlock + ", resumen=" + resumen + ", activity=" + listActivity
 				+ ", eventFault=" + eventFault + ", speed=" + speed + ", technical=" + technical + "]";
 	}
 	

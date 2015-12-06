@@ -8,7 +8,7 @@ import org.tacografo.tiposdatos.Datef;
 
 /**
  * 2.50. DriverCardHolderIdentification
- * Información almacenada en una tarjeta de conductor y relativa a la identificación del titular de dicha tarjeta (requisito
+ * Informaciï¿½n almacenada en una tarjeta de conductor y relativa a la identificaciï¿½n del titular de dicha tarjeta (requisito
  * 195).
  * DriverCardHolderIdentification ::= SEQUENCE {
  * cardHolderName HolderName,
@@ -99,12 +99,13 @@ public class DriverCardHolderIdentification {
 		this.cardHolderPreferredLanguage = cardHolderPreferredLanguage;
 	}
 
-	public String toString(){
-		String cadena="";
-		cadena="\n"+this.cardHolderName+
-				"\n"+this.cardHolderBirthDate+
-				"\nlenguaje preferido: "+this.cardHolderPreferredLanguage;
-		return cadena;
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "DriverCardHolderIdentification [cardHolderName=" + cardHolderName + ", cardHolderBirthDate="
+				+ cardHolderBirthDate + ", cardHolderPreferredLanguage=" + cardHolderPreferredLanguage + "]";
 	}
 
 

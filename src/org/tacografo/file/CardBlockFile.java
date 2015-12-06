@@ -452,22 +452,7 @@ public class CardBlockFile {
 		this.specific_conditions = specific_conditions;
 	}
 
-	/**
-	 * Devuelve la lista_bloque <fid, cardblock>
-	 * @return the lista_bloque
-	 */
-	public HashMap<String, Block> getLista_bloque() {
-		return listBlock;
-	}
-
-	/**
-	 * Asigna lista_bloque <fid,cardblock>
-	 * @param lista_bloque
-	 *            the lista_bloque to set
-	 */
-	public void setLista_bloque(HashMap<String, Block> lista_bloque) {
-		this.listBlock = lista_bloque;
-	}
+	
 
 	
 
