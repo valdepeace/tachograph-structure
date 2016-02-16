@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.thingtrack.parse.Tacho;
 
 
 /**
@@ -39,7 +40,9 @@ property="type")
 @Type(value= CardPlaceDailyWorkPeriod.class, name="places"),
 @Type(value= CardCurrentUse.class, name="current_usage"),
 @Type(value= CardControlActivityDataRecord.class, name="control_activity_data"),
-@Type(value= SpecificConditionRecord.class, name="specific_conditions")
+@Type(value= SpecificConditionRecord.class, name="specific_conditions"),
+@Type(value= Tacho.class, name="tacho")
+
 })
 
 public abstract class CardBlockDriver {
@@ -67,8 +70,6 @@ public abstract class CardBlockDriver {
 	public void setFID(String fID) {
 		FID = fID;
 	}
-
-
 
 	/**
 	 * Tama�o de cada bloque y sus propiedades segun definido en REGLAMENTO (CE) No 1360/2002 DE LA COMISI�N

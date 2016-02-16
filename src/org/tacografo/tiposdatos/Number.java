@@ -44,16 +44,18 @@ public class Number {
 	 */
 	public static int getShort_16(byte[] bytes){
 		int num = 0;
-		short i=(short) ((bytes[0]<< 8)&0xff00|
+		int i= ((bytes[0]<< 8)&0xff00|
 			       (bytes[1]<< 0)&0x00ff);
 		
+		/* java version 1.8 
 			if(i<0){
 				num=Short.toUnsignedInt(i);				
 			}else{
 				num=i;
-			}						
-		return num;
-		
+			}
+	   */				
+		return i;
+	
 		//return i;
 	}
 	/**

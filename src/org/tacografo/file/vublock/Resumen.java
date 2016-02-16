@@ -155,7 +155,7 @@ public class Resumen extends Block{
 		}
 		 this.noOfControls=Number.getShort_8(Arrays.copyOfRange(bytes, start, start+=Sizes.NOOFCONTROLS.getSize()));
 		 if(this.noOfControls>0){
-			 this.vuControlActivityRecord=new ArrayList<>();
+			 this.vuControlActivityRecord=new ArrayList();
 			 this.getListVuControlActivityRecord(Arrays.copyOfRange(bytes, start, start+=Sizes.VUCONTROLACTIVITYRECORD.getSize()*this.noOfControls));
 		 }else{
 			 this.vuControlActivityRecord=null;

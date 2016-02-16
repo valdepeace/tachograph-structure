@@ -3,6 +3,9 @@
  */
 package org.tacografo.file.cardblockdriver.subblock;
 
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * 
  * 2.1.   ActivityChangeInfo
@@ -71,6 +74,8 @@ package org.tacografo.file.cardblockdriver.subblock;
 public class ActivityChangeInfo {
 	
 	private String s,c,p,aa,t;
+	private int hours;
+	private int min;
 	
 	public ActivityChangeInfo() {}
 
@@ -116,6 +121,9 @@ public class ActivityChangeInfo {
 		}else{
 			min=t;
 		}
+		
+		this.hours=hora;
+		this.min=min;
 		this.t=String.valueOf(hora)+":"+String.valueOf(min);
 		
 	}
@@ -251,6 +259,34 @@ public class ActivityChangeInfo {
 	}
 
 
+
+	/**
+	 * @return the hours
+	 */
+	public int getHours() {
+		return hours;
+	}
+
+	/**
+	 * @param hours the hours to set
+	 */
+	public void setHours(int hours) {
+		this.hours = hours;
+	}
+
+	/**
+	 * @return the min
+	 */
+	public int getMin() {
+		return min;
+	}
+
+	/**
+	 * @param min the min to set
+	 */
+	public void setMin(int min) {
+		this.min = min;
+	}
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()

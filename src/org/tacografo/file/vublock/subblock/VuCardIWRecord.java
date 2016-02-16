@@ -5,9 +5,12 @@ package org.tacografo.file.vublock.subblock;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
 
+import org.tacografo.file.cardblockdriver.subblock.ActivityChangeInfo;
 import org.tacografo.file.cardblockdriver.subblock.FullCardNumber;
 import org.tacografo.file.cardblockdriver.subblock.HolderName;
 import org.tacografo.file.vublock.Sizes;
@@ -61,6 +64,9 @@ public class VuCardIWRecord {
 	private int vehicleOdometerValueAtWithdrawal;
 	private PreviousVehicleInfo previousVehicleInfo;
 	private String manualInputFlag;
+	private ArrayList<com.thingtrack.parse.ActivityChangeInfo> actvityChangeInfo;
+	private ArrayList<com.thingtrack.parse.Places> places;
+	 private HashMap<String,ArrayList> activityDriver;
 	
 	public VuCardIWRecord(byte[] bytes) throws UnsupportedEncodingException {
 		int start=0;		
@@ -77,6 +83,8 @@ public class VuCardIWRecord {
 		this.previousVehicleInfo=new PreviousVehicleInfo(Arrays.copyOfRange(bytes, start, start+=Sizes.PREVIOUSVEHICLEINFO.getSize()));
 		n=Number.getShort_8(Arrays.copyOfRange(bytes, start, start+=Sizes.MANUALINPUTFLAG.getSize()));
 		if(n==0){this.manualInputFlag="noEntry (0)";}else{this.manualInputFlag="manualEntries (1)";};
+		this.actvityChangeInfo=new ArrayList<com.thingtrack.parse.ActivityChangeInfo>();
+		this.places=new ArrayList<com.thingtrack.parse.Places>();
 		
 	}
 
@@ -218,6 +226,34 @@ public class VuCardIWRecord {
 	 */
 	public void setManualInputFlag(String manualInputFlag) {
 		this.manualInputFlag = manualInputFlag;
+	}
+
+	/**
+	 * @return the actvityChangeInfo
+	 */
+	public ArrayList<com.thingtrack.parse.ActivityChangeInfo> getActvityChangeInfo() {
+		return actvityChangeInfo;
+	}
+
+	/**
+	 * @param actvityChangeInfo the actvityChangeInfo to set
+	 */
+	public void setActvityChangeInfo(ArrayList<com.thingtrack.parse.ActivityChangeInfo> actvityChangeInfo) {
+		this.actvityChangeInfo = actvityChangeInfo;
+	}
+
+	/**
+	 * @return the places
+	 */
+	public ArrayList<com.thingtrack.parse.Places> getPlaces() {
+		return places;
+	}
+
+	/**
+	 * @param places the places to set
+	 */
+	public void setPlaces(ArrayList<com.thingtrack.parse.Places> places) {
+		this.places = places;
 	}
 
 	/* (non-Javadoc)

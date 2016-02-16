@@ -3,16 +3,10 @@
  */
 package org.tacografo.file;
 
-import java.io.DataInputStream;
-import java.io.EOFException;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.*;
 
-import org.tacografo.file.cardblockdriver.CardBlock;
+import com.thingtrack.parse.*;
 import org.tacografo.file.cardblockdriver.CardCertificate;
 import org.tacografo.file.cardblockdriver.CardChipIdentification;
 import org.tacografo.file.cardblockdriver.CardControlActivityDataRecord;
@@ -30,7 +24,7 @@ import org.tacografo.file.cardblockdriver.Fid;
 import org.tacografo.file.cardblockdriver.LastCardDownload;
 import org.tacografo.file.cardblockdriver.MemberStateCertificate;
 import org.tacografo.file.cardblockdriver.SpecificConditionRecord;
-import org.tacografo.file.error.ErrorFile;
+import org.tacografo.file.cardblockdriver.subblock.CardVehicleRecord;
 import org.tacografo.tiposdatos.Number;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -64,7 +58,7 @@ public class CardBlockFile {
 	private CardCertificate card_certificate = null;
 	@JsonIgnore
 	private MemberStateCertificate ca_certificate = null;
-	@JsonIgnore
+	
 	private CardIdentification identification = null;
 	@JsonIgnore
 	private LastCardDownload card_download = null;
@@ -86,14 +80,59 @@ public class CardBlockFile {
 	private CardControlActivityDataRecord control_activity_data = null;
 	@JsonIgnore
 	private SpecificConditionRecord specific_conditions = null;
-	
+
+	private Tacho tachos;
+
+	private HashMap<String,Vehicle> vehicles;
+
+	private HashMap<String,Driver> drivers;
+	private String organizationId=null;
+	/**
+	 * @return the vehicles
+	 */
+	public HashMap<String, Vehicle> getVehicles() {
+		return vehicles;
+	}
+
+
+
+	/**
+	 * @param vehicles the vehicles to set
+	 */
+	public void setVehicles(HashMap<String, Vehicle> vehicles) {
+		this.vehicles = vehicles;
+	}
+
+
+
+	/**
+	 * @return the drivers
+	 */
+	public HashMap<String, Driver> getDrivers() {
+		return drivers;
+	}
+
+
+
+	/**
+	 * @param drivers the drivers to set
+	 */
+	public void setDrivers(HashMap<String, Driver> drivers) {
+		this.drivers = drivers;
+	}
+
+
+
 	private boolean sid=false;
 	
 	/**
 	 * Listado de <key,value> donde key=fid, value=cardBlock
 	 */
+	@JsonIgnore
 	private HashMap<String, Block> listBlock;
-
+	
+	
+	
 	public CardBlockFile() {
 
 	}
@@ -112,8 +151,7 @@ public class CardBlockFile {
 		try {
 			int start=0;
 			while( start < bytes.length){
-				int fid = Number.getNumber(Arrays.copyOfRange(bytes, start, start += 2));				
-				System.out.println(Integer.toHexString(fid));
+				int fid = Number.getNumber(Arrays.copyOfRange(bytes, start, start += 2));								
 				if(this.existe_Fid(fid)){
 					byte tipo = bytes[start];
 					start += 1;
@@ -138,9 +176,133 @@ public class CardBlockFile {
 			System.out.println(e.getMessage());
 		}
 		
-		this.asignarBloques();	
+		this.asignarBloques();
+		this.tacho();
+		
 		
 	}
+	public CardBlockFile(byte[] bytes,String organizationId,String namefile) throws Exception {
+		this.nameFile=namefile;
+		this.organizationId=organizationId;
+		HashMap<String, Block> lista = new HashMap();
+		this.listBlock=new HashMap();
+		try {
+			int start=0;
+			while( start < bytes.length){
+				int fid = Number.getNumber(Arrays.copyOfRange(bytes, start, start += 2));								
+				if(this.existe_Fid(fid)){
+					byte tipo = bytes[start];
+					start += 1;
+					Integer longitud = (int) Number.getNumber(Arrays.copyOfRange(bytes, start, start += 2));
+					byte[] datos = new byte[longitud];
+					datos = Arrays.copyOfRange(bytes, start, start += longitud);
+					// tipo de archivo 0 = bloque de dato -- 1 = certificado
+					if (tipo == 0) {
+						Block block = (Block) FactoriaBloques.getFactoria(fid, datos);
+						if (block != null) {
+							this.listBlock.put(block.getFID(), (Block) block);														
+						}
+					}
+				}else{
+					throw new Error("Block not found");
+				}
+				
+			}
+
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
+		
+		this.asignarBloques();
+		this.tacho();
+		
+		
+	}
+	private void tacho() {
+		Iterator it=this.vehicles_used.getCardVehicleRecords().iterator();
+		this.tachos=new Tacho();
+		this.vehicles=new HashMap<String, Vehicle>();
+		this.drivers=new HashMap<String, Driver>();
+		Driver d=new Driver(this.getIdentification());
+		this.drivers.put(d.getCardNumber().get(0).getNumber(),d);
+		Calendar c=Calendar.getInstance();
+		com.thingtrack.parse.Places place;
+		String date="";
+		ArrayList list;
+		VehicleChangeInfo vci;
+		Vehicle v;
+		while(it.hasNext()){
+			place=new com.thingtrack.parse.Places();
+			CardVehicleRecord cvr = (CardVehicleRecord) it.next();
+			v=new Vehicle(cvr);
+			if(!this.vehicles.containsKey(v.getRegistration())){
+				vehicles.put(v.getRegistration(),v);
+			}
+			c.setTime(cvr.getVehicleFirstUse());
+			com.thingtrack.parse.Activity a=this.driver_activity_data.getActivity().get(c.get(Calendar.YEAR)+"-"+c.get(Calendar.MONTH)+"-"+c.get(Calendar.DAY_OF_MONTH));
+			com.thingtrack.parse.Activity aVehicle=new com.thingtrack.parse.Activity();
+			vci=new VehicleChangeInfo(cvr);
+			if(a!=null){
+				aVehicle.setDate(a.getDate());
+				aVehicle.setCardNumber(this.identification.getCardNumber().getDriverIdentification()+this.identification.getCardNumber().getDrivercardRenewalIndex()+this.identification.getCardNumber().getDrivercardReplacementIndex());
+				aVehicle.setRegistration(cvr.getVehicleRegistration().getVehicleRegistrationNumber());
+				aVehicle.setDistance(cvr.getVehicleOdometerEnd()-cvr.getVehicleOdometerBegin());
+				//aVehicle.setVehicle(vci);
+				if(this.organizationId!=null){
+					aVehicle.getFiles().add(this.nameFile);
+					aVehicle.setOrganizationId(this.organizationId);
+				}
+				Iterator ite=a.getActivityChangeInfo().iterator();
+				c.setTime(cvr.getVehicleFirstUse());
+				date=c.get(Calendar.YEAR)+"-"+c.get(Calendar.MONTH)+"-"+c.get(Calendar.DAY_OF_MONTH);
+				list = this.places.getPlaces().get(date);
+				if (list!=null){
+					Iterator i_list = list.iterator();
+					while(i_list.hasNext()){
+						Places p=(com.thingtrack.parse.Places)i_list.next();
+						if(p.getFromDate()!=null && p.getToDate()!=null){
+							if(p.getFromDate().getTime()>=cvr.getVehicleFirstUse().getTime() &&
+									p.getToDate().getTime()<=cvr.getVehicleLastUse().getTime()){
+								aVehicle.getPlaces().add(p);
+							}
+						}else{
+							if(p.getFromDate()!=null){
+								if(p.getFromDate().getTime()>=cvr.getVehicleFirstUse().getTime()){
+									aVehicle.getPlaces().add(p);
+								}
+							}else{
+								if(p.getToDate()!=null){
+									if(p.getToDate().getTime()>=cvr.getVehicleLastUse().getTime()){
+										aVehicle.getPlaces().add(p);
+									}
+								}
+							}
+						}
+
+					}
+				}
+
+				while(ite.hasNext()){
+					com.thingtrack.parse.ActivityChangeInfo aci=(ActivityChangeInfo) ite.next();
+					if(aci.getFromTime().getTime()>=cvr.getVehicleFirstUse().getTime() && aci.getFromTime().getTime()<=cvr.getVehicleLastUse().getTime()) {
+						aVehicle.getActivityChangeInfo().add(aci);
+					}
+
+				}
+				this.tachos.getActivity().add(aVehicle);
+
+			}
+
+		}
+				
+		//this.tacho = new Tacho(this.driver_activity_data.getActivity(),this.places.getPlaces(),this.vehicles_used.getListVehicle());
+		//this.tacho.setTacho(this.driver_activity_data.getActivity(),this.places.getPlaces(),this.vehicles_used.getListVehicle());
+		//logica
+		
+	}
+
+
+
 	/**
 	 * Metodo encargado de asignar a cada propiedad que seran los diferentes bloques que 
 	 * componen la estructura de fichero de una tarjeta(por ahora sin uso tanto de las propiedades
@@ -184,6 +346,9 @@ public class CardBlockFile {
 				.get(Fid.EF_CONTROL_ACTIVITY_DATA.toString());
 		this.specific_conditions = (SpecificConditionRecord) this.listBlock
 				.get(Fid.EF_SPECIFIC_CONDITIONS.toString());
+		
+		
+		
 	}
 
 
@@ -207,6 +372,24 @@ public class CardBlockFile {
 		return ok;
 	}
 	
+
+	/**
+	 * @return the tacho
+	 */
+	public Tacho getTachos() {
+		return tachos;
+	}
+
+
+
+	/**
+	 * @param tacho the tacho to set
+	 */
+	public void setTachos(Tacho tacho) {
+		this.tachos = tacho;
+	}
+
+
 
 	/**
 	 * @return the icc

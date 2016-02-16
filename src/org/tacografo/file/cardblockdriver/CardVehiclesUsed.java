@@ -10,6 +10,9 @@ import org.tacografo.file.Block;
 import org.tacografo.file.cardblockdriver.subblock.CardVehicleRecord;
 import org.tacografo.tiposdatos.Number;
 
+import com.thingtrack.parse.Vehicle;
+import com.thingtrack.parse.VehicleChangeInfo;
+
 /**
  * 2.31. CardVehiclesUsed
  * Informaci�n almacenada en una tarjeta de conductor o en una tarjeta del centro de ensayo y relativa a los veh�culos utilizados
@@ -34,6 +37,7 @@ public class CardVehiclesUsed extends Block implements CardBlock {
 	private ArrayList<CardVehicleRecord> cardVehicleRecords;
 	private int noOfCardVehicleRecords;
 	private byte[] datos;
+	private ArrayList<VehicleChangeInfo> listVehicle;
 	
 	
 	public CardVehiclesUsed() {}
@@ -49,6 +53,7 @@ public class CardVehiclesUsed extends Block implements CardBlock {
 		this.vehiclePointerNewestRecord=Number.getNumber(Arrays.copyOfRange(datos,start , start+=Sizes.VEHICLEPOINTERNEWESTRECORD.getMax()));
 		//this.vehiclePointerNewestRecord+=-1;		
 		this.cardVehicleRecords=new ArrayList<CardVehicleRecord>();
+		this.listVehicle=new ArrayList();
 		
 	}
 	
@@ -66,6 +71,7 @@ public class CardVehiclesUsed extends Block implements CardBlock {
 	private void setListaCardVehicleRecords(){
 		
 		CardVehicleRecord cvr;
+		VehicleChangeInfo v;
 		int start=2;
 		for (int i=0;i<this.vehiclePointerNewestRecord;i++){
 			if((start+Sizes.CARDVEHICLERECORD.getMax())>=this.datos.length){
@@ -73,11 +79,48 @@ public class CardVehiclesUsed extends Block implements CardBlock {
 			}else{
 				cvr=new CardVehicleRecord(Arrays.copyOfRange(this.datos, start, start+=Sizes.CARDVEHICLERECORD.getMax()));
 				this.cardVehicleRecords.add(cvr);
+				v=new VehicleChangeInfo(cvr);
+				this.listVehicle.add(v);
 			}
 			
 		}
 	}
 	
+	/**
+	 * @return the datos
+	 */
+	public byte[] getDatos() {
+		return datos;
+	}
+
+	/**
+	 * @param datos the datos to set
+	 */
+	public void setDatos(byte[] datos) {
+		this.datos = datos;
+	}
+
+	/**
+	 * @return the listVehicle
+	 */
+	public ArrayList<VehicleChangeInfo> getListVehicle() {
+		return listVehicle;
+	}
+
+	/**
+	 * @param listVehicle the listVehicle to set
+	 */
+	public void setListVehicle(ArrayList<VehicleChangeInfo> listVehicle) {
+		this.listVehicle = listVehicle;
+	}
+
+	/**
+	 * @param vehiclePointerNewestRecord the vehiclePointerNewestRecord to set
+	 */
+	public void setVehiclePointerNewestRecord(int vehiclePointerNewestRecord) {
+		this.vehiclePointerNewestRecord = vehiclePointerNewestRecord;
+	}
+
 	/**
 	 * Obtiene el n�mero de registros del veh�culo que caben en la tarjeta.
 	 * @return the noOfCardVehicleRecords

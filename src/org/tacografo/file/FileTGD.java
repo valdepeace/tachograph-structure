@@ -79,6 +79,20 @@ public class FileTGD {
 		}
 	
 	}
+	/**
+	 * Constructor que leera los bytes del fichero pasado como array de bytes para interpretar los
+	 * datos y asignarlo a los bloque correspondientes
+	 * @throws Exception 
+	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public FileTGD(byte[] bytes,String organizationId,String filename) throws Exception {				
+		if (bytes[0]==0x76){			
+			this.vuBlockFile=new VuBlockFile(bytes,organizationId,filename);
+		}else{
+			this.cardBlockFile=new CardBlockFile(bytes,organizationId,filename);
+		}
+	
+	}
 	
 	/**
 	 * Lectura de los bloques con formato :tag(fid)-longitud-value
@@ -162,7 +176,15 @@ public class FileTGD {
 		
 	}
 	
-	
+	public void setBuffer(byte[] bytes,String organizationId,String filename) throws Exception{
+		this.vuBlockFile=null;
+		this.cardBlockFile=null;
+		if (bytes[0]==0x76){			
+			this.vuBlockFile=new VuBlockFile(bytes,organizationId,filename);
+		}else{
+			this.cardBlockFile=new CardBlockFile(bytes,organizationId,filename);
+		}
+	}
 	
 	/**
 	 * @return the vuBlockFile

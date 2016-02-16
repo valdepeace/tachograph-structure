@@ -3,12 +3,14 @@
  */
 package org.tacografo.file.cardblockdriver;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 import org.tacografo.file.Block;
 import org.tacografo.file.cardblockdriver.subblock.CardActivityDailyRecord;
 import org.tacografo.tiposdatos.Number;
+
+import com.thingtrack.parse.Activity;
+import com.thingtrack.parse.Tacho;
 
 /**
  * 2.13. CardDriverActivity
@@ -53,6 +55,7 @@ public class CardDriverActivity extends Block implements CardBlock {
 	private Integer activityPointerOldestDayRecord;
 	private Integer activityPointerNewestRecord;
 	private ArrayList<CardActivityDailyRecord> activityDailyRecords;
+	private HashMap<String,com.thingtrack.parse.Activity> activity;
 	
 	/**
 	 * Constructor que asigna los bytes que le corresponda a cada propiedad y lo interpreta 
@@ -63,7 +66,6 @@ public class CardDriverActivity extends Block implements CardBlock {
 		
 		int start = 0; // indice del array de byte
 		byte[] arrayorigen;
-
 		this.activityPointerOldestDayRecord = (int) Number
 				.getShort_16(Arrays.copyOfRange(datos, start, start += Sizes.ACTIVITYPOINTEROLDESTADAYRECORD.getMax()));
 		this.activityPointerNewestRecord = (int) Number
@@ -94,6 +96,9 @@ public class CardDriverActivity extends Block implements CardBlock {
 		CardActivityDailyRecord cadr;
 		this.activityDailyRecords = new ArrayList<CardActivityDailyRecord>();
 		
+		Activity activity=new Activity();
+		this.activity=new HashMap();
+		Calendar c = Calendar.getInstance();
 		while (indice < arraybyte.length) {
 			length = Number.getShort_16(Arrays.copyOfRange(arraybyte, indice + Sizes.ACTIVITYRECORDLENGTH.getMax(),
 					indice + indice + Sizes.ACTIVITYRECORDLENGTH.getMax() + Sizes.ACTIVITYRECORDLENGTH.getMax()));
@@ -101,9 +106,33 @@ public class CardDriverActivity extends Block implements CardBlock {
 			byte[] arrayfrom = Arrays.copyOfRange(arraybyte, indice, indice += length);
 			cadr = new CardActivityDailyRecord(arrayfrom);
 			this.activityDailyRecords.add(cadr);
+			activity=new Activity(cadr);
+			c.setTime(activity.getDate());
+
+			this.activity.put(c.get(Calendar.YEAR)+"-"+c.get(Calendar.MONTH)+"-"+c.get(Calendar.DAY_OF_MONTH),activity);
 		}
 
 	}
+	
+	
+
+	/**
+	 * @return the activity
+	 */
+	public HashMap<String, Activity> getActivity() {
+		return activity;
+	}
+
+
+
+	/**
+	 * @param activity the activity to set
+	 */
+	public void setActivity(HashMap<String, Activity> activity) {
+		this.activity = activity;
+	}
+
+
 
 	/**
 	 * Obtenemos elemento que se�ala el comienzo del espacio de almacenamiento (n�mero de

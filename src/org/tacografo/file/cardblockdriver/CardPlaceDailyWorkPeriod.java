@@ -1,9 +1,9 @@
 package org.tacografo.file.cardblockdriver;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
+import com.thingtrack.parse.Places;
 import org.tacografo.file.Block;
 import org.tacografo.file.cardblockdriver.subblock.PlaceRecord;
 import org.tacografo.tiposdatos.Number;
@@ -32,7 +32,7 @@ public class CardPlaceDailyWorkPeriod extends Block implements
 	private ArrayList<PlaceRecord> placeRecords;
 	private byte[] datos;
 	private int noOfCardPlaceRecords;
-	
+	private HashMap<String , ArrayList> places;
 	
 	public CardPlaceDailyWorkPeriod() {	}
 	/**
@@ -45,6 +45,7 @@ public class CardPlaceDailyWorkPeriod extends Block implements
 		int start=0;
 		this.placePointerNewestRecord=(int) Number.getShort_8(Arrays.copyOfRange(datos, start, start+=Sizes.PLACEPOINTERNEWESTRECORD.getMax()));
 		this.placeRecords=new ArrayList<PlaceRecord>();
+		this.places = new HashMap<String, ArrayList>();
 		this.datos=datos;
 	}
 	
@@ -59,19 +60,65 @@ public class CardPlaceDailyWorkPeriod extends Block implements
 		// comenzaria en el byte 151.
 		int start=this.placePointerNewestRecord*Sizes.PLACERECORD.getMax()+10+1;
 		//int start=1;
-		
+		com.thingtrack.parse.Places p;
+		String date="";
+		Calendar c= Calendar.getInstance();
+		ArrayList<com.thingtrack.parse.Places> list;
 		for (int i=0;i<this.noOfCardPlaceRecords;i++){			
-			pr=new PlaceRecord(Arrays.copyOfRange(this.datos, start, start+=Sizes.PLACERECORD.getMax()));			
+			pr=new PlaceRecord(Arrays.copyOfRange(this.datos, start, start+=Sizes.PLACERECORD.getMax()));
+			p=new com.thingtrack.parse.Places(pr);
 			this.placeRecords.add(pr);
-			
+			c.setTime(pr.getEntryTime());
+			date=c.get(Calendar.YEAR)+"-"+c.get(Calendar.MONTH)+"-"+c.get(Calendar.DAY_OF_MONTH);
+			list=this.places.get(date);
+			if(list==null){
+				list=new ArrayList();
+				list.add(p);
+				this.places.put(date,list);
+			}else{
+				if (list.get(list.size()-1).getPlaceBegin()==null && list.get(list.size()-1).getPlaceBegin()==null){
+					this.places.get(date).add(p);
+				}else{
+					if(list.get(list.size()-1).getPlaceBegin()!=null && pr.getEntryTypeDailyWorkPeriod().substring(0,3).equals("Beg")){
+						this.places.get(date).add(p);
+					}else{
+						list.get(list.size()-1).setPlaces(pr);
+						this.places.put(date,list);
+					}
+				}
+
+			}
 			if (start>this.noOfCardPlaceRecords*10){
 				start=1;
-						
 			}
 		}
 	}
 
 	
+	/**
+	 * @return the datos
+	 */
+	public byte[] getDatos() {
+		return datos;
+	}
+	/**
+	 * @param datos the datos to set
+	 */
+	public void setDatos(byte[] datos) {
+		this.datos = datos;
+	}
+	/**
+	 * @return the places
+	 */
+	public HashMap<String,ArrayList> getPlaces() {
+		return places;
+	}
+	/**
+	 * @param places the places to set
+	 */
+	public void setPlaces(HashMap<String,ArrayList>  places) {
+		this.places = places;
+	}
 	/**
 	 * Obtiene el �ndice del �ltimo registro actualizado de un lugar.
 	 * @return the placePointerNewestRecord
