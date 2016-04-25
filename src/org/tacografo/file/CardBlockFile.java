@@ -242,7 +242,9 @@ public class CardBlockFile {
 					// varios vehiculos en un dia, recorro los vehiculo por dia para la actividad
 					for (int j = 0; j < list_vehicleUsed.size(); j++) {
 						VehicleChangeInfo vehicleUsed = list_vehicleUsed.get(j);
-						activity_Tacho.setCardNumber(this.identification.getCardNumber().getDriverIdentification() + this.identification.getCardNumber().getDrivercardRenewalIndex() + this.identification.getCardNumber().getDrivercardReplacementIndex());
+						activity_Tacho.setCardNumber(this.identification.getCardNumber().getDriverIdentification() +
+													this.identification.getCardNumber().getDrivercardRenewalIndex() +
+													this.identification.getCardNumber().getDrivercardReplacementIndex());
 						activity_Tacho.setRegistration(vehicleUsed.getRegistration());
 						activity_Tacho.setDistance(vehicleUsed.getDistance());
 						activity_Tacho.getVehicles().add(vehicleUsed);
@@ -290,8 +292,12 @@ public class CardBlockFile {
 					}
 
 				}
+
 				activity_Tacho.getFiles().add(this.nameFile);
 				activity_Tacho.setOrganizationId(this.organizationId);
+				activity_Tacho.setCardNumber(this.identification.getCardNumber().getDriverIdentification() +
+											this.identification.getCardNumber().getDrivercardRenewalIndex() +
+											this.identification.getCardNumber().getDrivercardReplacementIndex());
 				this.tachos.getActivity().add(activity_Tacho);
 			}
 

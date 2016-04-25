@@ -46,14 +46,23 @@ public class CardEventData extends Block implements CardBlock {
 	 */
 	public CardEventData(byte[] datos) {
 		
-		int end=datos.length/6;			
+		int end=datos.length/6;
+		int end1=end/24;
 		int start=0;
 		this.cardEventRecords=new HashSet<CardEventRecord>();
-		for (int i=0;i<6;i+=1){						
-			CardEventRecord cer=new CardEventRecord(Arrays.copyOfRange(datos,start,start+=end));
+		/*
+		for (int i=0;i<6;i+=1){
+			for (int j=0;j<end1-1;j++){
+				CardEventRecord cer=new CardEventRecord(Arrays.copyOfRange(datos,start,start+=24));
+				this.cardEventRecords.add(cer);
+			}
+
+		}
+		*/
+		for (int i=start;i<datos.length-1;i+=24){
+			CardEventRecord cer=new CardEventRecord(Arrays.copyOfRange(datos,start,start+=24));
 			this.cardEventRecords.add(cer);
 		}
-		
 		
 	}
 	
