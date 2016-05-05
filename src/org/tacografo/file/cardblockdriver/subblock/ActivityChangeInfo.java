@@ -102,9 +102,9 @@ public class ActivityChangeInfo {
 	
 		this.s=(s==0)?"conductor":"segundo conductor";
 		if (p==0){
-			this.c=(s==0)?"solitario":"en equipo";
+			this.c=(c==0)?"solitario":"en equipo";
 		}else{
-			this.c=(s==0)?"indeterminado":"entrada manual";
+			this.c=(c==0)?"indeterminado":"entrada manual";
 		}
 		this.p=(p==0)?"insertada":"no insertada";
 		switch(aa){

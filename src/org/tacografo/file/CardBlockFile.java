@@ -228,8 +228,11 @@ public class CardBlockFile {
 		this.tachos=new Tacho();
 		Iterator activitys=this.driver_activity_data.getActivity().entrySet().iterator();
 		ActivityChangeInfo aci;
+		HashMap<String,Activity> hashmap_activitys;
+		boolean exist=false;
 		// activitys por dia
 		while(activitys.hasNext()){
+			hashmap_activitys=new HashMap<String, Activity>();
 			Map.Entry activity_File=(Map.Entry)activitys.next();
 			Activity value_activity= (Activity) activity_File.getValue();
 			// dates 1970-01-01
@@ -237,14 +240,60 @@ public class CardBlockFile {
 				Activity activity_Tacho=new Activity();
 				activity_Tacho.setDate(value_activity.getDate());
 				ArrayList<VehicleChangeInfo> list_vehicleUsed=this.vehicles_used.getListVehicle().get(activity_File.getKey());
+				activity_Tacho.getFiles().add(this.nameFile);
+				activity_Tacho.setOrganizationId(this.organizationId);
+				activity_Tacho.setCardNumber(this.identification.getCardNumber().getDriverIdentification() +
+						this.identification.getCardNumber().getDrivercardRenewalIndex() +
+						this.identification.getCardNumber().getDrivercardReplacementIndex());
+
+				// activity without vehicle
+				for (int i = 0; i < value_activity.getActivityChangeInfo().size(); i++) {
+					aci = value_activity.getActivityChangeInfo().get(i);
+					// loop vehicles inject activitychangeinfo
+					for (int x=0;x<list_vehicleUsed.size();x++){
+						if (list_vehicleUsed.get(x).getFromDate().getTime() <= aci.getFromTime().getTime()) {
+							if (aci.getFromTime().getTime() <= list_vehicleUsed.get(x).getToDate().getTime()) {
+								//if (aci.getType() != "indeterminado")
+								if(hashmap_activitys.containsKey(list_vehicleUsed.get(x).getRegistration())){
+									hashmap_activitys.get(list_vehicleUsed.get(x).getRegistration()).getActivityChangeInfo().add(aci);
+								}else{
+									hashmap_activitys.put(list_vehicleUsed.get(x).getRegistration(),new Activity());
+									hashmap_activitys.get(list_vehicleUsed.get(x).getRegistration()).getActivityChangeInfo().add(aci);
+								}
+
+								hashmap_activitys.get(list_vehicleUsed.get(x).getRegistration()).setDate(value_activity.getDate());
+								hashmap_activitys.get(list_vehicleUsed.get(x).getRegistration()).setRegistration(list_vehicleUsed.get(x).getRegistration());
+								hashmap_activitys.get(list_vehicleUsed.get(x).getRegistration()).setCardNumber(this.identification.getCardNumber().getDriverIdentification() +
+										this.identification.getCardNumber().getDrivercardRenewalIndex() +
+										this.identification.getCardNumber().getDrivercardReplacementIndex());
+								hashmap_activitys.get(list_vehicleUsed.get(x).getRegistration()).setDistance(list_vehicleUsed.get(x).getDistance());
+
+								exist=true;
+							}
+						}
+					}
+					if(!exist){
+						if(hashmap_activitys.containsKey("without")){
+							hashmap_activitys.get("without").getActivityChangeInfo().add(aci);
+						}else{
+							hashmap_activitys.put("without",new Activity());
+							hashmap_activitys.get("without").getActivityChangeInfo().add(aci);
+						}
+						hashmap_activitys.get("without").setDate(value_activity.getDate());
+						hashmap_activitys.get("without").setCardNumber(this.identification.getCardNumber().getDriverIdentification() +
+								this.identification.getCardNumber().getDrivercardRenewalIndex() +
+								this.identification.getCardNumber().getDrivercardReplacementIndex());
+					}else{
+						exist=false;
+					}
+				}
 
 				if (list_vehicleUsed != null) { // vehiculo con actividad en ese dia
 					// varios vehiculos en un dia, recorro los vehiculo por dia para la actividad
+
 					for (int j = 0; j < list_vehicleUsed.size(); j++) {
+						/*
 						VehicleChangeInfo vehicleUsed = list_vehicleUsed.get(j);
-						activity_Tacho.setCardNumber(this.identification.getCardNumber().getDriverIdentification() +
-													this.identification.getCardNumber().getDrivercardRenewalIndex() +
-													this.identification.getCardNumber().getDrivercardReplacementIndex());
 						activity_Tacho.setRegistration(vehicleUsed.getRegistration());
 						activity_Tacho.setDistance(vehicleUsed.getDistance());
 						activity_Tacho.getVehicles().add(vehicleUsed);
@@ -253,34 +302,43 @@ public class CardBlockFile {
 							aci = value_activity.getActivityChangeInfo().get(i);
 							if (vehicleUsed.getFromDate().getTime() <= aci.getFromTime().getTime()) {
 								if (aci.getFromTime().getTime() <= vehicleUsed.getToDate().getTime()) {
-									if (aci.getType() != "indeterminado")
+									//if (aci.getType() != "indeterminado")
 										activity_Tacho.getActivityChangeInfo().add(aci);
 								}
-
 							}
 						}
-						if(this.vehicles.get(vehicleUsed.getRegistration())==null){
+						*/
+						if(this.vehicles.get(list_vehicleUsed.get(j).getRegistration())==null){
 							Vehicle v = new Vehicle();
-							v.setRegistration(vehicleUsed.getRegistration());
+							v.setRegistration(list_vehicleUsed.get(j).getRegistration());
 							v.setActive(true);
 							v.setDescription("Create vehicle");
-							this.vehicles.put(vehicleUsed.getRegistration(),v);
+							this.vehicles.put(list_vehicleUsed.get(j).getRegistration(),v);
 						}
 						if (this.places.getPlaces().get(activity_File.getKey()) != null) {
 							ArrayList<Places> list_places = this.places.getPlaces().get(activity_File.getKey());
 							if(list_places!=null){
 								for (int k = 0; k < list_places.size(); k++) {
-									if (vehicleUsed.getFromDate().equals(list_places.get(k).getFromDate()) || vehicleUsed.getToDate().equals(list_places.get(k).getToDate())){
-										activity_Tacho.getPlaces().add(list_places.get(k));
+									if (list_vehicleUsed.get(j).getFromDate().equals(list_places.get(k).getFromDate()) || list_vehicleUsed.get(j).getToDate().equals(list_places.get(k).getToDate())){
+										hashmap_activitys.get(list_vehicleUsed.get(j).getRegistration()).getPlaces().add(list_places.get(k));
 									}
 								}
 							}
 						}
+						//this.tachos.getActivity().add(activity_Tacho);
+
+					}
+
+					for (Map.Entry e: hashmap_activitys.entrySet()) {
+
+						this.tachos.getActivity().add((Activity)e.getValue());
+						System.out.println(e.getKey() + " " + e.getValue());
 					}
 				} else { // activity without vehicle
+
 					for (int i = 0; i < value_activity.getActivityChangeInfo().size(); i++) {
 						aci = value_activity.getActivityChangeInfo().get(i);
-						if (aci.getType() != "indeterminado")
+						//if (aci.getType() != "indeterminado")
 							activity_Tacho.getActivityChangeInfo().add(aci);
 
 					}
@@ -291,14 +349,10 @@ public class CardBlockFile {
 						}
 					}
 
+
 				}
 
-				activity_Tacho.getFiles().add(this.nameFile);
-				activity_Tacho.setOrganizationId(this.organizationId);
-				activity_Tacho.setCardNumber(this.identification.getCardNumber().getDriverIdentification() +
-											this.identification.getCardNumber().getDrivercardRenewalIndex() +
-											this.identification.getCardNumber().getDrivercardReplacementIndex());
-				this.tachos.getActivity().add(activity_Tacho);
+
 			}
 
 

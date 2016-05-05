@@ -5,5 +5,6 @@
 	<classpathentry kind="lib" path="C:/Users/negrero/workspace/ServiceCardFile/WebContent/WEB-INF/lib/jackson-annotations-2.5.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/negrero/workspace/ServiceCardFile/WebContent/WEB-INF/lib/jackson-core-2.5.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/negrero/workspace/ServiceCardFile/WebContent/WEB-INF/lib/jackson-databind-2.5.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/negrero/workspace/joda-time-2.9.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

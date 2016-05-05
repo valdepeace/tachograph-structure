@@ -7,6 +7,10 @@ import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.util.*;
 
+import org.joda.time.Instant;
+import org.joda.time.LocalDate;
+import org.joda.time.LocalDateTime;
+import org.joda.time.LocalTime;
 import org.tacografo.file.Block;
 import org.tacografo.file.cardblockdriver.SpecificConditionRecord;
 import org.tacografo.file.cardblockdriver.subblock.ActivityChangeInfo;
@@ -100,8 +104,9 @@ public class Activity extends Block{
 	
 	public Activity(byte[] bytes) throws Exception{
 		int start=0;
+
 		this.timeReal=RealTime.getRealTime(Arrays.copyOfRange(bytes, start, start+=Sizes.TIMEREAL.getSize()));
-		
+
 		this.OdometerValueMidnight=Number.getInteger_24(Arrays.copyOfRange(bytes, start, start+=Sizes.ODOMETERVALUEMINDNIGHT.getSize()));
 				
 		this.noOfIWRecords=Number.getShort_16(Arrays.copyOfRange(bytes, start, start+=Sizes.NOOFVUCARDIWRECORDS.getSize()));
