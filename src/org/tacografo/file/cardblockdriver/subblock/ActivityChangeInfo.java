@@ -106,7 +106,7 @@ public class ActivityChangeInfo {
 		}else{
 			this.c=(s==0)?"indeterminado":"entrada manual";
 		}
-		this.p=(s==0)?"insertada":"no insertada";
+		this.p=(p==0)?"insertada":"no insertada";
 		switch(aa){
 			case 00: this.aa="PAUSA/DESCANSO";break;
 			case 01: this.aa="DISPONIBILIDAD";break;

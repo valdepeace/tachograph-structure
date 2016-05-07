@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.*;
 
 import com.thingtrack.parse.*;
+import com.thingtrack.parse.ActivityChangeInfo;
 import org.tacografo.file.cardblockdriver.CardCertificate;
 import org.tacografo.file.cardblockdriver.CardChipIdentification;
 import org.tacografo.file.cardblockdriver.CardControlActivityDataRecord;
@@ -24,7 +25,7 @@ import org.tacografo.file.cardblockdriver.Fid;
 import org.tacografo.file.cardblockdriver.LastCardDownload;
 import org.tacografo.file.cardblockdriver.MemberStateCertificate;
 import org.tacografo.file.cardblockdriver.SpecificConditionRecord;
-import org.tacografo.file.cardblockdriver.subblock.CardVehicleRecord;
+import org.tacografo.file.cardblockdriver.subblock.*;
 import org.tacografo.tiposdatos.Number;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -219,85 +220,84 @@ public class CardBlockFile {
 		
 	}
 	private void tacho() {
-		Iterator it=this.vehicles_used.getCardVehicleRecords().iterator();
-		this.tachos=new Tacho();
-		this.vehicles=new HashMap<String, Vehicle>();
 		this.drivers=new HashMap<String, Driver>();
-		Driver d=new Driver(this.getIdentification());
-		this.drivers.put(d.getCardNumber().get(0).getNumber(),d);
-		Calendar c=Calendar.getInstance();
-		com.thingtrack.parse.Places place;
-		String date="";
-		ArrayList list;
-		VehicleChangeInfo vci;
-		Vehicle v;
-		while(it.hasNext()){
-			place=new com.thingtrack.parse.Places();
-			CardVehicleRecord cvr = (CardVehicleRecord) it.next();
-			v=new Vehicle(cvr);
-			if(!this.vehicles.containsKey(v.getRegistration())){
-				vehicles.put(v.getRegistration(),v);
-			}
-			c.setTime(cvr.getVehicleFirstUse());
-			com.thingtrack.parse.Activity a=this.driver_activity_data.getActivity().get(c.get(Calendar.YEAR)+"-"+c.get(Calendar.MONTH)+"-"+c.get(Calendar.DAY_OF_MONTH));
-			com.thingtrack.parse.Activity aVehicle=new com.thingtrack.parse.Activity();
-			vci=new VehicleChangeInfo(cvr);
-			if(a!=null){
-				aVehicle.setDate(a.getDate());
-				aVehicle.setCardNumber(this.identification.getCardNumber().getDriverIdentification()+this.identification.getCardNumber().getDrivercardRenewalIndex()+this.identification.getCardNumber().getDrivercardReplacementIndex());
-				aVehicle.setRegistration(cvr.getVehicleRegistration().getVehicleRegistrationNumber());
-				aVehicle.setDistance(cvr.getVehicleOdometerEnd()-cvr.getVehicleOdometerBegin());
-				//aVehicle.setVehicle(vci);
-				if(this.organizationId!=null){
-					aVehicle.getFiles().add(this.nameFile);
-					aVehicle.setOrganizationId(this.organizationId);
-				}
-				Iterator ite=a.getActivityChangeInfo().iterator();
-				c.setTime(cvr.getVehicleFirstUse());
-				date=c.get(Calendar.YEAR)+"-"+c.get(Calendar.MONTH)+"-"+c.get(Calendar.DAY_OF_MONTH);
-				list = this.places.getPlaces().get(date);
-				if (list!=null){
-					Iterator i_list = list.iterator();
-					while(i_list.hasNext()){
-						Places p=(com.thingtrack.parse.Places)i_list.next();
-						if(p.getFromDate()!=null && p.getToDate()!=null){
-							if(p.getFromDate().getTime()>=cvr.getVehicleFirstUse().getTime() &&
-									p.getToDate().getTime()<=cvr.getVehicleLastUse().getTime()){
-								aVehicle.getPlaces().add(p);
-							}
-						}else{
-							if(p.getFromDate()!=null){
-								if(p.getFromDate().getTime()>=cvr.getVehicleFirstUse().getTime()){
-									aVehicle.getPlaces().add(p);
+		this.vehicles=new HashMap<String,Vehicle>();
+		Driver d=new Driver(this.identification);
+		Date limit = new Date(2000,1,1);		
+		this.drivers.put(this.identification.getCardNumber().getDriverIdentification() + this.identification.getCardNumber().getDrivercardRenewalIndex() + this.identification.getCardNumber().getDrivercardReplacementIndex(),d);
+		this.tachos=new Tacho();
+		Iterator activitys=this.driver_activity_data.getActivity().entrySet().iterator();
+		ActivityChangeInfo aci;
+		// activitys por dia
+		while(activitys.hasNext()){
+			Map.Entry activity_File=(Map.Entry)activitys.next();
+			Activity value_activity= (Activity) activity_File.getValue();
+			// dates 1970-01-01
+			if(value_activity.getDate().getTime()>0){
+				Activity activity_Tacho=new Activity();
+				activity_Tacho.setDate(value_activity.getDate());
+				ArrayList<VehicleChangeInfo> list_vehicleUsed=this.vehicles_used.getListVehicle().get(activity_File.getKey());
+
+				if (list_vehicleUsed != null) { // vehiculo con actividad en ese dia
+					// varios vehiculos en un dia, recorro los vehiculo por dia para la actividad
+					for (int j = 0; j < list_vehicleUsed.size(); j++) {
+						VehicleChangeInfo vehicleUsed = list_vehicleUsed.get(j);
+						activity_Tacho.setCardNumber(this.identification.getCardNumber().getDriverIdentification() + this.identification.getCardNumber().getDrivercardRenewalIndex() + this.identification.getCardNumber().getDrivercardReplacementIndex());
+						activity_Tacho.setRegistration(vehicleUsed.getRegistration());
+						activity_Tacho.setDistance(vehicleUsed.getDistance());
+						activity_Tacho.getVehicles().add(vehicleUsed);
+						// add activityChangeInfo for vehicle
+						for (int i = 0; i < value_activity.getActivityChangeInfo().size(); i++) {
+							aci = value_activity.getActivityChangeInfo().get(i);
+							if (vehicleUsed.getFromDate().getTime() <= aci.getFromTime().getTime()) {
+								if (aci.getFromTime().getTime() <= vehicleUsed.getToDate().getTime()) {
+									if (aci.getType() != "indeterminado")
+										activity_Tacho.getActivityChangeInfo().add(aci);
 								}
-							}else{
-								if(p.getToDate()!=null){
-									if(p.getToDate().getTime()>=cvr.getVehicleLastUse().getTime()){
-										aVehicle.getPlaces().add(p);
+
+							}
+						}
+						if(this.vehicles.get(vehicleUsed.getRegistration())==null){
+							Vehicle v = new Vehicle();
+							v.setRegistration(vehicleUsed.getRegistration());
+							v.setActive(true);
+							v.setDescription("Create vehicle");
+							this.vehicles.put(vehicleUsed.getRegistration(),v);
+						}
+						if (this.places.getPlaces().get(activity_File.getKey()) != null) {
+							ArrayList<Places> list_places = this.places.getPlaces().get(activity_File.getKey());
+							if(list_places!=null){
+								for (int k = 0; k < list_places.size(); k++) {
+									if (vehicleUsed.getFromDate().equals(list_places.get(k).getFromDate()) || vehicleUsed.getToDate().equals(list_places.get(k).getToDate())){
+										activity_Tacho.getPlaces().add(list_places.get(k));
 									}
 								}
 							}
 						}
+					}
+				} else { // activity without vehicle
+					for (int i = 0; i < value_activity.getActivityChangeInfo().size(); i++) {
+						aci = value_activity.getActivityChangeInfo().get(i);
+						if (aci.getType() != "indeterminado")
+							activity_Tacho.getActivityChangeInfo().add(aci);
 
 					}
-				}
-
-				while(ite.hasNext()){
-					com.thingtrack.parse.ActivityChangeInfo aci=(ActivityChangeInfo) ite.next();
-					if(aci.getFromTime().getTime()>=cvr.getVehicleFirstUse().getTime() && aci.getFromTime().getTime()<=cvr.getVehicleLastUse().getTime()) {
-						aVehicle.getActivityChangeInfo().add(aci);
+					ArrayList<Places> list_places = this.places.getPlaces().get(activity_File.getKey());
+					if(list_places!=null){
+						for (int k = 0; k < list_places.size(); k++) {
+							activity_Tacho.getPlaces().add(list_places.get(k));
+						}
 					}
 
 				}
-				this.tachos.getActivity().add(aVehicle);
-
+				activity_Tacho.getFiles().add(this.nameFile);
+				activity_Tacho.setOrganizationId(this.organizationId);
+				this.tachos.getActivity().add(activity_Tacho);
 			}
 
+
 		}
-				
-		//this.tacho = new Tacho(this.driver_activity_data.getActivity(),this.places.getPlaces(),this.vehicles_used.getListVehicle());
-		//this.tacho.setTacho(this.driver_activity_data.getActivity(),this.places.getPlaces(),this.vehicles_used.getListVehicle());
-		//logica
+
 		
 	}
 

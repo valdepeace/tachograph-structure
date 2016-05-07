@@ -84,6 +84,8 @@ public class CardActivityDailyRecord {
 		this.comActivityChangeInfo=new ArrayList<com.thingtrack.parse.ActivityChangeInfo>();
 
 		Calendar c= Calendar.getInstance();
+		Date d;
+		long num=0;
 		for (int i=start; i<this.activityRecordLength;i+=2){
 			ActivityChangeInfo activityChangeInfo=new ActivityChangeInfo(Arrays.copyOfRange(bytes, start, start+=Sizes.ACTIVITYCHANGEINFO.getMin()));			
 			this.activityChangeInfo.add(activityChangeInfo);
@@ -91,7 +93,15 @@ public class CardActivityDailyRecord {
 			c.setTime(this.activityRecordDate);
 			c.set(Calendar.HOUR,activityChangeInfo.getHours());
 			c.set(Calendar.MINUTE,activityChangeInfo.getMin());
-			caci.setFromTime(c.getTime());
+			//caci.setFromTime(c.getTime());
+			num=this.activityRecordDate.getTime()+(activityChangeInfo.getHours()*60*60*1000)+(activityChangeInfo.getMin()*60*1000);
+			d=new Date(num);
+			//d.setHours(activityChangeInfo.getHours());
+			//d.setMinutes(activityChangeInfo.getMin());
+			caci.setFromTime(d);
+			if(this.getComActivityChangeInfo().size()>0){
+				this.getComActivityChangeInfo().get(this.getComActivityChangeInfo().size()-1).setToTime(caci.getFromTime());
+			}
 			this.getComActivityChangeInfo().add(caci);
 		}
 				
