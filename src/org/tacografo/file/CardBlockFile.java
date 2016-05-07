@@ -6,8 +6,6 @@ package org.tacografo.file;
 import java.io.IOException;
 import java.util.*;
 
-import com.thingtrack.parse.*;
-import com.thingtrack.parse.ActivityChangeInfo;
 import org.tacografo.file.cardblockdriver.CardCertificate;
 import org.tacografo.file.cardblockdriver.CardChipIdentification;
 import org.tacografo.file.cardblockdriver.CardControlActivityDataRecord;
@@ -59,7 +57,7 @@ public class CardBlockFile {
 	private CardCertificate card_certificate = null;
 	@JsonIgnore
 	private MemberStateCertificate ca_certificate = null;
-	
+	@JsonIgnore
 	private CardIdentification identification = null;
 	@JsonIgnore
 	private LastCardDownload card_download = null;
@@ -82,54 +80,13 @@ public class CardBlockFile {
 	@JsonIgnore
 	private SpecificConditionRecord specific_conditions = null;
 
-	private Tacho tachos;
-
-	private HashMap<String,Vehicle> vehicles;
-
-	private HashMap<String,Driver> drivers;
-	private String organizationId=null;
-	/**
-	 * @return the vehicles
-	 */
-	public HashMap<String, Vehicle> getVehicles() {
-		return vehicles;
-	}
-
-
-
-	/**
-	 * @param vehicles the vehicles to set
-	 */
-	public void setVehicles(HashMap<String, Vehicle> vehicles) {
-		this.vehicles = vehicles;
-	}
-
-
-
-	/**
-	 * @return the drivers
-	 */
-	public HashMap<String, Driver> getDrivers() {
-		return drivers;
-	}
-
-
-
-	/**
-	 * @param drivers the drivers to set
-	 */
-	public void setDrivers(HashMap<String, Driver> drivers) {
-		this.drivers = drivers;
-	}
-
-
 
 	private boolean sid=false;
 	
 	/**
 	 * Listado de <key,value> donde key=fid, value=cardBlock
 	 */
-	@JsonIgnore
+
 	private HashMap<String, Block> listBlock;
 	
 	
@@ -178,13 +135,13 @@ public class CardBlockFile {
 		}
 		
 		this.asignarBloques();
-		this.tacho();
+
 		
 		
 	}
 	public CardBlockFile(byte[] bytes,String organizationId,String namefile) throws Exception {
 		this.nameFile=namefile;
-		this.organizationId=organizationId;
+
 		HashMap<String, Block> lista = new HashMap();
 		this.listBlock=new HashMap();
 		try {
@@ -215,91 +172,10 @@ public class CardBlockFile {
 		}
 		
 		this.asignarBloques();
-		this.tacho();
-		
-		
-	}
-	private void tacho() {
-		this.drivers=new HashMap<String, Driver>();
-		this.vehicles=new HashMap<String,Vehicle>();
-		Driver d=new Driver(this.identification);
-		Date limit = new Date(2000,1,1);		
-		this.drivers.put(this.identification.getCardNumber().getDriverIdentification() + this.identification.getCardNumber().getDrivercardRenewalIndex() + this.identification.getCardNumber().getDrivercardReplacementIndex(),d);
-		this.tachos=new Tacho();
-		Iterator activitys=this.driver_activity_data.getActivity().entrySet().iterator();
-		ActivityChangeInfo aci;
-		// activitys por dia
-		while(activitys.hasNext()){
-			Map.Entry activity_File=(Map.Entry)activitys.next();
-			Activity value_activity= (Activity) activity_File.getValue();
-			// dates 1970-01-01
-			if(value_activity.getDate().getTime()>0){
-				Activity activity_Tacho=new Activity();
-				activity_Tacho.setDate(value_activity.getDate());
-				ArrayList<VehicleChangeInfo> list_vehicleUsed=this.vehicles_used.getListVehicle().get(activity_File.getKey());
-
-				if (list_vehicleUsed != null) { // vehiculo con actividad en ese dia
-					// varios vehiculos en un dia, recorro los vehiculo por dia para la actividad
-					for (int j = 0; j < list_vehicleUsed.size(); j++) {
-						VehicleChangeInfo vehicleUsed = list_vehicleUsed.get(j);
-						activity_Tacho.setCardNumber(this.identification.getCardNumber().getDriverIdentification() + this.identification.getCardNumber().getDrivercardRenewalIndex() + this.identification.getCardNumber().getDrivercardReplacementIndex());
-						activity_Tacho.setRegistration(vehicleUsed.getRegistration());
-						activity_Tacho.setDistance(vehicleUsed.getDistance());
-						activity_Tacho.getVehicles().add(vehicleUsed);
-						// add activityChangeInfo for vehicle
-						for (int i = 0; i < value_activity.getActivityChangeInfo().size(); i++) {
-							aci = value_activity.getActivityChangeInfo().get(i);
-							if (vehicleUsed.getFromDate().getTime() <= aci.getFromTime().getTime()) {
-								if (aci.getFromTime().getTime() <= vehicleUsed.getToDate().getTime()) {
-									if (aci.getType() != "indeterminado")
-										activity_Tacho.getActivityChangeInfo().add(aci);
-								}
-
-							}
-						}
-						if(this.vehicles.get(vehicleUsed.getRegistration())==null){
-							Vehicle v = new Vehicle();
-							v.setRegistration(vehicleUsed.getRegistration());
-							v.setActive(true);
-							v.setDescription("Create vehicle");
-							this.vehicles.put(vehicleUsed.getRegistration(),v);
-						}
-						if (this.places.getPlaces().get(activity_File.getKey()) != null) {
-							ArrayList<Places> list_places = this.places.getPlaces().get(activity_File.getKey());
-							if(list_places!=null){
-								for (int k = 0; k < list_places.size(); k++) {
-									if (vehicleUsed.getFromDate().equals(list_places.get(k).getFromDate()) || vehicleUsed.getToDate().equals(list_places.get(k).getToDate())){
-										activity_Tacho.getPlaces().add(list_places.get(k));
-									}
-								}
-							}
-						}
-					}
-				} else { // activity without vehicle
-					for (int i = 0; i < value_activity.getActivityChangeInfo().size(); i++) {
-						aci = value_activity.getActivityChangeInfo().get(i);
-						if (aci.getType() != "indeterminado")
-							activity_Tacho.getActivityChangeInfo().add(aci);
-
-					}
-					ArrayList<Places> list_places = this.places.getPlaces().get(activity_File.getKey());
-					if(list_places!=null){
-						for (int k = 0; k < list_places.size(); k++) {
-							activity_Tacho.getPlaces().add(list_places.get(k));
-						}
-					}
-
-				}
-				activity_Tacho.getFiles().add(this.nameFile);
-				activity_Tacho.setOrganizationId(this.organizationId);
-				this.tachos.getActivity().add(activity_Tacho);
-			}
-
-
-		}
 
 		
 	}
+
 
 
 
@@ -371,25 +247,6 @@ public class CardBlockFile {
 
 		return ok;
 	}
-	
-
-	/**
-	 * @return the tacho
-	 */
-	public Tacho getTachos() {
-		return tachos;
-	}
-
-
-
-	/**
-	 * @param tacho the tacho to set
-	 */
-	public void setTachos(Tacho tacho) {
-		this.tachos = tacho;
-	}
-
-
 
 	/**
 	 * @return the icc

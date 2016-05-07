@@ -60,7 +60,7 @@ public class CardActivityDailyRecord {
 	private int activityDailyPresenceCounter; // 2 size
 	private int activityDayDistance; // 2 size
 	private ArrayList <ActivityChangeInfo> activityChangeInfo; // size 2
-	private ArrayList<com.thingtrack.parse.ActivityChangeInfo> comActivityChangeInfo;
+
 	
 	
 	
@@ -81,7 +81,7 @@ public class CardActivityDailyRecord {
 		//Distance d=new Distance(Arrays.copyOfRange(bytes, start, start+=2));
 		this.activityDayDistance=Number.getShort_16(Arrays.copyOfRange(bytes, start, start+=Sizes.ACTIVITYDAYDISTANCE.getMax()));	
 		this.activityChangeInfo=new ArrayList<ActivityChangeInfo>();
-		this.comActivityChangeInfo=new ArrayList<com.thingtrack.parse.ActivityChangeInfo>();
+
 
 		Calendar c= Calendar.getInstance();
 		Date d;
@@ -89,37 +89,11 @@ public class CardActivityDailyRecord {
 		for (int i=start; i<this.activityRecordLength;i+=2){
 			ActivityChangeInfo activityChangeInfo=new ActivityChangeInfo(Arrays.copyOfRange(bytes, start, start+=Sizes.ACTIVITYCHANGEINFO.getMin()));			
 			this.activityChangeInfo.add(activityChangeInfo);
-			com.thingtrack.parse.ActivityChangeInfo caci=new com.thingtrack.parse.ActivityChangeInfo(activityChangeInfo);
 			c.setTime(this.activityRecordDate);
-			c.set(Calendar.HOUR,activityChangeInfo.getHours());
-			c.set(Calendar.MINUTE,activityChangeInfo.getMin());
-			//caci.setFromTime(c.getTime());
-			num=this.activityRecordDate.getTime()+(activityChangeInfo.getHours()*60*60*1000)+(activityChangeInfo.getMin()*60*1000);
-			d=new Date(num);
-			//d.setHours(activityChangeInfo.getHours());
-			//d.setMinutes(activityChangeInfo.getMin());
-			caci.setFromTime(d);
-			if(this.getComActivityChangeInfo().size()>0){
-				this.getComActivityChangeInfo().get(this.getComActivityChangeInfo().size()-1).setToTime(caci.getFromTime());
-			}
-			this.getComActivityChangeInfo().add(caci);
 		}
 				
 	
 		
-	}
-
-	/**
-	 * @return the comActivityChangeInfo
-	 */
-	public ArrayList<com.thingtrack.parse.ActivityChangeInfo> getComActivityChangeInfo() {
-		return comActivityChangeInfo;
-	}
-	/**
-	 * @param comActivityChangeInfo the comActivityChangeInfo to set
-	 */
-	public void setComActivityChangeInfo(ArrayList<com.thingtrack.parse.ActivityChangeInfo> comActivityChangeInfo) {
-		this.comActivityChangeInfo = comActivityChangeInfo;
 	}
 	/**
 	 * @param activityDailyPresenceCounter the activityDailyPresenceCounter to set

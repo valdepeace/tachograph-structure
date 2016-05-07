@@ -12,8 +12,6 @@ import org.tacografo.file.Block;
 import org.tacografo.file.cardblockdriver.subblock.CardVehicleRecord;
 import org.tacografo.tiposdatos.Number;
 
-import com.thingtrack.parse.Vehicle;
-import com.thingtrack.parse.VehicleChangeInfo;
 
 /**
  * 2.31. CardVehiclesUsed
@@ -39,7 +37,7 @@ public class CardVehiclesUsed extends Block implements CardBlock {
 	private ArrayList<CardVehicleRecord> cardVehicleRecords;
 	private int noOfCardVehicleRecords;
 	private byte[] datos;
-	private HashMap<String,ArrayList<VehicleChangeInfo>> listVehicle;
+
 	
 	
 	public CardVehiclesUsed() {}
@@ -55,7 +53,7 @@ public class CardVehiclesUsed extends Block implements CardBlock {
 		this.vehiclePointerNewestRecord=Number.getNumber(Arrays.copyOfRange(datos,start , start+=Sizes.VEHICLEPOINTERNEWESTRECORD.getMax()));
 		//this.vehiclePointerNewestRecord+=-1;		
 		this.cardVehicleRecords=new ArrayList<CardVehicleRecord>();
-		this.listVehicle=new HashMap<String,ArrayList<VehicleChangeInfo>>();
+
 		
 	}
 	
@@ -73,8 +71,7 @@ public class CardVehiclesUsed extends Block implements CardBlock {
 	private void setListaCardVehicleRecords(){
 		
 		CardVehicleRecord cvr;
-		VehicleChangeInfo v;
-		ArrayList<VehicleChangeInfo> list_VehicleChangeInfo;
+
 		int start=2;
 		String key="";
 		Calendar c=Calendar.getInstance();
@@ -84,17 +81,6 @@ public class CardVehiclesUsed extends Block implements CardBlock {
 			}else{
 				cvr=new CardVehicleRecord(Arrays.copyOfRange(this.datos, start, start+=Sizes.CARDVEHICLERECORD.getMax()));
 				this.cardVehicleRecords.add(cvr);
-				v=new VehicleChangeInfo(cvr);
-				c.setTime(cvr.getVehicleFirstUse());
-				key=c.get(Calendar.YEAR)+"-"+c.get(Calendar.MONTH)+"-"+c.get(Calendar.DAY_OF_MONTH);
-				if(this.listVehicle.get(key)==null){
-					list_VehicleChangeInfo = new ArrayList<VehicleChangeInfo>();
-					list_VehicleChangeInfo.add(v);
-					this.listVehicle.put(key,list_VehicleChangeInfo);
-				}else{
-					this.listVehicle.get(key).add(v);
-				}
-
 			}
 			
 		}
@@ -114,19 +100,6 @@ public class CardVehiclesUsed extends Block implements CardBlock {
 		this.datos = datos;
 	}
 
-	/**
-	 * @return the listVehicle
-	 */
-	public HashMap<String,ArrayList<VehicleChangeInfo>> getListVehicle() {
-		return listVehicle;
-	}
-
-	/**
-	 * @param listVehicle the listVehicle to set
-	 */
-	public void setListVehicle(HashMap<String,ArrayList<VehicleChangeInfo>> listVehicle) {
-		this.listVehicle = listVehicle;
-	}
 
 	/**
 	 * @param vehiclePointerNewestRecord the vehiclePointerNewestRecord to set

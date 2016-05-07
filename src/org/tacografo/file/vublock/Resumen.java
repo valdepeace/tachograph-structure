@@ -180,7 +180,7 @@ public class Resumen extends Block{
 				
 		VuCompanyLocksRecord vclr=null;		
 		int start=0;
-		for(int i=0; i<this.noOfControls; i++){
+		for(int i=0; i<this.noOfLocks; i++){
 			vclr=new VuCompanyLocksRecord(Arrays.copyOfRange(bytes, start, start+=Sizes.VUCOMPANYLOCKSRECORD.getSize()));
 			this.vuCompanyLocksRecords.add(vclr);
 		}
