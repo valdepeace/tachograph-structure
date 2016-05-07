@@ -1,141 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0f5193c1-04aa-48b7-8381-c6222aa16cca" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/D_Agafontsev_Nikolay_RUD00000179546_01.02.2016_555.DDD" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/diagram class.uml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/Block.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/EventsFaults.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/ListActivity.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/Trep.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuActivityDailyData.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuCardIWRecord.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuCompanyLocksRecord.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuControlActivityRecord.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuDataBlockCounter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuEventRecord.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuFaultRecord.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuPlaceDailyWorkPeriodRecord.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuSpecificConditionRecords.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/diagram.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/jackson_annotations_2_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/jackson_core_2_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/jackson_databind_2_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/joda_time_2_9_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/diagrama de clases.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/pruebaDiagrama.ucls" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/CardBlockFile.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/CardBlockFile.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/FactoriaBloques.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/FactoriaBloques.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/FileBlockTGD.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/FileBlockTGD.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/FileTGD.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/FileTGD.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/VuBlockFile.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/VuBlockFile.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardBlock.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardBlock.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardBlockDriver.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardBlockDriver.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardCertificate.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardCertificate.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardChipIdentification.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardChipIdentification.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardControlActivityDataRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardControlActivityDataRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardCurrentUse.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardCurrentUse.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardDriverActivity.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardDriverActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardDrivingLicenceInformation.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardDrivingLicenceInformation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardEventData.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardEventData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardFaultData.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardFaultData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardIccIdentification.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardIccIdentification.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardIdentification.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardIdentification.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardPlaceDailyWorkPeriod.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardPlaceDailyWorkPeriod.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardVehiclesUsed.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardVehiclesUsed.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/DriverCardApplicationIdentification.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/DriverCardApplicationIdentification.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/Fid.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/Fid.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/LastCardDownload.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/LastCardDownload.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/MemberStateCertificate.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/MemberStateCertificate.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/Sizes.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/Sizes.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/SpecificConditionRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/SpecificConditionRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/TipoDatos.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/TipoDatos.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/ActivityChangeInfo.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/ActivityChangeInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardActivityDailyRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardActivityDailyRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardActivityLengthRange.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardActivityLengthRange.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardApprovalNumber.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardApprovalNumber.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardEventRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardEventRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardFaultRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardFaultRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardNumber.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardNumber.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardStructureVersion.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardStructureVersion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardVehicleRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardVehicleRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/Certificate.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/Certificate.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/ControlType.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/ControlType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/DailyPresenceCounter.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/DailyPresenceCounter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/Distance.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/Distance.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/DriverCardHolderIdentification.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/DriverCardHolderIdentification.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/EntryTypeDailyWorkPeriod.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/EntryTypeDailyWorkPeriod.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/EquipmentType.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/EquipmentType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/EventFaultType.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/EventFaultType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/ExtendedSerialNumber.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/ExtendedSerialNumber.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/FullCardNumber.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/FullCardNumber.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/HolderName.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/HolderName.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/Language.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/Language.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/ManufacturerCode.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/ManufacturerCode.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/Name.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/Name.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/NationNumeric.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/NationNumeric.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/NoOfCardPlaceRecords.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/NoOfCardPlaceRecords.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/NoOfCardVehicleRecords.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/NoOfCardVehicleRecords.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/NoOfEventsPerType.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/NoOfEventsPerType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/NoOfFaultsPerType.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/NoOfFaultsPerType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/PlaceRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/PlaceRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/RegionNumeric.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/RegionNumeric.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/SpecificConditionType.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/SpecificConditionType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/VehicleRegistrationIdentification.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/VehicleRegistrationIdentification.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/VehicleRegistrationNumber.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/VehicleRegistrationNumber.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/error/ErrorFile.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/error/ErrorFile.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/Activity.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/Activity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/Resumen.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/Resumen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/Sizes.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/Sizes.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/Speed.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/Speed.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/Technical.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/Technical.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/CalibrationPurpose.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/CalibrationPurpose.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/EventFaulType.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/EventFaulType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/EventFaultRecordPurpose.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/EventFaultRecordPurpose.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/PreviousVehicleInfo.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/PreviousVehicleInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/SensorPaired.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/SensorPaired.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuCalibrationRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuCalibrationRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuDetailedSpeedBlock.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuDetailedSpeedBlock.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuIdentification.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuIdentification.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuOverSpeedingControlData.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuOverSpeedingControlData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuOverSpeedingEventRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuOverSpeedingEventRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuSoftwareIdentification.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuSoftwareIdentification.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuTimeAdjustmentRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuTimeAdjustmentRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/BCDString.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/BCDString.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/Datef.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/Datef.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/EquipmentType.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/EquipmentType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/IA5String.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/IA5String.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/Integer_32.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/Integer_32.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/Number.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/Number.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/OctetString.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/OctetString.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/OdometerShort.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/OdometerShort.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/RealTime.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/RealTime.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.classpath" afterPath="$PROJECT_DIR$/.classpath" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/.gitignore" afterPath="$PROJECT_DIR$/bin/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/tacografo/file/CardBlockFile.java" afterPath="$PROJECT_DIR$/src/org/tacografo/file/CardBlockFile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/tacografo/file/FileTGD.java" afterPath="$PROJECT_DIR$/src/org/tacografo/file/FileTGD.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/tacografo/file/VuBlockFile.java" afterPath="$PROJECT_DIR$/src/org/tacografo/file/VuBlockFile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardBlockDriver.java" afterPath="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardBlockDriver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardDriverActivity.java" afterPath="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardDriverActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardEventData.java" afterPath="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardEventData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardPlaceDailyWorkPeriod.java" afterPath="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardPlaceDailyWorkPeriod.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardVehiclesUsed.java" afterPath="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardVehiclesUsed.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/subblock/ActivityChangeInfo.java" afterPath="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/subblock/ActivityChangeInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/subblock/CardActivityDailyRecord.java" afterPath="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/subblock/CardActivityDailyRecord.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/tacografo/file/vublock/Activity.java" afterPath="$PROJECT_DIR$/src/org/tacografo/file/vublock/Activity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/tacografo/file/vublock/Resumen.java" afterPath="$PROJECT_DIR$/src/org/tacografo/file/vublock/Resumen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/tacografo/file/vublock/subblock/VuCalibrationRecord.java" afterPath="$PROJECT_DIR$/src/org/tacografo/file/vublock/subblock/VuCalibrationRecord.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/tacografo/file/vublock/subblock/VuCardIWRecord.java" afterPath="$PROJECT_DIR$/src/org/tacografo/file/vublock/subblock/VuCardIWRecord.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tachograph-structure.iml" afterPath="$PROJECT_DIR$/tachograph-structure.iml" />
-    </list>
+    <list default="true" id="0f5193c1-04aa-48b7-8381-c6222aa16cca" name="Default" comment="" />
     <ignored path="tachograph-structure.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -156,22 +22,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Principal.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/Principal.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27356747">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VuBlockFile.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="VuBlockFile.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/VuBlockFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.1923075">
-              <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-              <folding />
+            <state vertical-scroll-proportion="0.3681672">
+              <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -179,7 +37,7 @@
       <file leaf-file-name="FileTGD.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/FileTGD.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614">
+            <state vertical-scroll-proportion="0.0">
               <caret line="3" column="11" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="11" />
               <folding />
             </state>
@@ -201,77 +59,9 @@
       <file leaf-file-name="CardBlockFile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/CardBlockFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="false" />
-                <element signature="e#8329#8330#0" expanded="false" />
-                <element signature="e#8346#8347#0" expanded="false" />
-                <element signature="e#8451#8452#0" expanded="false" />
-                <element signature="e#8472#8473#0" expanded="false" />
-                <element signature="e#8543#8544#0" expanded="false" />
-                <element signature="e#8559#8560#0" expanded="false" />
-                <element signature="e#8661#8662#0" expanded="false" />
-                <element signature="e#8680#8681#0" expanded="false" />
-                <element signature="e#8812#8813#0" expanded="false" />
-                <element signature="e#8852#8853#0" expanded="false" />
-                <element signature="e#9226#9227#0" expanded="false" />
-                <element signature="e#9256#9257#0" expanded="false" />
-                <element signature="e#9407#9408#0" expanded="false" />
-                <element signature="e#9454#9455#0" expanded="false" />
-                <element signature="e#9549#9550#0" expanded="false" />
-                <element signature="e#9577#9578#0" expanded="false" />
-                <element signature="e#9727#9728#0" expanded="false" />
-                <element signature="e#9770#9771#0" expanded="false" />
-                <element signature="e#9861#9862#0" expanded="false" />
-                <element signature="e#9889#9890#0" expanded="false" />
-                <element signature="e#10035#10036#0" expanded="false" />
-                <element signature="e#10078#10079#0" expanded="false" />
-                <element signature="e#10165#10166#0" expanded="false" />
-                <element signature="e#10192#10193#0" expanded="false" />
-                <element signature="e#10332#10333#0" expanded="false" />
-                <element signature="e#10373#10374#0" expanded="false" />
-                <element signature="e#10489#10490#0" expanded="false" />
-                <element signature="e#10524#10525#0" expanded="false" />
-                <element signature="e#10848#10849#0" expanded="false" />
-                <element signature="e#10872#10873#0" expanded="false" />
-                <element signature="e#10997#10998#0" expanded="false" />
-                <element signature="e#11032#11033#0" expanded="false" />
-                <element signature="e#11110#11111#0" expanded="false" />
-                <element signature="e#11134#11135#0" expanded="false" />
-                <element signature="e#11259#11260#0" expanded="false" />
-                <element signature="e#11294#11295#0" expanded="false" />
-                <element signature="e#11397#11398#0" expanded="false" />
-                <element signature="e#11431#11432#0" expanded="false" />
-                <element signature="e#11743#11744#0" expanded="false" />
-                <element signature="e#11770#11771#0" expanded="false" />
-                <element signature="e#11910#11911#0" expanded="false" />
-                <element signature="e#11951#11952#0" expanded="false" />
-                <element signature="e#12032#12033#0" expanded="false" />
-                <element signature="e#12052#12053#0" expanded="false" />
-                <element signature="e#12172#12173#0" expanded="false" />
-                <element signature="e#12199#12200#0" expanded="false" />
-                <element signature="e#12284#12285#0" expanded="false" />
-                <element signature="e#12311#12312#0" expanded="false" />
-                <element signature="e#12449#12450#0" expanded="false" />
-                <element signature="e#12490#12491#0" expanded="false" />
-                <element signature="e#12606#12607#0" expanded="false" />
-                <element signature="e#12641#12642#0" expanded="false" />
-                <element signature="e#12993#12994#0" expanded="false" />
-                <element signature="e#13026#13027#0" expanded="false" />
-                <element signature="e#14216#14217#0" expanded="false" />
-                <element signature="e#14238#14239#0" expanded="false" />
-                <element signature="e#14369#14370#0" expanded="false" />
-                <element signature="e#14400#14401#0" expanded="false" />
-                <element signature="e#14460#14461#0" expanded="false" />
-                <element signature="e#14477#14478#0" expanded="false" />
-                <element signature="e#14555#14556#0" expanded="false" />
-                <element signature="e#14576#14577#0" expanded="false" />
-                <element signature="e#14663#14664#0" expanded="false" />
-                <element signature="e#14686#14687#0" expanded="false" />
-                <element signature="e#14803#14804#0" expanded="false" />
-                <element signature="e#14836#14837#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="-6.6153846">
+              <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -302,10 +92,10 @@
         <option value="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardBlockDriver.java" />
         <option value="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardDriverActivity.java" />
         <option value="$PROJECT_DIR$/src/org/tacografo/file/FileTGD.java" />
-        <option value="$PROJECT_DIR$/src/org/tacografo/file/CardBlockFile.java" />
         <option value="$PROJECT_DIR$/src/test/Principal.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/org/tacografo/file/VuBlockFile.java" />
+        <option value="$PROJECT_DIR$/src/org/tacografo/file/CardBlockFile.java" />
       </list>
     </option>
   </component>
@@ -345,6 +135,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -383,8 +175,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -871,11 +661,12 @@
       <workItem from="1462600538842" duration="4011000" />
       <workItem from="1462603987243" duration="1087000" />
       <workItem from="1462608171162" duration="1029000" />
+      <workItem from="1462611863708" duration="311000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15475000" />
+    <option name="totallyTimeSpent" value="15786000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1608" height="1180" extended-state="6" />
@@ -883,13 +674,11 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3593156" sideWeight="0.5025674" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51520914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4610266" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51520914" sideWeight="0.49743262" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3593156" sideWeight="0.49743262" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15019256" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -897,13 +686,15 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36121672" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36121672" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -936,10 +727,38 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/Principal.java">
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/VuBlockFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/FileTGD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardBlockDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/CardBlockFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -948,7 +767,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -972,7 +793,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -980,7 +800,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="226" column="0" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -998,82 +817,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#8329#8330#0" expanded="false" />
-            <element signature="e#8346#8347#0" expanded="false" />
-            <element signature="e#8451#8452#0" expanded="false" />
-            <element signature="e#8472#8473#0" expanded="false" />
-            <element signature="e#8543#8544#0" expanded="false" />
-            <element signature="e#8559#8560#0" expanded="false" />
-            <element signature="e#8661#8662#0" expanded="false" />
-            <element signature="e#8680#8681#0" expanded="false" />
-            <element signature="e#8812#8813#0" expanded="false" />
-            <element signature="e#8852#8853#0" expanded="false" />
-            <element signature="e#9226#9227#0" expanded="false" />
-            <element signature="e#9256#9257#0" expanded="false" />
-            <element signature="e#9407#9408#0" expanded="false" />
-            <element signature="e#9454#9455#0" expanded="false" />
-            <element signature="e#9549#9550#0" expanded="false" />
-            <element signature="e#9577#9578#0" expanded="false" />
-            <element signature="e#9727#9728#0" expanded="false" />
-            <element signature="e#9770#9771#0" expanded="false" />
-            <element signature="e#9861#9862#0" expanded="false" />
-            <element signature="e#9889#9890#0" expanded="false" />
-            <element signature="e#10035#10036#0" expanded="false" />
-            <element signature="e#10078#10079#0" expanded="false" />
-            <element signature="e#10165#10166#0" expanded="false" />
-            <element signature="e#10192#10193#0" expanded="false" />
-            <element signature="e#10332#10333#0" expanded="false" />
-            <element signature="e#10373#10374#0" expanded="false" />
-            <element signature="e#10489#10490#0" expanded="false" />
-            <element signature="e#10524#10525#0" expanded="false" />
-            <element signature="e#10848#10849#0" expanded="false" />
-            <element signature="e#10872#10873#0" expanded="false" />
-            <element signature="e#10997#10998#0" expanded="false" />
-            <element signature="e#11032#11033#0" expanded="false" />
-            <element signature="e#11110#11111#0" expanded="false" />
-            <element signature="e#11134#11135#0" expanded="false" />
-            <element signature="e#11259#11260#0" expanded="false" />
-            <element signature="e#11294#11295#0" expanded="false" />
-            <element signature="e#11397#11398#0" expanded="false" />
-            <element signature="e#11431#11432#0" expanded="false" />
-            <element signature="e#11743#11744#0" expanded="false" />
-            <element signature="e#11770#11771#0" expanded="false" />
-            <element signature="e#11910#11911#0" expanded="false" />
-            <element signature="e#11951#11952#0" expanded="false" />
-            <element signature="e#12032#12033#0" expanded="false" />
-            <element signature="e#12052#12053#0" expanded="false" />
-            <element signature="e#12172#12173#0" expanded="false" />
-            <element signature="e#12199#12200#0" expanded="false" />
-            <element signature="e#12284#12285#0" expanded="false" />
-            <element signature="e#12311#12312#0" expanded="false" />
-            <element signature="e#12449#12450#0" expanded="false" />
-            <element signature="e#12490#12491#0" expanded="false" />
-            <element signature="e#12606#12607#0" expanded="false" />
-            <element signature="e#12641#12642#0" expanded="false" />
-            <element signature="e#12993#12994#0" expanded="false" />
-            <element signature="e#13026#13027#0" expanded="false" />
-            <element signature="e#14216#14217#0" expanded="false" />
-            <element signature="e#14238#14239#0" expanded="false" />
-            <element signature="e#14369#14370#0" expanded="false" />
-            <element signature="e#14400#14401#0" expanded="false" />
-            <element signature="e#14460#14461#0" expanded="false" />
-            <element signature="e#14477#14478#0" expanded="false" />
-            <element signature="e#14555#14556#0" expanded="false" />
-            <element signature="e#14576#14577#0" expanded="false" />
-            <element signature="e#14663#14664#0" expanded="false" />
-            <element signature="e#14686#14687#0" expanded="false" />
-            <element signature="e#14803#14804#0" expanded="false" />
-            <element signature="e#14836#14837#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/Principal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="51" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -1082,7 +825,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1098,45 +843,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="184" column="0" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#7811#7812#0" expanded="false" />
-            <element signature="e#7833#7834#0" expanded="false" />
-            <element signature="e#7926#7927#0" expanded="false" />
-            <element signature="e#7957#7958#0" expanded="false" />
-            <element signature="e#8047#8048#0" expanded="false" />
-            <element signature="e#8082#8083#0" expanded="false" />
-            <element signature="e#8226#8227#0" expanded="false" />
-            <element signature="e#8278#8279#0" expanded="false" />
-            <element signature="e#8352#8353#0" expanded="false" />
-            <element signature="e#8379#8380#0" expanded="false" />
-            <element signature="e#8491#8492#0" expanded="false" />
-            <element signature="e#8532#8533#0" expanded="false" />
-            <element signature="e#8626#8627#0" expanded="false" />
-            <element signature="e#8652#8653#0" expanded="false" />
-            <element signature="e#8782#8783#0" expanded="false" />
-            <element signature="e#8821#8822#0" expanded="false" />
-            <element signature="e#8907#8908#0" expanded="false" />
-            <element signature="e#8940#8941#0" expanded="false" />
-            <element signature="e#9076#9077#0" expanded="false" />
-            <element signature="e#9129#9130#0" expanded="false" />
-            <element signature="e#9241#9242#0" expanded="false" />
-            <element signature="e#9274#9275#0" expanded="false" />
-            <element signature="e#9569#9570#0" expanded="false" />
-            <element signature="e#9599#9600#0" expanded="false" />
-            <element signature="e#9723#9724#0" expanded="false" />
-            <element signature="e#9770#9771#0" expanded="false" />
-            <element signature="e#9906#9907#0" expanded="false" />
-            <element signature="e#9946#9947#0" expanded="false" />
-            <element signature="e#10317#10318#0" expanded="false" />
-            <element signature="e#10359#10360#0" expanded="false" />
-            <element signature="e#10727#10728#0" expanded="false" />
-            <element signature="e#10764#10765#0" expanded="false" />
-            <element signature="e#11077#11078#0" expanded="false" />
-            <element signature="e#11100#11101#0" expanded="false" />
-            <element signature="e#11199#11200#0" expanded="false" />
-            <element signature="e#11232#11233#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1152,7 +858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="226" column="0" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1170,9 +875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1180,82 +882,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#8329#8330#0" expanded="false" />
-            <element signature="e#8346#8347#0" expanded="false" />
-            <element signature="e#8451#8452#0" expanded="false" />
-            <element signature="e#8472#8473#0" expanded="false" />
-            <element signature="e#8543#8544#0" expanded="false" />
-            <element signature="e#8559#8560#0" expanded="false" />
-            <element signature="e#8661#8662#0" expanded="false" />
-            <element signature="e#8680#8681#0" expanded="false" />
-            <element signature="e#8812#8813#0" expanded="false" />
-            <element signature="e#8852#8853#0" expanded="false" />
-            <element signature="e#9226#9227#0" expanded="false" />
-            <element signature="e#9256#9257#0" expanded="false" />
-            <element signature="e#9407#9408#0" expanded="false" />
-            <element signature="e#9454#9455#0" expanded="false" />
-            <element signature="e#9549#9550#0" expanded="false" />
-            <element signature="e#9577#9578#0" expanded="false" />
-            <element signature="e#9727#9728#0" expanded="false" />
-            <element signature="e#9770#9771#0" expanded="false" />
-            <element signature="e#9861#9862#0" expanded="false" />
-            <element signature="e#9889#9890#0" expanded="false" />
-            <element signature="e#10035#10036#0" expanded="false" />
-            <element signature="e#10078#10079#0" expanded="false" />
-            <element signature="e#10165#10166#0" expanded="false" />
-            <element signature="e#10192#10193#0" expanded="false" />
-            <element signature="e#10332#10333#0" expanded="false" />
-            <element signature="e#10373#10374#0" expanded="false" />
-            <element signature="e#10489#10490#0" expanded="false" />
-            <element signature="e#10524#10525#0" expanded="false" />
-            <element signature="e#10848#10849#0" expanded="false" />
-            <element signature="e#10872#10873#0" expanded="false" />
-            <element signature="e#10997#10998#0" expanded="false" />
-            <element signature="e#11032#11033#0" expanded="false" />
-            <element signature="e#11110#11111#0" expanded="false" />
-            <element signature="e#11134#11135#0" expanded="false" />
-            <element signature="e#11259#11260#0" expanded="false" />
-            <element signature="e#11294#11295#0" expanded="false" />
-            <element signature="e#11397#11398#0" expanded="false" />
-            <element signature="e#11431#11432#0" expanded="false" />
-            <element signature="e#11743#11744#0" expanded="false" />
-            <element signature="e#11770#11771#0" expanded="false" />
-            <element signature="e#11910#11911#0" expanded="false" />
-            <element signature="e#11951#11952#0" expanded="false" />
-            <element signature="e#12032#12033#0" expanded="false" />
-            <element signature="e#12052#12053#0" expanded="false" />
-            <element signature="e#12172#12173#0" expanded="false" />
-            <element signature="e#12199#12200#0" expanded="false" />
-            <element signature="e#12284#12285#0" expanded="false" />
-            <element signature="e#12311#12312#0" expanded="false" />
-            <element signature="e#12449#12450#0" expanded="false" />
-            <element signature="e#12490#12491#0" expanded="false" />
-            <element signature="e#12606#12607#0" expanded="false" />
-            <element signature="e#12641#12642#0" expanded="false" />
-            <element signature="e#12993#12994#0" expanded="false" />
-            <element signature="e#13026#13027#0" expanded="false" />
-            <element signature="e#14216#14217#0" expanded="false" />
-            <element signature="e#14238#14239#0" expanded="false" />
-            <element signature="e#14369#14370#0" expanded="false" />
-            <element signature="e#14400#14401#0" expanded="false" />
-            <element signature="e#14460#14461#0" expanded="false" />
-            <element signature="e#14477#14478#0" expanded="false" />
-            <element signature="e#14555#14556#0" expanded="false" />
-            <element signature="e#14576#14577#0" expanded="false" />
-            <element signature="e#14663#14664#0" expanded="false" />
-            <element signature="e#14686#14687#0" expanded="false" />
-            <element signature="e#14803#14804#0" expanded="false" />
-            <element signature="e#14836#14837#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/Principal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1264,75 +890,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="343" column="21" selection-start-line="343" selection-start-column="21" selection-end-line="343" selection-end-column="21" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#8329#8330#0" expanded="false" />
-            <element signature="e#8346#8347#0" expanded="false" />
-            <element signature="e#8451#8452#0" expanded="false" />
-            <element signature="e#8472#8473#0" expanded="false" />
-            <element signature="e#8543#8544#0" expanded="false" />
-            <element signature="e#8559#8560#0" expanded="false" />
-            <element signature="e#8661#8662#0" expanded="false" />
-            <element signature="e#8680#8681#0" expanded="false" />
-            <element signature="e#8812#8813#0" expanded="false" />
-            <element signature="e#8852#8853#0" expanded="false" />
-            <element signature="e#9226#9227#0" expanded="false" />
-            <element signature="e#9256#9257#0" expanded="false" />
-            <element signature="e#9407#9408#0" expanded="false" />
-            <element signature="e#9454#9455#0" expanded="false" />
-            <element signature="e#9549#9550#0" expanded="false" />
-            <element signature="e#9577#9578#0" expanded="false" />
-            <element signature="e#9727#9728#0" expanded="false" />
-            <element signature="e#9770#9771#0" expanded="false" />
-            <element signature="e#9861#9862#0" expanded="false" />
-            <element signature="e#9889#9890#0" expanded="false" />
-            <element signature="e#10035#10036#0" expanded="false" />
-            <element signature="e#10078#10079#0" expanded="false" />
-            <element signature="e#10165#10166#0" expanded="false" />
-            <element signature="e#10192#10193#0" expanded="false" />
-            <element signature="e#10332#10333#0" expanded="false" />
-            <element signature="e#10373#10374#0" expanded="false" />
-            <element signature="e#10489#10490#0" expanded="false" />
-            <element signature="e#10524#10525#0" expanded="false" />
-            <element signature="e#10848#10849#0" expanded="false" />
-            <element signature="e#10872#10873#0" expanded="false" />
-            <element signature="e#10997#10998#0" expanded="false" />
-            <element signature="e#11032#11033#0" expanded="false" />
-            <element signature="e#11110#11111#0" expanded="false" />
-            <element signature="e#11134#11135#0" expanded="false" />
-            <element signature="e#11259#11260#0" expanded="false" />
-            <element signature="e#11294#11295#0" expanded="false" />
-            <element signature="e#11397#11398#0" expanded="false" />
-            <element signature="e#11431#11432#0" expanded="false" />
-            <element signature="e#11743#11744#0" expanded="false" />
-            <element signature="e#11770#11771#0" expanded="false" />
-            <element signature="e#11910#11911#0" expanded="false" />
-            <element signature="e#11951#11952#0" expanded="false" />
-            <element signature="e#12032#12033#0" expanded="false" />
-            <element signature="e#12052#12053#0" expanded="false" />
-            <element signature="e#12172#12173#0" expanded="false" />
-            <element signature="e#12199#12200#0" expanded="false" />
-            <element signature="e#12284#12285#0" expanded="false" />
-            <element signature="e#12311#12312#0" expanded="false" />
-            <element signature="e#12449#12450#0" expanded="false" />
-            <element signature="e#12490#12491#0" expanded="false" />
-            <element signature="e#12606#12607#0" expanded="false" />
-            <element signature="e#12641#12642#0" expanded="false" />
-            <element signature="e#12993#12994#0" expanded="false" />
-            <element signature="e#13026#13027#0" expanded="false" />
-            <element signature="e#14216#14217#0" expanded="false" />
-            <element signature="e#14238#14239#0" expanded="false" />
-            <element signature="e#14369#14370#0" expanded="false" />
-            <element signature="e#14400#14401#0" expanded="false" />
-            <element signature="e#14460#14461#0" expanded="false" />
-            <element signature="e#14477#14478#0" expanded="false" />
-            <element signature="e#14555#14556#0" expanded="false" />
-            <element signature="e#14576#14577#0" expanded="false" />
-            <element signature="e#14663#14664#0" expanded="false" />
-            <element signature="e#14686#14687#0" expanded="false" />
-            <element signature="e#14803#14804#0" expanded="false" />
-            <element signature="e#14836#14837#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1348,7 +906,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="270" column="26" selection-start-line="270" selection-start-column="26" selection-end-line="270" selection-end-column="26" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1359,87 +919,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/Principal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/CardBlockFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#8329#8330#0" expanded="false" />
-            <element signature="e#8346#8347#0" expanded="false" />
-            <element signature="e#8451#8452#0" expanded="false" />
-            <element signature="e#8472#8473#0" expanded="false" />
-            <element signature="e#8543#8544#0" expanded="false" />
-            <element signature="e#8559#8560#0" expanded="false" />
-            <element signature="e#8661#8662#0" expanded="false" />
-            <element signature="e#8680#8681#0" expanded="false" />
-            <element signature="e#8812#8813#0" expanded="false" />
-            <element signature="e#8852#8853#0" expanded="false" />
-            <element signature="e#9226#9227#0" expanded="false" />
-            <element signature="e#9256#9257#0" expanded="false" />
-            <element signature="e#9407#9408#0" expanded="false" />
-            <element signature="e#9454#9455#0" expanded="false" />
-            <element signature="e#9549#9550#0" expanded="false" />
-            <element signature="e#9577#9578#0" expanded="false" />
-            <element signature="e#9727#9728#0" expanded="false" />
-            <element signature="e#9770#9771#0" expanded="false" />
-            <element signature="e#9861#9862#0" expanded="false" />
-            <element signature="e#9889#9890#0" expanded="false" />
-            <element signature="e#10035#10036#0" expanded="false" />
-            <element signature="e#10078#10079#0" expanded="false" />
-            <element signature="e#10165#10166#0" expanded="false" />
-            <element signature="e#10192#10193#0" expanded="false" />
-            <element signature="e#10332#10333#0" expanded="false" />
-            <element signature="e#10373#10374#0" expanded="false" />
-            <element signature="e#10489#10490#0" expanded="false" />
-            <element signature="e#10524#10525#0" expanded="false" />
-            <element signature="e#10848#10849#0" expanded="false" />
-            <element signature="e#10872#10873#0" expanded="false" />
-            <element signature="e#10997#10998#0" expanded="false" />
-            <element signature="e#11032#11033#0" expanded="false" />
-            <element signature="e#11110#11111#0" expanded="false" />
-            <element signature="e#11134#11135#0" expanded="false" />
-            <element signature="e#11259#11260#0" expanded="false" />
-            <element signature="e#11294#11295#0" expanded="false" />
-            <element signature="e#11397#11398#0" expanded="false" />
-            <element signature="e#11431#11432#0" expanded="false" />
-            <element signature="e#11743#11744#0" expanded="false" />
-            <element signature="e#11770#11771#0" expanded="false" />
-            <element signature="e#11910#11911#0" expanded="false" />
-            <element signature="e#11951#11952#0" expanded="false" />
-            <element signature="e#12032#12033#0" expanded="false" />
-            <element signature="e#12052#12053#0" expanded="false" />
-            <element signature="e#12172#12173#0" expanded="false" />
-            <element signature="e#12199#12200#0" expanded="false" />
-            <element signature="e#12284#12285#0" expanded="false" />
-            <element signature="e#12311#12312#0" expanded="false" />
-            <element signature="e#12449#12450#0" expanded="false" />
-            <element signature="e#12490#12491#0" expanded="false" />
-            <element signature="e#12606#12607#0" expanded="false" />
-            <element signature="e#12641#12642#0" expanded="false" />
-            <element signature="e#12993#12994#0" expanded="false" />
-            <element signature="e#13026#13027#0" expanded="false" />
-            <element signature="e#14216#14217#0" expanded="false" />
-            <element signature="e#14238#14239#0" expanded="false" />
-            <element signature="e#14369#14370#0" expanded="false" />
-            <element signature="e#14400#14401#0" expanded="false" />
-            <element signature="e#14460#14461#0" expanded="false" />
-            <element signature="e#14477#14478#0" expanded="false" />
-            <element signature="e#14555#14556#0" expanded="false" />
-            <element signature="e#14576#14577#0" expanded="false" />
-            <element signature="e#14663#14664#0" expanded="false" />
-            <element signature="e#14686#14687#0" expanded="false" />
-            <element signature="e#14803#14804#0" expanded="false" />
-            <element signature="e#14836#14837#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1447,7 +931,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="270" column="26" selection-start-line="270" selection-start-column="26" selection-end-line="270" selection-end-column="26" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1480,9 +966,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1507,121 +990,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="184" column="0" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#7811#7812#0" expanded="false" />
-            <element signature="e#7833#7834#0" expanded="false" />
-            <element signature="e#7926#7927#0" expanded="false" />
-            <element signature="e#7957#7958#0" expanded="false" />
-            <element signature="e#8047#8048#0" expanded="false" />
-            <element signature="e#8082#8083#0" expanded="false" />
-            <element signature="e#8226#8227#0" expanded="false" />
-            <element signature="e#8278#8279#0" expanded="false" />
-            <element signature="e#8352#8353#0" expanded="false" />
-            <element signature="e#8379#8380#0" expanded="false" />
-            <element signature="e#8491#8492#0" expanded="false" />
-            <element signature="e#8532#8533#0" expanded="false" />
-            <element signature="e#8626#8627#0" expanded="false" />
-            <element signature="e#8652#8653#0" expanded="false" />
-            <element signature="e#8782#8783#0" expanded="false" />
-            <element signature="e#8821#8822#0" expanded="false" />
-            <element signature="e#8907#8908#0" expanded="false" />
-            <element signature="e#8940#8941#0" expanded="false" />
-            <element signature="e#9076#9077#0" expanded="false" />
-            <element signature="e#9129#9130#0" expanded="false" />
-            <element signature="e#9241#9242#0" expanded="false" />
-            <element signature="e#9274#9275#0" expanded="false" />
-            <element signature="e#9569#9570#0" expanded="false" />
-            <element signature="e#9599#9600#0" expanded="false" />
-            <element signature="e#9723#9724#0" expanded="false" />
-            <element signature="e#9770#9771#0" expanded="false" />
-            <element signature="e#9906#9907#0" expanded="false" />
-            <element signature="e#9946#9947#0" expanded="false" />
-            <element signature="e#10317#10318#0" expanded="false" />
-            <element signature="e#10359#10360#0" expanded="false" />
-            <element signature="e#10727#10728#0" expanded="false" />
-            <element signature="e#10764#10765#0" expanded="false" />
-            <element signature="e#11077#11078#0" expanded="false" />
-            <element signature="e#11100#11101#0" expanded="false" />
-            <element signature="e#11199#11200#0" expanded="false" />
-            <element signature="e#11232#11233#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/CardBlockFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#8329#8330#0" expanded="false" />
-            <element signature="e#8346#8347#0" expanded="false" />
-            <element signature="e#8451#8452#0" expanded="false" />
-            <element signature="e#8472#8473#0" expanded="false" />
-            <element signature="e#8543#8544#0" expanded="false" />
-            <element signature="e#8559#8560#0" expanded="false" />
-            <element signature="e#8661#8662#0" expanded="false" />
-            <element signature="e#8680#8681#0" expanded="false" />
-            <element signature="e#8812#8813#0" expanded="false" />
-            <element signature="e#8852#8853#0" expanded="false" />
-            <element signature="e#9226#9227#0" expanded="false" />
-            <element signature="e#9256#9257#0" expanded="false" />
-            <element signature="e#9407#9408#0" expanded="false" />
-            <element signature="e#9454#9455#0" expanded="false" />
-            <element signature="e#9549#9550#0" expanded="false" />
-            <element signature="e#9577#9578#0" expanded="false" />
-            <element signature="e#9727#9728#0" expanded="false" />
-            <element signature="e#9770#9771#0" expanded="false" />
-            <element signature="e#9861#9862#0" expanded="false" />
-            <element signature="e#9889#9890#0" expanded="false" />
-            <element signature="e#10035#10036#0" expanded="false" />
-            <element signature="e#10078#10079#0" expanded="false" />
-            <element signature="e#10165#10166#0" expanded="false" />
-            <element signature="e#10192#10193#0" expanded="false" />
-            <element signature="e#10332#10333#0" expanded="false" />
-            <element signature="e#10373#10374#0" expanded="false" />
-            <element signature="e#10489#10490#0" expanded="false" />
-            <element signature="e#10524#10525#0" expanded="false" />
-            <element signature="e#10848#10849#0" expanded="false" />
-            <element signature="e#10872#10873#0" expanded="false" />
-            <element signature="e#10997#10998#0" expanded="false" />
-            <element signature="e#11032#11033#0" expanded="false" />
-            <element signature="e#11110#11111#0" expanded="false" />
-            <element signature="e#11134#11135#0" expanded="false" />
-            <element signature="e#11259#11260#0" expanded="false" />
-            <element signature="e#11294#11295#0" expanded="false" />
-            <element signature="e#11397#11398#0" expanded="false" />
-            <element signature="e#11431#11432#0" expanded="false" />
-            <element signature="e#11743#11744#0" expanded="false" />
-            <element signature="e#11770#11771#0" expanded="false" />
-            <element signature="e#11910#11911#0" expanded="false" />
-            <element signature="e#11951#11952#0" expanded="false" />
-            <element signature="e#12032#12033#0" expanded="false" />
-            <element signature="e#12052#12053#0" expanded="false" />
-            <element signature="e#12172#12173#0" expanded="false" />
-            <element signature="e#12199#12200#0" expanded="false" />
-            <element signature="e#12284#12285#0" expanded="false" />
-            <element signature="e#12311#12312#0" expanded="false" />
-            <element signature="e#12449#12450#0" expanded="false" />
-            <element signature="e#12490#12491#0" expanded="false" />
-            <element signature="e#12606#12607#0" expanded="false" />
-            <element signature="e#12641#12642#0" expanded="false" />
-            <element signature="e#12993#12994#0" expanded="false" />
-            <element signature="e#13026#13027#0" expanded="false" />
-            <element signature="e#14216#14217#0" expanded="false" />
-            <element signature="e#14238#14239#0" expanded="false" />
-            <element signature="e#14369#14370#0" expanded="false" />
-            <element signature="e#14400#14401#0" expanded="false" />
-            <element signature="e#14460#14461#0" expanded="false" />
-            <element signature="e#14477#14478#0" expanded="false" />
-            <element signature="e#14555#14556#0" expanded="false" />
-            <element signature="e#14576#14577#0" expanded="false" />
-            <element signature="e#14663#14664#0" expanded="false" />
-            <element signature="e#14686#14687#0" expanded="false" />
-            <element signature="e#14803#14804#0" expanded="false" />
-            <element signature="e#14836#14837#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1629,7 +997,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1783,7 +1150,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="226" column="0" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1797,8 +1163,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/FileTGD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
+        <state vertical-scroll-proportion="0.0">
           <caret line="3" column="11" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/CardBlockFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.6153846">
+          <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1815,17 +1189,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/VuBlockFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/Principal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27356747">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.3681672">
+          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
