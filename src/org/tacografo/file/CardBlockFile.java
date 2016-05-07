@@ -246,49 +246,51 @@ public class CardBlockFile {
 						this.identification.getCardNumber().getDrivercardRenewalIndex() +
 						this.identification.getCardNumber().getDrivercardReplacementIndex());
 
-				// activity without vehicle
-				for (int i = 0; i < value_activity.getActivityChangeInfo().size(); i++) {
-					aci = value_activity.getActivityChangeInfo().get(i);
-					// loop vehicles inject activitychangeinfo
-					for (int x=0;x<list_vehicleUsed.size();x++){
-						if (list_vehicleUsed.get(x).getFromDate().getTime() <= aci.getFromTime().getTime()) {
-							if (aci.getFromTime().getTime() <= list_vehicleUsed.get(x).getToDate().getTime()) {
-								//if (aci.getType() != "indeterminado")
-								if(hashmap_activitys.containsKey(list_vehicleUsed.get(x).getRegistration())){
-									hashmap_activitys.get(list_vehicleUsed.get(x).getRegistration()).getActivityChangeInfo().add(aci);
-								}else{
-									hashmap_activitys.put(list_vehicleUsed.get(x).getRegistration(),new Activity());
-									hashmap_activitys.get(list_vehicleUsed.get(x).getRegistration()).getActivityChangeInfo().add(aci);
-								}
 
-								hashmap_activitys.get(list_vehicleUsed.get(x).getRegistration()).setDate(value_activity.getDate());
-								hashmap_activitys.get(list_vehicleUsed.get(x).getRegistration()).setRegistration(list_vehicleUsed.get(x).getRegistration());
-								hashmap_activitys.get(list_vehicleUsed.get(x).getRegistration()).setCardNumber(this.identification.getCardNumber().getDriverIdentification() +
-										this.identification.getCardNumber().getDrivercardRenewalIndex() +
-										this.identification.getCardNumber().getDrivercardReplacementIndex());
-								hashmap_activitys.get(list_vehicleUsed.get(x).getRegistration()).setDistance(list_vehicleUsed.get(x).getDistance());
-
-								exist=true;
-							}
-						}
-					}
-					if(!exist){
-						if(hashmap_activitys.containsKey("without")){
-							hashmap_activitys.get("without").getActivityChangeInfo().add(aci);
-						}else{
-							hashmap_activitys.put("without",new Activity());
-							hashmap_activitys.get("without").getActivityChangeInfo().add(aci);
-						}
-						hashmap_activitys.get("without").setDate(value_activity.getDate());
-						hashmap_activitys.get("without").setCardNumber(this.identification.getCardNumber().getDriverIdentification() +
-								this.identification.getCardNumber().getDrivercardRenewalIndex() +
-								this.identification.getCardNumber().getDrivercardReplacementIndex());
-					}else{
-						exist=false;
-					}
-				}
 
 				if (list_vehicleUsed != null) { // vehiculo con actividad en ese dia
+					// activity without vehicle
+					for (int i = 0; i < value_activity.getActivityChangeInfo().size(); i++) {
+						aci = value_activity.getActivityChangeInfo().get(i);
+						// loop vehicles inject activitychangeinfo
+						for (int x=0;x<list_vehicleUsed.size();x++){
+							if (list_vehicleUsed.get(x).getFromDate().getTime() <= aci.getFromTime().getTime()) {
+								if (aci.getFromTime().getTime() <= list_vehicleUsed.get(x).getToDate().getTime()) {
+									//if (aci.getType() != "indeterminado")
+									if(hashmap_activitys.containsKey(list_vehicleUsed.get(x).getRegistration())){
+										hashmap_activitys.get(list_vehicleUsed.get(x).getRegistration()).getActivityChangeInfo().add(aci);
+									}else{
+										hashmap_activitys.put(list_vehicleUsed.get(x).getRegistration(),new Activity());
+										hashmap_activitys.get(list_vehicleUsed.get(x).getRegistration()).getActivityChangeInfo().add(aci);
+									}
+
+									hashmap_activitys.get(list_vehicleUsed.get(x).getRegistration()).setDate(value_activity.getDate());
+									hashmap_activitys.get(list_vehicleUsed.get(x).getRegistration()).setRegistration(list_vehicleUsed.get(x).getRegistration());
+									hashmap_activitys.get(list_vehicleUsed.get(x).getRegistration()).setCardNumber(this.identification.getCardNumber().getDriverIdentification() +
+											this.identification.getCardNumber().getDrivercardRenewalIndex() +
+											this.identification.getCardNumber().getDrivercardReplacementIndex());
+									hashmap_activitys.get(list_vehicleUsed.get(x).getRegistration()).setDistance(list_vehicleUsed.get(x).getDistance());
+
+									exist=true;
+								}
+							}
+						}
+						if(!exist){
+							if(hashmap_activitys.containsKey("without")){
+								hashmap_activitys.get("without").getActivityChangeInfo().add(aci);
+							}else{
+								hashmap_activitys.put("without",new Activity());
+								hashmap_activitys.get("without").getActivityChangeInfo().add(aci);
+							}
+							hashmap_activitys.get("without").setDate(value_activity.getDate());
+							hashmap_activitys.get("without").setCardNumber(this.identification.getCardNumber().getDriverIdentification() +
+									this.identification.getCardNumber().getDrivercardRenewalIndex() +
+									this.identification.getCardNumber().getDrivercardReplacementIndex());
+
+						}else{
+							exist=false;
+						}
+					}
 					// varios vehiculos en un dia, recorro los vehiculo por dia para la actividad
 
 					for (int j = 0; j < list_vehicleUsed.size(); j++) {
@@ -308,6 +310,9 @@ public class CardBlockFile {
 							}
 						}
 						*/
+						// inject vehicles a tacho
+						hashmap_activitys.get(list_vehicleUsed.get(j).getRegistration()).getVehicles().add(list_vehicleUsed.get(j));
+						// inject vehicles a organization
 						if(this.vehicles.get(list_vehicleUsed.get(j).getRegistration())==null){
 							Vehicle v = new Vehicle();
 							v.setRegistration(list_vehicleUsed.get(j).getRegistration());
@@ -315,6 +320,7 @@ public class CardBlockFile {
 							v.setDescription("Create vehicle");
 							this.vehicles.put(list_vehicleUsed.get(j).getRegistration(),v);
 						}
+						// inject places a tacho
 						if (this.places.getPlaces().get(activity_File.getKey()) != null) {
 							ArrayList<Places> list_places = this.places.getPlaces().get(activity_File.getKey());
 							if(list_places!=null){
@@ -330,9 +336,11 @@ public class CardBlockFile {
 					}
 
 					for (Map.Entry e: hashmap_activitys.entrySet()) {
+						Activity a=(Activity)e.getValue();
+						a.setOrganizationId(this.organizationId);
+						a.getFiles().add(this.nameFile);
+						this.tachos.getActivity().add(a);
 
-						this.tachos.getActivity().add((Activity)e.getValue());
-						System.out.println(e.getKey() + " " + e.getValue());
 					}
 				} else { // activity without vehicle
 
