@@ -2,136 +2,66 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f5193c1-04aa-48b7-8381-c6222aa16cca" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/jackson_annotations_2_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/jackson_core_2_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/jackson_databind_2_5_1.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/tachograph_structure_jar.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/Activity.class" afterPath="$PROJECT_DIR$/bin/com/thingtrack/parse/Activity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/ActivityChangeInfo.class" afterPath="$PROJECT_DIR$/bin/com/thingtrack/parse/ActivityChangeInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/CardNumber.class" afterPath="$PROJECT_DIR$/bin/com/thingtrack/parse/CardNumber.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/Driver.class" afterPath="$PROJECT_DIR$/bin/com/thingtrack/parse/Driver.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/Event.class" afterPath="$PROJECT_DIR$/bin/com/thingtrack/parse/Event.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/Fault.class" afterPath="$PROJECT_DIR$/bin/com/thingtrack/parse/Fault.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/ListDriver.class" afterPath="$PROJECT_DIR$/bin/com/thingtrack/parse/ListDriver.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/ListTacho.class" afterPath="$PROJECT_DIR$/bin/com/thingtrack/parse/ListTacho.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/OverSpeed.class" afterPath="$PROJECT_DIR$/bin/com/thingtrack/parse/OverSpeed.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/Places.class" afterPath="$PROJECT_DIR$/bin/com/thingtrack/parse/Places.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/SpeedVehicle.class" afterPath="$PROJECT_DIR$/bin/com/thingtrack/parse/SpeedVehicle.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/Tacho.class" afterPath="$PROJECT_DIR$/bin/com/thingtrack/parse/Tacho.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/Vehicle.class" afterPath="$PROJECT_DIR$/bin/com/thingtrack/parse/Vehicle.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/VehicleActivity.class" afterPath="$PROJECT_DIR$/bin/com/thingtrack/parse/VehicleActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/VehicleChangeInfo.class" afterPath="$PROJECT_DIR$/bin/com/thingtrack/parse/VehicleChangeInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/Block.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/Block.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/Activity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/ActivityChangeInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/CardNumber.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/Driver.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/Event.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/Fault.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/ListDriver.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/ListTacho.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/OverSpeed.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/Places.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/SpeedVehicle.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/Tacho.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/Vehicle.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/VehicleActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/thingtrack/parse/VehicleChangeInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thingtrack/parse/Activity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thingtrack/parse/ActivityChangeInfo.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thingtrack/parse/CardNumber.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thingtrack/parse/Driver.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thingtrack/parse/Event.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thingtrack/parse/Fault.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thingtrack/parse/ListDriver.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thingtrack/parse/ListTacho.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thingtrack/parse/OverSpeed.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thingtrack/parse/Places.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thingtrack/parse/SpeedVehicle.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thingtrack/parse/Tacho.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thingtrack/parse/Vehicle.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thingtrack/parse/VehicleActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thingtrack/parse/VehicleChangeInfo.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/CardBlockFile.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/CardBlockFile.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/FactoriaBloques.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/FactoriaBloques.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/FileBlockTGD.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/FileBlockTGD.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/FileTGD.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/FileTGD.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/VuBlockFile.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/VuBlockFile.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardBlock.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardBlock.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardBlockDriver.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardBlockDriver.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardCertificate.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardCertificate.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardChipIdentification.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardChipIdentification.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardControlActivityDataRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardControlActivityDataRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardCurrentUse.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardCurrentUse.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardDriverActivity.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardDriverActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardDrivingLicenceInformation.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardDrivingLicenceInformation.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardEventData.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardEventData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardFaultData.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardFaultData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardIccIdentification.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardIccIdentification.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardIdentification.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardIdentification.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardPlaceDailyWorkPeriod.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardPlaceDailyWorkPeriod.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardVehiclesUsed.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/CardVehiclesUsed.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/DriverCardApplicationIdentification.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/DriverCardApplicationIdentification.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/Fid.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/Fid.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/LastCardDownload.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/LastCardDownload.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/MemberStateCertificate.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/MemberStateCertificate.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/Sizes.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/Sizes.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/SpecificConditionRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/SpecificConditionRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/TipoDatos.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/TipoDatos.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/ActivityChangeInfo.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/ActivityChangeInfo.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardActivityDailyRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardActivityDailyRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardActivityLengthRange.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardActivityLengthRange.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardApprovalNumber.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardApprovalNumber.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardEventRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardEventRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardFaultRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardFaultRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardNumber.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardNumber.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardStructureVersion.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardStructureVersion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardVehicleRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/CardVehicleRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/Certificate.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/Certificate.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/ControlType.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/ControlType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/DailyPresenceCounter.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/DailyPresenceCounter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/Distance.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/Distance.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/DriverCardHolderIdentification.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/DriverCardHolderIdentification.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/EntryTypeDailyWorkPeriod.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/EntryTypeDailyWorkPeriod.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/EquipmentType.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/EquipmentType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/EventFaultType.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/EventFaultType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/ExtendedSerialNumber.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/ExtendedSerialNumber.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/FullCardNumber.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/FullCardNumber.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/HolderName.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/HolderName.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/Language.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/Language.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/ManufacturerCode.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/ManufacturerCode.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/Name.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/Name.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/NationNumeric.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/NationNumeric.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/NoOfCardPlaceRecords.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/NoOfCardPlaceRecords.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/NoOfCardVehicleRecords.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/NoOfCardVehicleRecords.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/NoOfEventsPerType.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/NoOfEventsPerType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/NoOfFaultsPerType.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/NoOfFaultsPerType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/PlaceRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/PlaceRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/RegionNumeric.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/RegionNumeric.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/SpecificConditionType.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/SpecificConditionType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/VehicleRegistrationIdentification.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/VehicleRegistrationIdentification.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/VehicleRegistrationNumber.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/VehicleRegistrationNumber.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/package-info.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/cardblockdriver/subblock/package-info.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/error/ErrorFile.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/error/ErrorFile.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/error/package-info.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/error/package-info.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/package-info.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/package-info.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/Activity.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/Activity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/EventsFaults.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/EventsFaults.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/ListActivity.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/ListActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/Resumen.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/Resumen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/Sizes.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/Sizes.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/Speed.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/Speed.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/Technical.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/Technical.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/Trep.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/Trep.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/package-info.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/package-info.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/CalibrationPurpose.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/CalibrationPurpose.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/EventFaulType.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/EventFaulType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/EventFaultRecordPurpose.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/EventFaultRecordPurpose.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/PreviousVehicleInfo.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/PreviousVehicleInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/SensorPaired.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/SensorPaired.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuActivityDailyData.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuActivityDailyData.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuCalibrationRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuCalibrationRecord.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuCardIWRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuCardIWRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuCompanyLocksRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuCompanyLocksRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuControlActivityRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuControlActivityRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuDataBlockCounter.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuDataBlockCounter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuDetailedSpeedBlock.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuDetailedSpeedBlock.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuEventRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuEventRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuFaultRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuFaultRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuIdentification.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuIdentification.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuOverSpeedingControlData.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuOverSpeedingControlData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuOverSpeedingEventRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuOverSpeedingEventRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuPlaceDailyWorkPeriodRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuPlaceDailyWorkPeriodRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuSoftwareIdentification.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuSoftwareIdentification.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuSpecificConditionRecords.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuSpecificConditionRecords.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuTimeAdjustmentRecord.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/file/vublock/subblock/VuTimeAdjustmentRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/BCDString.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/BCDString.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/Datef.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/Datef.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/EquipmentType.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/EquipmentType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/IA5String.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/IA5String.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/Integer_32.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/Integer_32.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/Number.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/Number.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/OctetString.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/OctetString.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/OdometerShort.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/OdometerShort.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/RealTime.class" afterPath="$PROJECT_DIR$/bin/org/tacografo/tiposdatos/RealTime.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.classpath" afterPath="$PROJECT_DIR$/.classpath" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/.gitignore" afterPath="$PROJECT_DIR$/bin/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/tacografo/file/CardBlockFile.java" afterPath="$PROJECT_DIR$/src/org/tacografo/file/CardBlockFile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/tacografo/file/FileTGD.java" afterPath="$PROJECT_DIR$/src/org/tacografo/file/FileTGD.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/tacografo/file/VuBlockFile.java" afterPath="$PROJECT_DIR$/src/org/tacografo/file/VuBlockFile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tachograph-structure.iml" afterPath="$PROJECT_DIR$/tachograph-structure.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardBlockDriver.java" afterPath="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardBlockDriver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardDriverActivity.java" afterPath="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardDriverActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardPlaceDailyWorkPeriod.java" afterPath="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardPlaceDailyWorkPeriod.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardVehiclesUsed.java" afterPath="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardVehiclesUsed.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/subblock/CardActivityDailyRecord.java" afterPath="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/subblock/CardActivityDailyRecord.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/tacografo/file/vublock/Activity.java" afterPath="$PROJECT_DIR$/src/org/tacografo/file/vublock/Activity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/tacografo/file/vublock/subblock/VuCardIWRecord.java" afterPath="$PROJECT_DIR$/src/org/tacografo/file/vublock/subblock/VuCardIWRecord.java" />
     </list>
     <ignored path="tachograph-structure.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -152,22 +82,12 @@
     <favorites_list name="tachograph-structure" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Principal.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/Principal.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CardBlockFile.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/CardBlockFile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.21201414">
-              <caret line="338" column="52" selection-start-line="338" selection-start-column="52" selection-end-line="338" selection-end-column="52" />
+              <caret line="36" column="51" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -176,52 +96,260 @@
       <file leaf-file-name="VuBlockFile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/VuBlockFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.518518">
-              <caret line="270" column="26" selection-start-line="270" selection-start-column="26" selection-end-line="270" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
               <folding>
-                <element signature="e#3570#3604#0" expanded="false" />
-                <element signature="e#11688#11722#0" expanded="false" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActivityChangeInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thingtrack/parse/ActivityChangeInfo.java">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.11111">
-              <caret line="58" column="7" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+            <state vertical-scroll-proportion="-0.9153846">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VehicleActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thingtrack/parse/VehicleActivity.java">
+      <file leaf-file-name="diagram class.uml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/diagram class.uml">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement />
+              <nodes>
+                <node x="2367.0" y="156.0">org.tacografo.file.vublock.ListActivity</node>
+                <node x="2655.0" y="156.0">org.tacografo.file.vublock.EventsFaults</node>
+                <node x="1796.0" y="156.0">org.tacografo.file.cardblockdriver.CardIdentification</node>
+                <node x="1090.0" y="156.0">org.tacografo.file.cardblockdriver.CardDrivingLicenceInformation</node>
+                <node x="1430.0" y="156.0">org.tacografo.file.cardblockdriver.CardChipIdentification</node>
+                <node x="349.0" y="156.0">org.tacografo.file.cardblockdriver.CardCertificate</node>
+                <node x="2473.0" y="156.0">org.tacografo.file.vublock.Speed</node>
+                <node x="768.0000000000001" y="156.0">org.tacografo.file.cardblockdriver.CardDriverActivity</node>
+                <node x="1591.0" y="156.0">org.tacografo.file.cardblockdriver.CardControlActivityDataRecord</node>
+                <node x="2317.5" y="0.0">org.tacografo.file.cardblockdriver.SpecificConditionRecord</node>
+                <node x="1852.5572916666667" y="372.0">org.tacografo.file.FileTGD</node>
+                <node x="1291.0" y="156.0">org.tacografo.file.cardblockdriver.CardVehiclesUsed</node>
+                <node x="0.0" y="156.0">org.tacografo.file.cardblockdriver.CardEventData</node>
+                <node x="2507.5" y="294.0">org.tacografo.file.VuBlockFile</node>
+                <node x="910.0000000000001" y="156.0">org.tacografo.file.cardblockdriver.CardPlaceDailyWorkPeriod</node>
+                <node x="476.0" y="156.0">org.tacografo.file.cardblockdriver.MemberStateCertificate</node>
+                <node x="0.0" y="445.0">org.tacografo.file.cardblockdriver.CardBlockDriver</node>
+                <node x="1936.0" y="156.0">org.tacografo.file.cardblockdriver.LastCardDownload</node>
+                <node x="2771.0" y="156.0">org.tacografo.file.vublock.Technical</node>
+                <node x="2375.0" y="78.0">org.tacografo.file.vublock.Activity</node>
+                <node x="1217.0" y="294.0">org.tacografo.file.CardBlockFile</node>
+                <node x="2080.0" y="156.0">org.tacografo.file.cardblockdriver.CardIccIdentification</node>
+                <node x="128.0" y="156.0">org.tacografo.file.cardblockdriver.DriverCardApplicationIdentification</node>
+                <node x="644.0" y="156.0">org.tacografo.file.cardblockdriver.CardFaultData</node>
+                <node x="2557.0" y="156.0">org.tacografo.file.vublock.Resumen</node>
+                <node x="2234.0" y="156.0">org.tacografo.file.cardblockdriver.CardCurrentUse</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.CardDriverActivity">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.CardIccIdentification">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.SpecificConditionRecord">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="org.tacografo.file.VuBlockFile" target="org.tacografo.file.vublock.EventsFaults">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.CardControlActivityDataRecord">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.CardDrivingLicenceInformation">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.CardIdentification">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.LastCardDownload">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="org.tacografo.file.vublock.Activity" target="org.tacografo.file.cardblockdriver.SpecificConditionRecord">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="org.tacografo.file.vublock.ListActivity" target="org.tacografo.file.vublock.Activity">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.CardEventData">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.CardChipIdentification">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.MemberStateCertificate">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.DriverCardApplicationIdentification">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="org.tacografo.file.FileTGD" target="org.tacografo.file.CardBlockFile">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.CardCurrentUse">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.CardPlaceDailyWorkPeriod">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="org.tacografo.file.VuBlockFile" target="org.tacografo.file.vublock.ListActivity">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="org.tacografo.file.VuBlockFile" target="org.tacografo.file.vublock.Speed">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="org.tacografo.file.FileTGD" target="org.tacografo.file.VuBlockFile">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.CardVehiclesUsed">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.CardFaultData">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="org.tacografo.file.VuBlockFile" target="org.tacografo.file.vublock.Technical">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.CardCertificate">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="org.tacografo.file.VuBlockFile" target="org.tacografo.file.vublock.Resumen">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="0.4074590449634019" x="1424.5" y="236.5" />
+              <SelectedNodes>
+                <node>org.tacografo.file.cardblockdriver.CardBlockDriver</node>
+              </SelectedNodes>
+              <Categories />
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileTGD.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/FileTGD.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+              <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Activity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thingtrack/parse/Activity.java">
+      <file leaf-file-name=".project" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.project">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActivityChangeInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/subblock/ActivityChangeInfo.java">
+      <file leaf-file-name="VuCardIWRecord.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/vublock/subblock/VuCardIWRecord.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="109" column="19" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
-              <folding />
+              <caret line="226" column="0" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#4587#4588#0" expanded="false" />
+                <element signature="e#4615#4616#0" expanded="false" />
+                <element signature="e#4738#4739#0" expanded="false" />
+                <element signature="e#4781#4782#0" expanded="false" />
+                <element signature="e#4868#4869#0" expanded="false" />
+                <element signature="e#4896#4897#0" expanded="false" />
+                <element signature="e#5023#5024#0" expanded="false" />
+                <element signature="e#5066#5067#0" expanded="false" />
+                <element signature="e#5145#5146#0" expanded="false" />
+                <element signature="e#5174#5175#0" expanded="false" />
+                <element signature="e#5295#5296#0" expanded="false" />
+                <element signature="e#5340#5341#0" expanded="false" />
+                <element signature="e#5423#5424#0" expanded="false" />
+                <element signature="e#5454#5455#0" expanded="false" />
+                <element signature="e#5583#5584#0" expanded="false" />
+                <element signature="e#5632#5633#0" expanded="false" />
+                <element signature="e#5742#5743#0" expanded="false" />
+                <element signature="e#5787#5788#0" expanded="false" />
+                <element signature="e#6127#6128#0" expanded="false" />
+                <element signature="e#6155#6156#0" expanded="false" />
+                <element signature="e#6274#6275#0" expanded="false" />
+                <element signature="e#6317#6318#0" expanded="false" />
+                <element signature="e#6402#6403#0" expanded="false" />
+                <element signature="e#6434#6435#0" expanded="false" />
+                <element signature="e#6567#6568#0" expanded="false" />
+                <element signature="e#6618#6619#0" expanded="false" />
+                <element signature="e#6730#6731#0" expanded="false" />
+                <element signature="e#6776#6777#0" expanded="false" />
+                <element signature="e#7145#7146#0" expanded="false" />
+                <element signature="e#7178#7179#0" expanded="false" />
+                <element signature="e#7464#7465#0" expanded="false" />
+                <element signature="e#7493#7494#0" expanded="false" />
+                <element signature="e#7616#7617#0" expanded="false" />
+                <element signature="e#7661#7662#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CardBlockDriver.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardBlockDriver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CardBlockFile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/CardBlockFile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -239,9 +367,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/subblock/CardActivityDailyRecord.java" />
+        <option value="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardPlaceDailyWorkPeriod.java" />
+        <option value="$PROJECT_DIR$/src/org/tacografo/file/vublock/Activity.java" />
+        <option value="$PROJECT_DIR$/src/org/tacografo/file/vublock/subblock/VuCardIWRecord.java" />
+        <option value="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardVehiclesUsed.java" />
+        <option value="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardBlockDriver.java" />
+        <option value="$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardDriverActivity.java" />
+        <option value="$PROJECT_DIR$/src/org/tacografo/file/FileTGD.java" />
         <option value="$PROJECT_DIR$/src/org/tacografo/file/VuBlockFile.java" />
-        <option value="$PROJECT_DIR$/src/test/Principal.java" />
         <option value="$PROJECT_DIR$/src/org/tacografo/file/CardBlockFile.java" />
+        <option value="$PROJECT_DIR$/src/test/Principal.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -283,7 +420,6 @@
     <panes>
       <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -330,24 +466,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tachograph-structure" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tachograph-structure" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="tacografo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -396,7 +514,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="cardblockdriver" />
+              <option name="myItemId" value="vublock" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -423,33 +541,12 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="cardblockdriver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="subblock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tachograph-structure" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tachograph-structure" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parse" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -458,7 +555,7 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Users\negrero\herramientas\server\node-v0.12.0\node.exe" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tachograph-card-structure/jackson-databind-2.5.1.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -892,6 +989,11 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -926,39 +1028,42 @@
       <option name="number" value="Default" />
       <updated>1462434069251</updated>
       <workItem from="1462434079179" duration="8255000" />
+      <workItem from="1462599544368" duration="1093000" />
+      <workItem from="1462600538842" duration="4011000" />
+      <workItem from="1462603987243" duration="1087000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8255000" />
+    <option name="totallyTimeSpent" value="14446000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1608" height="1180" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889733" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24967907" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922202" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24967907" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41254753" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36121672" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -974,32 +1079,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/Principal.java</url>
-          <line>36</line>
-          <properties />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/org/tacografo/file/VuBlockFile.java</url>
-          <line>259</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/org/tacografo/file/VuBlockFile.java</url>
-          <line>245</line>
-          <properties />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/org/tacografo/file/CardBlockFile.java</url>
-          <line>352</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="10" />
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1008,46 +1088,158 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/thingtrack/parse/Activity.java">
+    <entry file="file://$PROJECT_DIR$/src/test/Principal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thingtrack/parse/VehicleActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <caret line="36" column="51" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/VuBlockFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.518518">
-          <caret line="270" column="26" selection-start-line="270" selection-start-column="26" selection-end-line="270" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
           <folding>
-            <element signature="e#3570#3604#0" expanded="false" />
-            <element signature="e#11688#11722#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thingtrack/parse/ActivityChangeInfo.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.11111">
-          <caret line="58" column="7" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/subblock/ActivityChangeInfo.java">
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/vublock/Activity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="109" column="19" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
+          <caret line="184" column="0" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#7811#7812#0" expanded="false" />
+            <element signature="e#7833#7834#0" expanded="false" />
+            <element signature="e#7926#7927#0" expanded="false" />
+            <element signature="e#7957#7958#0" expanded="false" />
+            <element signature="e#8047#8048#0" expanded="false" />
+            <element signature="e#8082#8083#0" expanded="false" />
+            <element signature="e#8226#8227#0" expanded="false" />
+            <element signature="e#8278#8279#0" expanded="false" />
+            <element signature="e#8352#8353#0" expanded="false" />
+            <element signature="e#8379#8380#0" expanded="false" />
+            <element signature="e#8491#8492#0" expanded="false" />
+            <element signature="e#8532#8533#0" expanded="false" />
+            <element signature="e#8626#8627#0" expanded="false" />
+            <element signature="e#8652#8653#0" expanded="false" />
+            <element signature="e#8782#8783#0" expanded="false" />
+            <element signature="e#8821#8822#0" expanded="false" />
+            <element signature="e#8907#8908#0" expanded="false" />
+            <element signature="e#8940#8941#0" expanded="false" />
+            <element signature="e#9076#9077#0" expanded="false" />
+            <element signature="e#9129#9130#0" expanded="false" />
+            <element signature="e#9241#9242#0" expanded="false" />
+            <element signature="e#9274#9275#0" expanded="false" />
+            <element signature="e#9569#9570#0" expanded="false" />
+            <element signature="e#9599#9600#0" expanded="false" />
+            <element signature="e#9723#9724#0" expanded="false" />
+            <element signature="e#9770#9771#0" expanded="false" />
+            <element signature="e#9906#9907#0" expanded="false" />
+            <element signature="e#9946#9947#0" expanded="false" />
+            <element signature="e#10317#10318#0" expanded="false" />
+            <element signature="e#10359#10360#0" expanded="false" />
+            <element signature="e#10727#10728#0" expanded="false" />
+            <element signature="e#10764#10765#0" expanded="false" />
+            <element signature="e#11077#11078#0" expanded="false" />
+            <element signature="e#11100#11101#0" expanded="false" />
+            <element signature="e#11199#11200#0" expanded="false" />
+            <element signature="e#11232#11233#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/FileTGD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/vublock/subblock/VuCardIWRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="226" column="0" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#4587#4588#0" expanded="false" />
+            <element signature="e#4615#4616#0" expanded="false" />
+            <element signature="e#4738#4739#0" expanded="false" />
+            <element signature="e#4781#4782#0" expanded="false" />
+            <element signature="e#4868#4869#0" expanded="false" />
+            <element signature="e#4896#4897#0" expanded="false" />
+            <element signature="e#5023#5024#0" expanded="false" />
+            <element signature="e#5066#5067#0" expanded="false" />
+            <element signature="e#5145#5146#0" expanded="false" />
+            <element signature="e#5174#5175#0" expanded="false" />
+            <element signature="e#5295#5296#0" expanded="false" />
+            <element signature="e#5340#5341#0" expanded="false" />
+            <element signature="e#5423#5424#0" expanded="false" />
+            <element signature="e#5454#5455#0" expanded="false" />
+            <element signature="e#5583#5584#0" expanded="false" />
+            <element signature="e#5632#5633#0" expanded="false" />
+            <element signature="e#5742#5743#0" expanded="false" />
+            <element signature="e#5787#5788#0" expanded="false" />
+            <element signature="e#6127#6128#0" expanded="false" />
+            <element signature="e#6155#6156#0" expanded="false" />
+            <element signature="e#6274#6275#0" expanded="false" />
+            <element signature="e#6317#6318#0" expanded="false" />
+            <element signature="e#6402#6403#0" expanded="false" />
+            <element signature="e#6434#6435#0" expanded="false" />
+            <element signature="e#6567#6568#0" expanded="false" />
+            <element signature="e#6618#6619#0" expanded="false" />
+            <element signature="e#6730#6731#0" expanded="false" />
+            <element signature="e#6776#6777#0" expanded="false" />
+            <element signature="e#7145#7146#0" expanded="false" />
+            <element signature="e#7178#7179#0" expanded="false" />
+            <element signature="e#7464#7465#0" expanded="false" />
+            <element signature="e#7493#7494#0" expanded="false" />
+            <element signature="e#7616#7617#0" expanded="false" />
+            <element signature="e#7661#7662#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardBlockDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardDriverActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/CardBlockFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1061,9 +1253,420 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/CardBlockFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21201414">
-          <caret line="338" column="52" selection-start-line="338" selection-start-column="52" selection-end-line="338" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="343" column="21" selection-start-line="343" selection-start-column="21" selection-end-line="343" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/VuBlockFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="270" column="26" selection-start-line="270" selection-start-column="26" selection-end-line="270" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/subblock/ActivityChangeInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="109" column="19" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/Principal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/CardBlockFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/VuBlockFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="270" column="26" selection-start-line="270" selection-start-column="26" selection-end-line="270" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/FactoriaBloques.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/subblock/ActivityChangeInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="109" column="19" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardVehiclesUsed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardDriverActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/subblock/CardActivityDailyRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="96" column="5" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardPlaceDailyWorkPeriod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/vublock/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="184" column="0" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#7811#7812#0" expanded="false" />
+            <element signature="e#7833#7834#0" expanded="false" />
+            <element signature="e#7926#7927#0" expanded="false" />
+            <element signature="e#7957#7958#0" expanded="false" />
+            <element signature="e#8047#8048#0" expanded="false" />
+            <element signature="e#8082#8083#0" expanded="false" />
+            <element signature="e#8226#8227#0" expanded="false" />
+            <element signature="e#8278#8279#0" expanded="false" />
+            <element signature="e#8352#8353#0" expanded="false" />
+            <element signature="e#8379#8380#0" expanded="false" />
+            <element signature="e#8491#8492#0" expanded="false" />
+            <element signature="e#8532#8533#0" expanded="false" />
+            <element signature="e#8626#8627#0" expanded="false" />
+            <element signature="e#8652#8653#0" expanded="false" />
+            <element signature="e#8782#8783#0" expanded="false" />
+            <element signature="e#8821#8822#0" expanded="false" />
+            <element signature="e#8907#8908#0" expanded="false" />
+            <element signature="e#8940#8941#0" expanded="false" />
+            <element signature="e#9076#9077#0" expanded="false" />
+            <element signature="e#9129#9130#0" expanded="false" />
+            <element signature="e#9241#9242#0" expanded="false" />
+            <element signature="e#9274#9275#0" expanded="false" />
+            <element signature="e#9569#9570#0" expanded="false" />
+            <element signature="e#9599#9600#0" expanded="false" />
+            <element signature="e#9723#9724#0" expanded="false" />
+            <element signature="e#9770#9771#0" expanded="false" />
+            <element signature="e#9906#9907#0" expanded="false" />
+            <element signature="e#9946#9947#0" expanded="false" />
+            <element signature="e#10317#10318#0" expanded="false" />
+            <element signature="e#10359#10360#0" expanded="false" />
+            <element signature="e#10727#10728#0" expanded="false" />
+            <element signature="e#10764#10765#0" expanded="false" />
+            <element signature="e#11077#11078#0" expanded="false" />
+            <element signature="e#11100#11101#0" expanded="false" />
+            <element signature="e#11199#11200#0" expanded="false" />
+            <element signature="e#11232#11233#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/vublock/subblock/VuCardIWRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="226" column="0" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#4587#4588#0" expanded="false" />
+            <element signature="e#4615#4616#0" expanded="false" />
+            <element signature="e#4738#4739#0" expanded="false" />
+            <element signature="e#4781#4782#0" expanded="false" />
+            <element signature="e#4868#4869#0" expanded="false" />
+            <element signature="e#4896#4897#0" expanded="false" />
+            <element signature="e#5023#5024#0" expanded="false" />
+            <element signature="e#5066#5067#0" expanded="false" />
+            <element signature="e#5145#5146#0" expanded="false" />
+            <element signature="e#5174#5175#0" expanded="false" />
+            <element signature="e#5295#5296#0" expanded="false" />
+            <element signature="e#5340#5341#0" expanded="false" />
+            <element signature="e#5423#5424#0" expanded="false" />
+            <element signature="e#5454#5455#0" expanded="false" />
+            <element signature="e#5583#5584#0" expanded="false" />
+            <element signature="e#5632#5633#0" expanded="false" />
+            <element signature="e#5742#5743#0" expanded="false" />
+            <element signature="e#5787#5788#0" expanded="false" />
+            <element signature="e#6127#6128#0" expanded="false" />
+            <element signature="e#6155#6156#0" expanded="false" />
+            <element signature="e#6274#6275#0" expanded="false" />
+            <element signature="e#6317#6318#0" expanded="false" />
+            <element signature="e#6402#6403#0" expanded="false" />
+            <element signature="e#6434#6435#0" expanded="false" />
+            <element signature="e#6567#6568#0" expanded="false" />
+            <element signature="e#6618#6619#0" expanded="false" />
+            <element signature="e#6730#6731#0" expanded="false" />
+            <element signature="e#6776#6777#0" expanded="false" />
+            <element signature="e#7145#7146#0" expanded="false" />
+            <element signature="e#7178#7179#0" expanded="false" />
+            <element signature="e#7464#7465#0" expanded="false" />
+            <element signature="e#7493#7494#0" expanded="false" />
+            <element signature="e#7616#7617#0" expanded="false" />
+            <element signature="e#7661#7662#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/cardblockdriver/CardBlockDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/Principal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="51" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/VuBlockFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/CardBlockFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/tacografo/file/FileTGD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.project">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.9153846">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diagrama de clases.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diagram class.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="2367.0" y="156.0">org.tacografo.file.vublock.ListActivity</node>
+            <node x="2655.0" y="156.0">org.tacografo.file.vublock.EventsFaults</node>
+            <node x="1796.0" y="156.0">org.tacografo.file.cardblockdriver.CardIdentification</node>
+            <node x="1090.0" y="156.0">org.tacografo.file.cardblockdriver.CardDrivingLicenceInformation</node>
+            <node x="1430.0" y="156.0">org.tacografo.file.cardblockdriver.CardChipIdentification</node>
+            <node x="349.0" y="156.0">org.tacografo.file.cardblockdriver.CardCertificate</node>
+            <node x="2473.0" y="156.0">org.tacografo.file.vublock.Speed</node>
+            <node x="768.0000000000001" y="156.0">org.tacografo.file.cardblockdriver.CardDriverActivity</node>
+            <node x="1591.0" y="156.0">org.tacografo.file.cardblockdriver.CardControlActivityDataRecord</node>
+            <node x="2317.5" y="0.0">org.tacografo.file.cardblockdriver.SpecificConditionRecord</node>
+            <node x="1852.5572916666667" y="372.0">org.tacografo.file.FileTGD</node>
+            <node x="1291.0" y="156.0">org.tacografo.file.cardblockdriver.CardVehiclesUsed</node>
+            <node x="0.0" y="156.0">org.tacografo.file.cardblockdriver.CardEventData</node>
+            <node x="2507.5" y="294.0">org.tacografo.file.VuBlockFile</node>
+            <node x="910.0000000000001" y="156.0">org.tacografo.file.cardblockdriver.CardPlaceDailyWorkPeriod</node>
+            <node x="476.0" y="156.0">org.tacografo.file.cardblockdriver.MemberStateCertificate</node>
+            <node x="0.0" y="445.0">org.tacografo.file.cardblockdriver.CardBlockDriver</node>
+            <node x="1936.0" y="156.0">org.tacografo.file.cardblockdriver.LastCardDownload</node>
+            <node x="2771.0" y="156.0">org.tacografo.file.vublock.Technical</node>
+            <node x="2375.0" y="78.0">org.tacografo.file.vublock.Activity</node>
+            <node x="1217.0" y="294.0">org.tacografo.file.CardBlockFile</node>
+            <node x="2080.0" y="156.0">org.tacografo.file.cardblockdriver.CardIccIdentification</node>
+            <node x="128.0" y="156.0">org.tacografo.file.cardblockdriver.DriverCardApplicationIdentification</node>
+            <node x="644.0" y="156.0">org.tacografo.file.cardblockdriver.CardFaultData</node>
+            <node x="2557.0" y="156.0">org.tacografo.file.vublock.Resumen</node>
+            <node x="2234.0" y="156.0">org.tacografo.file.cardblockdriver.CardCurrentUse</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.CardDriverActivity">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.CardIccIdentification">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.SpecificConditionRecord">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="org.tacografo.file.VuBlockFile" target="org.tacografo.file.vublock.EventsFaults">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.CardControlActivityDataRecord">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.CardDrivingLicenceInformation">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.CardIdentification">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.LastCardDownload">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="org.tacografo.file.vublock.Activity" target="org.tacografo.file.cardblockdriver.SpecificConditionRecord">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="org.tacografo.file.vublock.ListActivity" target="org.tacografo.file.vublock.Activity">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.CardEventData">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.CardChipIdentification">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.MemberStateCertificate">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.DriverCardApplicationIdentification">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="org.tacografo.file.FileTGD" target="org.tacografo.file.CardBlockFile">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.CardCurrentUse">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.CardPlaceDailyWorkPeriod">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="org.tacografo.file.VuBlockFile" target="org.tacografo.file.vublock.ListActivity">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="org.tacografo.file.VuBlockFile" target="org.tacografo.file.vublock.Speed">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="org.tacografo.file.FileTGD" target="org.tacografo.file.VuBlockFile">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.CardVehiclesUsed">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.CardFaultData">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="org.tacografo.file.VuBlockFile" target="org.tacografo.file.vublock.Technical">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="org.tacografo.file.CardBlockFile" target="org.tacografo.file.cardblockdriver.CardCertificate">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="org.tacografo.file.VuBlockFile" target="org.tacografo.file.vublock.Resumen">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.4074590449634019" x="1424.5" y="236.5" />
+          <SelectedNodes>
+            <node>org.tacografo.file.cardblockdriver.CardBlockDriver</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>

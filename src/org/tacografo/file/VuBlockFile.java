@@ -6,7 +6,7 @@ package org.tacografo.file;
 
 import java.util.*;
 
-import com.thingtrack.parse.*;
+
 import org.joda.time.*;
 import org.tacografo.file.cardblockdriver.subblock.ActivityChangeInfo;
 import org.tacografo.file.vublock.*;
@@ -38,7 +38,7 @@ property="type")
 */
 public class VuBlockFile {
 
-	@JsonIgnore
+
 	private HashMap<String,Block> listBlock;	
 	@JsonIgnore
 	private ListActivity listActivity=null; //VU_ACTIVITY(0X7602),
@@ -48,15 +48,9 @@ public class VuBlockFile {
 	private Speed speed=null; //VU_SPEED(0X7604),	
 	@JsonIgnore
 	private Technical technical=null; //VU_TECHNICAL(0X7605);
-	
+	@JsonIgnore
 	private Resumen resumen=null; // VU_RESUMEN(0X7601),
-	
-	private Tacho tachos;
-	
-	private HashMap<String,Driver> drivers;
-	
-	private HashMap<String, Vehicle> vehicles;
-	
+
 	public VuBlockFile(){
 		
 	}
@@ -65,186 +59,19 @@ public class VuBlockFile {
 		int start=0;
 		ListActivity listActivity=new ListActivity();
 		this.listBlock=new HashMap();
-		this.tachos=new Tacho();
-		this.drivers=new HashMap();
 
-		Activity activity;
-		com.thingtrack.parse.Activity activityParse;
-		Driver driver;
-		Tacho tacho;
-		String registration="";
 		while(start<datos.length){	
-			//System.out.println(Integer.toHexString(datos[start])+" ====="+datos[start]);
+
 			if(datos[start]==0x76){
 					start+=1;					
 					if(start<datos.length){
 						if(datos[start]>0x00 && datos[start]<0x06){
 
 						    int word = Number.getNumber(Arrays.copyOfRange(datos, start-1, start+1));
-
-							String str=Integer.toHexString(word);
-
 							Block b=(Block) FactoriaBloques.getFactoria(word, Arrays.copyOfRange(datos, start+1, datos.length));
-							if(b.getTRED()==Trep.VU_RESUMEN.toString()){
-								Resumen r=(Resumen)b;
-								registration=r.getVehicleRegistrationIdentification().getVehicleRegistrationNumber();
-							}
+
 							if(b.getTRED()==Trep.VU_ACTIVITY.toString()){
 								listActivity.add((Activity)b);
-								activity=(Activity) b;
-								java.util.Iterator<VuCardIWRecord> it= activity.getVuCardIWData().iterator();
-								// ----------> driver
-
-								ActivityChangeInfo aci;
-								com.thingtrack.parse.ActivityChangeInfo ctpaci;
-								com.thingtrack.parse.ActivityChangeInfo ctpaci_aux;
-								HashMap<String, ArrayList<com.thingtrack.parse.ActivityChangeInfo>> tacho_activity=new HashMap();
-								HashMap<String, ArrayList<VehicleChangeInfo>> tacho_vehicles=new HashMap();
-								HashMap<String, ArrayList> tacho_places=new HashMap();
-								ArrayList lista_changeInfo, lista;
-								Driver dr;
-								boolean exist=false;
-								// ----> ActivityChangeInfo for driver
-								//Iterator it_changeInfo=activity.getVuActivityDailyData().iterator();
-								ArrayList<ActivityChangeInfo> it_changeInfo=activity.getVuActivityDailyData();
-								for(int i=0;i<it_changeInfo.size();i++){
-								//while (it_changeInfo.hasNext()){
-									//aci=(ActivityChangeInfo)it_changeInfo.next();
-									aci=it_changeInfo.get(i);
-									ctpaci=new com.thingtrack.parse.ActivityChangeInfo(aci);
-
-									long fecha=activity.getTimeReal().getTime();
-									DateTimeZone zoneUTC = DateTimeZone.UTC;
-									Instant inst=new Instant(activity.getTimeReal());
-									fecha+=aci.getHours()*60*60*1000;
-									fecha+=aci.getMin()*60*1000;
-									//Date d=new Date(fecha);
-									MutableDateTime d=inst.toMutableDateTime();
-									d.setZone(zoneUTC);
-
-									d.setSecondOfDay(((aci.getHours()*60)+aci.getMin())*60);
-
-									Iterator<VuCardIWRecord> iter_driver=activity.getVuCardIWData().iterator();
-									ctpaci.setFromTime(d.toDate());
-									com.thingtrack.parse.ActivityChangeInfo aux=ctpaci;
-									/**
-									if (aci.getP()=="no insertada"){
-										if(tacho_activity.containsKey("withoutDriver")){
-											tacho_activity.get("withoutDriver").add(ctpaci);
-										}else{
-											lista_changeInfo=new ArrayList();
-											lista_changeInfo.add(ctpaci);
-											tacho_activity.put("withoutDriver",lista_changeInfo);
-										}
-									}else{
-									 */
-										while(iter_driver.hasNext()){
-											// ----> driver el
-											VuCardIWRecord el = iter_driver.next();
-											dr = new Driver(el);
-											Instant from= new Instant(el.getCardInsertionTime());
-											Instant to=new Instant(el.getCardWithdrawalTime());
-											//from.setSeconds(0);
-											//to.setSeconds(0);
-											if(d.compareTo(from)>=0 && d.compareTo(to)<=0  ){
-												if((el.getCardSlotNumber()=="driverSlot (0)" && aci.getS()=="conductor") ||
-														(el.getCardSlotNumber()=="driverSlot (1)" && aci.getS()=="segundo conductor")){
-													exist=true;
-													if(tacho_activity.containsKey(dr.getCardNumber().get(0).getNumber())){
-														int size=tacho_activity.get(dr.getCardNumber().get(0).getNumber()).size();
-														tacho_activity.get(dr.getCardNumber().get(0).getNumber()).get(size-1).setToTime(ctpaci.getFromTime()); // to
-														tacho_activity.get(dr.getCardNumber().get(0).getNumber()).add(ctpaci);
-													}else{
-														lista_changeInfo=new ArrayList();
-														lista_changeInfo.add(ctpaci);
-														tacho_activity.put(dr.getCardNumber().get(0).getNumber(),lista_changeInfo);
-													}
-													if(el.getActvityChangeInfo().isEmpty()){
-														el.getActvityChangeInfo().add(ctpaci);
-													}else{
-														el.getActvityChangeInfo().get(el.getActvityChangeInfo().size()-1).setToTime(ctpaci.getFromTime());
-														el.getActvityChangeInfo().add(ctpaci);
-													}
-												}
-
-											}
-										}
-										if(!exist){
-											if(i+1>it_changeInfo.size()-1){
-												inst=new Instant(activity.getTimeReal());
-												d=inst.toMutableDateTime();
-												d.setZone(zoneUTC);
-												d.setSecondOfDay(86399);
-												ctpaci.setToTime(d.toDate());
-											}else{
-												inst=new Instant(activity.getTimeReal());
-												d=inst.toMutableDateTime();
-												d.setZone(zoneUTC);
-												d.setSecondOfDay(((it_changeInfo.get(i+1).getHours()*60)+it_changeInfo.get(i+1).getMin())*60);
-												ctpaci.setToTime(d.toDate());
-											}
-
-											if(tacho_activity.containsKey("withoutDriver")){
-												tacho_activity.get("withoutDriver").add(ctpaci);
-											}else{
-												lista_changeInfo=new ArrayList();
-												lista_changeInfo.add(ctpaci);
-												tacho_activity.put("withoutDriver",lista_changeInfo);
-											}
-										}else{
-											exist=false;
-										}
-										ctpaci_aux=ctpaci;
-
-									//}
-								}
-								// -----> vehicles for driver
-								while(it.hasNext()){
-									VuCardIWRecord vc=it.next();
-									driver=new Driver(vc);
-									VehicleChangeInfo v=new VehicleChangeInfo();
-									v.setFromDate(vc.getCardInsertionTime());
-									v.setToDate(vc.getCardWithdrawalTime());
-									v.setDistance(vc.getVehicleOdometerValueAtWithdrawal()-vc.getVehicleOdometerValueAtInsertion());
-									if(tacho_vehicles.containsKey(vc.getFullCardNumber().getCardNumber().getDriverIdentification())){
-										tacho_vehicles.get(vc.getFullCardNumber().getCardNumber().getDriverIdentification()).add(v);
-									}else{
-										lista=new ArrayList();
-										lista.add(v);
-										tacho_vehicles.put(driver.getCardNumber().get(0).getNumber(),lista);
-									}
-									if(!tacho_places.containsKey(vc.getFullCardNumber().getCardNumber().getDriverIdentification())){
-										tacho_places.put(driver.getCardNumber().get(0).getNumber(),vc.getPlaces());
-									}
-									if(!drivers.containsKey(driver.getCardNumber())){
-										drivers.put(driver.getCardNumber().get(0).getNumber(),driver);
-									}
-								}
-								// ----> Activity for driver
-								Iterator iter_tacho=tacho_activity.entrySet().iterator();
-								while(iter_tacho.hasNext()){
-									Map.Entry<String,ArrayList> t=(Map.Entry) iter_tacho.next();
-									activityParse=new com.thingtrack.parse.Activity();
-									activityParse.setDate(activity.getTimeReal());
-									activityParse.setActivityChangeInfo(t.getValue());
-
-									if(t.getKey()=="withoutDriver"){
-										activityParse.setCardNumber(null);
-									}else{
-										activityParse.setVehicles(tacho_vehicles.get(t.getKey()));
-										activityParse.setPlaces(tacho_places.get(t.getKey()));
-
-										int distance=0;
-										for(int i=0;i<tacho_vehicles.get(t.getKey()).size();i++){
-											distance+=tacho_vehicles.get(t.getKey()).get(i).getDistance();
-										}
-
-										activityParse.setDistance(distance);
-										activityParse.setCardNumber(drivers.get(t.getKey()).getCardNumber().get(0).getNumber());
-									}
-
-									this.tachos.getActivity().add(activityParse);
-								}
 							}else{
 								this.listBlock.put(b.getTRED(), b);
 							}
@@ -260,229 +87,14 @@ public class VuBlockFile {
 		this.listBlock.put("VU_ACTIVITY", listActivity);
 		setTrep();
 	}
-	
-	public VuBlockFile(byte[] datos, String organizationId, String filename) throws Exception {
-		int start=0;
-		ListActivity listActivity=new ListActivity();
-		this.listBlock=new HashMap();
-		this.tachos=new Tacho();
-		this.drivers=new HashMap();
-
-		Activity activity;
-		com.thingtrack.parse.Activity activityParse;
-		Driver driver;
-		Tacho tacho;
-		String registration="";
-		while(start<datos.length){
-			//System.out.println(Integer.toHexString(datos[start])+" ====="+datos[start]);
-			if(datos[start]==0x76){
-				start+=1;
-				if(start<datos.length){
-					if(datos[start]>0x00 && datos[start]<0x06){
-
-						int word = Number.getNumber(Arrays.copyOfRange(datos, start-1, start+1));
-
-						String str=Integer.toHexString(word);
-
-						Block b=(Block) FactoriaBloques.getFactoria(word, Arrays.copyOfRange(datos, start+1, datos.length));
-						if(b.getTRED()==Trep.VU_RESUMEN.toString()){
-							Resumen r=(Resumen)b;
-							registration=r.getVehicleRegistrationIdentification().getVehicleRegistrationNumber();
-						}
-						if(b.getTRED()==Trep.VU_ACTIVITY.toString()){
-							listActivity.add((Activity)b);
-							activity=(Activity) b;
-							java.util.Iterator<VuCardIWRecord> it= activity.getVuCardIWData().iterator();
-							// ----------> driver
-
-							ActivityChangeInfo aci;
-							com.thingtrack.parse.ActivityChangeInfo ctpaci;
-							com.thingtrack.parse.ActivityChangeInfo ctpaci_aux;
-							HashMap<String, ArrayList<com.thingtrack.parse.ActivityChangeInfo>> tacho_activity=new HashMap();
-							HashMap<String, ArrayList<VehicleChangeInfo>> tacho_vehicles=new HashMap();
-							HashMap<String, ArrayList> tacho_places=new HashMap();
-							ArrayList lista_changeInfo, lista;
-							Driver dr;
-							boolean exist=false;
-							// ----> ActivityChangeInfo for driver
-							//Iterator it_changeInfo=activity.getVuActivityDailyData().iterator();
-							ArrayList<ActivityChangeInfo> it_changeInfo=activity.getVuActivityDailyData();
-							for(int i=0;i<it_changeInfo.size();i++){
-								//while (it_changeInfo.hasNext()){
-								//aci=(ActivityChangeInfo)it_changeInfo.next();
-								aci=it_changeInfo.get(i);
-								ctpaci=new com.thingtrack.parse.ActivityChangeInfo(aci);
-
-								long fecha=activity.getTimeReal().getTime();
-								DateTimeZone zoneUTC = DateTimeZone.UTC;
-								Instant inst=new Instant(activity.getTimeReal());
-								fecha+=aci.getHours()*60*60*1000;
-								fecha+=aci.getMin()*60*1000;
-								//Date d=new Date(fecha);
-								MutableDateTime d=inst.toMutableDateTime();
-								d.setZone(zoneUTC);
-
-								d.setSecondOfDay(((aci.getHours()*60)+aci.getMin())*60);
-
-								Iterator<VuCardIWRecord> iter_driver=activity.getVuCardIWData().iterator();
-								ctpaci.setFromTime(d.toDate());
-								com.thingtrack.parse.ActivityChangeInfo aux=ctpaci;
-								/**
-								 if (aci.getP()=="no insertada"){
-								 if(tacho_activity.containsKey("withoutDriver")){
-								 tacho_activity.get("withoutDriver").add(ctpaci);
-								 }else{
-								 lista_changeInfo=new ArrayList();
-								 lista_changeInfo.add(ctpaci);
-								 tacho_activity.put("withoutDriver",lista_changeInfo);
-								 }
-								 }else{
-								 */
-								while(iter_driver.hasNext()){
-									// ----> driver el
-									VuCardIWRecord el = iter_driver.next();
-									dr = new Driver(el);
-									Instant from= new Instant(el.getCardInsertionTime());
-									Instant to=new Instant(el.getCardWithdrawalTime());
-									//from.setSeconds(0);
-									//to.setSeconds(0);
-									if(d.compareTo(from)>=0 && d.compareTo(to)<=0  ){
-										if((el.getCardSlotNumber()=="driverSlot (0)" && aci.getS()=="conductor") ||
-												(el.getCardSlotNumber()=="driverSlot (1)" && aci.getS()=="segundo conductor")){
-											exist=true;
-											if(tacho_activity.containsKey(dr.getCardNumber().get(0).getNumber())){
-												int size=tacho_activity.get(dr.getCardNumber().get(0).getNumber()).size();
-												tacho_activity.get(dr.getCardNumber().get(0).getNumber()).get(size-1).setToTime(ctpaci.getFromTime()); // to
-												tacho_activity.get(dr.getCardNumber().get(0).getNumber()).add(ctpaci);
-											}else{
-												lista_changeInfo=new ArrayList();
-												lista_changeInfo.add(ctpaci);
-												tacho_activity.put(dr.getCardNumber().get(0).getNumber(),lista_changeInfo);
-											}
-											if(el.getActvityChangeInfo().isEmpty()){
-												el.getActvityChangeInfo().add(ctpaci);
-											}else{
-												el.getActvityChangeInfo().get(el.getActvityChangeInfo().size()-1).setToTime(ctpaci.getFromTime());
-												el.getActvityChangeInfo().add(ctpaci);
-											}
-										}
-
-									}
-								}
-								if(!exist){
-									if(i+1>it_changeInfo.size()-1){
-										inst=new Instant(activity.getTimeReal());
-										d=inst.toMutableDateTime();
-										d.setZone(zoneUTC);
-										d.setSecondOfDay(86399);
-										ctpaci.setToTime(d.toDate());
-									}else{
-										inst=new Instant(activity.getTimeReal());
-										d=inst.toMutableDateTime();
-										d.setZone(zoneUTC);
-										d.setSecondOfDay(((it_changeInfo.get(i+1).getHours()*60)+it_changeInfo.get(i+1).getMin())*60);
-										ctpaci.setToTime(d.toDate());
-									}
-
-									if(tacho_activity.containsKey("withoutDriver")){
-										tacho_activity.get("withoutDriver").add(ctpaci);
-									}else{
-										lista_changeInfo=new ArrayList();
-										lista_changeInfo.add(ctpaci);
-										tacho_activity.put("withoutDriver",lista_changeInfo);
-									}
-								}else{
-									exist=false;
-								}
-								ctpaci_aux=ctpaci;
-
-								//}
-							}
-							// -----> vehicles for driver
-							while(it.hasNext()){
-								VuCardIWRecord vc=it.next();
-								driver=new Driver(vc);
-								VehicleChangeInfo v=new VehicleChangeInfo();
-								v.setFromDate(vc.getCardInsertionTime());
-								v.setToDate(vc.getCardWithdrawalTime());
-								v.setDistance(vc.getVehicleOdometerValueAtWithdrawal()-vc.getVehicleOdometerValueAtInsertion());
-								if(tacho_vehicles.containsKey(vc.getFullCardNumber().getCardNumber().getDriverIdentification())){
-									tacho_vehicles.get(vc.getFullCardNumber().getCardNumber().getDriverIdentification()).add(v);
-								}else{
-									lista=new ArrayList();
-									lista.add(v);
-									tacho_vehicles.put(driver.getCardNumber().get(0).getNumber(),lista);
-								}
-								if(!tacho_places.containsKey(vc.getFullCardNumber().getCardNumber().getDriverIdentification())){
-									tacho_places.put(driver.getCardNumber().get(0).getNumber(),vc.getPlaces());
-								}
-								if(!drivers.containsKey(driver.getCardNumber())){
-									drivers.put(driver.getCardNumber().get(0).getNumber(),driver);
-								}
-							}
-							// ----> Activity for driver
-							Iterator iter_tacho=tacho_activity.entrySet().iterator();
-							while(iter_tacho.hasNext()){
-								Map.Entry<String,ArrayList> t=(Map.Entry) iter_tacho.next();
-								activityParse=new com.thingtrack.parse.Activity();
-								activityParse.setDate(activity.getTimeReal());
-								activityParse.setActivityChangeInfo(t.getValue());
-
-								if(t.getKey()=="withoutDriver"){
-									activityParse.setCardNumber(null);
-								}else{
-									activityParse.setVehicles(tacho_vehicles.get(t.getKey()));
-									activityParse.setPlaces(tacho_places.get(t.getKey()));
-
-									int distance=0;
-									for(int i=0;i<tacho_vehicles.get(t.getKey()).size();i++){
-										distance+=tacho_vehicles.get(t.getKey()).get(i).getDistance();
-									}
-
-									activityParse.setDistance(distance);
-									activityParse.setCardNumber(drivers.get(t.getKey()).getCardNumber().get(0).getNumber());
-								}
-								activityParse.getFiles().add(filename);
-								activityParse.setOrganizationId(organizationId);
-								this.tachos.getActivity().add(activityParse);
-							}
-						}else{
-							this.listBlock.put(b.getTRED(), b);
-						}
-						start+=b.getSize();
-					}
-				}
-			}else{
-				start+=1;
-			}
-
-		}
-
-		this.listBlock.put("VU_ACTIVITY", listActivity);
-		setTrep();
-	}
 
 	private void setTrep(){
 		
 		this.resumen=(Resumen)this.listBlock.get(Trep.VU_RESUMEN.toString());
-		this.vehicles=new HashMap<String, Vehicle>();
-		Vehicle v=new Vehicle(this.resumen);
-		this.vehicles.put(v.getRegistration(),v);
 		this.listActivity=(ListActivity) this.listBlock.get(Trep.VU_ACTIVITY.toString());		
 		this.eventFault=(EventsFaults) this.listBlock.get(Trep.VU_EVENT_FAULT.toString());
 		this.speed=(Speed) this.listBlock.get(Trep.VU_SPEED.toString());
 		this.technical=(Technical) this.listBlock.get(Trep.VU_TECHNICAL.toString());
-		Iterator it=this.tachos.getActivity().iterator();
-		String reg=this.resumen.getVehicleRegistrationIdentification().getVehicleRegistrationNumber();
-		while(it.hasNext()){
-			com.thingtrack.parse.Activity a=(com.thingtrack.parse.Activity)it.next();
-			a.setRegistration(reg);
-			for(int i=0;i<a.getVehicles().size();i++){
-				a.getVehicles().get(i).setRegistration(reg);
-			}
-
-		}
-
 	}
 	/**
 	 * @return the listBlock
@@ -562,57 +174,6 @@ public class VuBlockFile {
 		this.listActivity = listActivity;
 	}
 
-	/**
-	 * @return the tachos
-	 */
-	public Tacho getTachos() {
-		return tachos;
-	}
-
-	/**
-	 * @param tachos the tachos to set
-	 */
-	public void setTachos(Tacho tachos) {
-		this.tachos = tachos;
-	}
-
-	/**
-	 * @return the drivers
-	 */
-	public HashMap getDrivers() {
-		return drivers;
-	}
-
-	
-
-
-	/**
-	 * @param vehicle the vehicle to set
-	 */
-	public void setVehicle(HashMap<String,Vehicle> vehicle) {
-		this.vehicles = vehicle;
-	}
-
-	/**
-	 * @return the vehicles
-	 */
-	public HashMap<String, Vehicle> getVehicles() {
-		return vehicles;
-	}
-
-	/**
-	 * @param vehicles the vehicles to set
-	 */
-	public void setVehicles(HashMap<String, Vehicle> vehicles) {
-		this.vehicles = vehicles;
-	}
-
-	/**
-	 * @param drivers the drivers to set
-	 */
-	public void setDrivers(HashMap<String, Driver> drivers) {
-		this.drivers = drivers;
-	}
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
