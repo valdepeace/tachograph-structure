@@ -139,44 +139,6 @@ public class CardBlockFile {
 		
 		
 	}
-	public CardBlockFile(byte[] bytes,String organizationId,String namefile) throws Exception {
-		this.nameFile=namefile;
-
-		HashMap<String, Block> lista = new HashMap();
-		this.listBlock=new HashMap();
-		try {
-			int start=0;
-			while( start < bytes.length){
-				int fid = Number.getNumber(Arrays.copyOfRange(bytes, start, start += 2));								
-				if(this.existe_Fid(fid)){
-					byte tipo = bytes[start];
-					start += 1;
-					Integer longitud = (int) Number.getNumber(Arrays.copyOfRange(bytes, start, start += 2));
-					byte[] datos = new byte[longitud];
-					datos = Arrays.copyOfRange(bytes, start, start += longitud);
-					// tipo de archivo 0 = bloque de dato -- 1 = certificado
-					if (tipo == 0) {
-						Block block = (Block) FactoriaBloques.getFactoria(fid, datos);
-						if (block != null) {
-							this.listBlock.put(block.getFID(), (Block) block);														
-						}
-					}
-				}else{
-					throw new Error("Block not found");
-				}
-				
-			}
-
-		} catch (IOException e) {
-			System.out.println(e.getMessage());
-		}
-		
-		this.asignarBloques();
-
-		
-	}
-
-
 
 
 	/**
