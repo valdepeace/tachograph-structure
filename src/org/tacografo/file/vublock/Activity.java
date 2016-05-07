@@ -7,6 +7,10 @@ import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.util.*;
 
+import org.joda.time.Instant;
+import org.joda.time.LocalDate;
+import org.joda.time.LocalDateTime;
+import org.joda.time.LocalTime;
 import org.tacografo.file.Block;
 import org.tacografo.file.cardblockdriver.SpecificConditionRecord;
 import org.tacografo.file.cardblockdriver.subblock.ActivityChangeInfo;
@@ -14,7 +18,7 @@ import org.tacografo.file.vublock.subblock.VuCardIWRecord;
 import org.tacografo.file.vublock.subblock.VuPlaceDailyWorkPeriodRecord;
 import org.tacografo.tiposdatos.RealTime;
 
-import com.thingtrack.parse.Places;
+
 
 import org.tacografo.tiposdatos.Number;
 import org.tacografo.tiposdatos.OctetString;
@@ -92,16 +96,12 @@ public class Activity extends Block{
 	private String signature;
 	
 	private int size=0;
-	
-	private com.thingtrack.parse.Activity activity;
-	private ArrayList<com.thingtrack.parse.Driver> drivers;
-	private HashMap<String, ArrayList> tacho;
-	
-	
+
 	public Activity(byte[] bytes) throws Exception{
 		int start=0;
+
 		this.timeReal=RealTime.getRealTime(Arrays.copyOfRange(bytes, start, start+=Sizes.TIMEREAL.getSize()));
-		
+
 		this.OdometerValueMidnight=Number.getInteger_24(Arrays.copyOfRange(bytes, start, start+=Sizes.ODOMETERVALUEMINDNIGHT.getSize()));
 				
 		this.noOfIWRecords=Number.getShort_16(Arrays.copyOfRange(bytes, start, start+=Sizes.NOOFVUCARDIWRECORDS.getSize()));
@@ -125,8 +125,7 @@ public class Activity extends Block{
 		this.signature=OctetString.getHexString(Arrays.copyOfRange(bytes, start, start+=Sizes.SIGNATURE_TREP2.getSize()));
 		this.size=start;
 		
-		this.activity = new com.thingtrack.parse.Activity();
-		this.drivers = new ArrayList();
+
 	}
 
 	private void getListVuSpecificConditionData(byte[] bytes) {
@@ -144,48 +143,13 @@ public class Activity extends Block{
 		VuPlaceDailyWorkPeriodRecord vpdwpr;
 		int end = bytes.length / Sizes.VUPLACEDAILYWORKPERIODRECORD.getSize();
 		int start = 0;
-		com.thingtrack.parse.Places place;
-		com.thingtrack.parse.Places p;
+
 		for (int i = 0; i < end; i++) {
 			vpdwpr = new VuPlaceDailyWorkPeriodRecord(
-					Arrays.copyOfRange(bytes, start, start += Sizes.VUPLACEDAILYWORKPERIODRECORD.getSize()));
-			this.vuPlaceDailyWorkPeriodData.add(vpdwpr);
+							Arrays.copyOfRange(bytes, start, start += Sizes.VUPLACEDAILYWORKPERIODRECORD.getSize()));
 			Iterator<VuCardIWRecord> it = this.vuCardIWData.iterator();
 			if (vpdwpr.getPlacerecord().getEntryTime().getTime() > 0) {
-				while (it.hasNext()) {
-					VuCardIWRecord el = it.next();
-					place = new com.thingtrack.parse.Places(vpdwpr);
-					el.getPlaces().add(place);
-
-					String cn1 = el.getFullCardNumber().getCardNumber().getDriverIdentification();
-					String cn2 = vpdwpr.getFullCardNumber().getCardNumber().getDriverIdentification();
-					place = new com.thingtrack.parse.Places(vpdwpr);
-
-					if (cn1.equals(cn2)) {
-						if (el.getPlaces().isEmpty()) {
-							el.getPlaces().add(place);
-						} else {
-							boolean exist = true;
-							Iterator ite = el.getPlaces().iterator();
-							while (ite.hasNext()) {
-								p = (Places) ite.next();
-								String str = vpdwpr.getPlacerecord().getEntryTypeDailyWorkPeriod().substring(0, 3);
-								if (str.equals("Beg") && p.getPlaceBegin() == null) {
-									el.getPlaces().get(el.getPlaces().lastIndexOf(p)).setPlaces(vpdwpr);
-									exist = false;
-								} else {
-									if (p.getPlaceEnd() == null) {
-										el.getPlaces().get(el.getPlaces().lastIndexOf(p)).setPlaces(vpdwpr);
-										exist = false;
-									}
-								}
-							}
-							if (exist) {
-								el.getPlaces().add(place);
-							}
-						}
-					}
-				}
+				this.vuPlaceDailyWorkPeriodData.add(vpdwpr);
 			}
 
 		}
@@ -194,7 +158,7 @@ public class Activity extends Block{
 
 	private void getListVuActivityDailyData(byte[] bytes) {
 		ActivityChangeInfo aci;
-		com.thingtrack.parse.ActivityChangeInfo ctpaci;
+
 		int end=bytes.length/Sizes.ACTIVITYCHANGEINFO.getSize();
 		int start=0;
 		HashMap<String, ArrayList> tacho=new HashMap();
@@ -202,53 +166,9 @@ public class Activity extends Block{
 
 		for(int i=0; i<end;i++){
 			aci=new ActivityChangeInfo(Arrays.copyOfRange(bytes, start, start+=Sizes.ACTIVITYCHANGEINFO.getSize()));
-			ctpaci=new com.thingtrack.parse.ActivityChangeInfo(aci);			
-			long fecha=this.timeReal.getTime();
-			fecha+=aci.getHours()*60*60*1000;
-			fecha+=aci.getMin()*60*1000;
-			Date d=new Date(fecha);						
-			Iterator<VuCardIWRecord> it=this.vuCardIWData.iterator();
-			ctpaci.setFromTime(d);
-			com.thingtrack.parse.ActivityChangeInfo aux=ctpaci;
-			if (aci.getP()=="no insertada"){
-				if(tacho.containsKey("withoutDriver")){
-					tacho.get("withoutDriver").add(ctpaci);
-				}else{
-					lista_changeInfo=new ArrayList();
-					lista_changeInfo.add(ctpaci);
-					tacho.put("withoutDriver",lista_changeInfo);
-				}
-			}else{
-				while(it.hasNext()){
-					// ----> driver el
-					VuCardIWRecord el = it.next();
-					Date b=el.getCardInsertionTime();
-					Date e=el.getCardWithdrawalTime();
-					b.setSeconds(0);
-					e.setSeconds(0);
-					if(d.compareTo(b)>=0 && e.compareTo(d)>=0){
-						if(tacho.containsKey(el.getFullCardNumber().getCardNumber().getDriverIdentification())){
-							tacho.get(el.getFullCardNumber().getCardNumber().getDriverIdentification()).add(ctpaci);
-						}else{
-							lista_changeInfo=new ArrayList();
-							lista_changeInfo.add(ctpaci);
-							tacho.put(el.getFullCardNumber().getCardNumber().getDriverIdentification(),lista_changeInfo);
-						}
-						if(el.getActvityChangeInfo().isEmpty()){
-							el.getActvityChangeInfo().add(ctpaci);
-						}else{
-							el.getActvityChangeInfo().get(el.getActvityChangeInfo().size()-1).setToTime(ctpaci.getFromTime());
-							el.getActvityChangeInfo().add(ctpaci);
-						}
-					}
-			}
-
-
-
-			}
 			this.vuActivityDailyData.add(aci);
 		}
-		this.tacho=tacho;
+
 	}
 
 	private void getListvuCardIWData(byte[] bytes) throws UnsupportedEncodingException {
@@ -263,13 +183,6 @@ public class Activity extends Block{
 		
 	}
 
-	public HashMap<String, ArrayList> getTacho() {
-		return tacho;
-	}
-
-	public void setTacho(HashMap<String, ArrayList> tacho) {
-		this.tacho = tacho;
-	}
 
 	/**
 	 * @return the timeReal

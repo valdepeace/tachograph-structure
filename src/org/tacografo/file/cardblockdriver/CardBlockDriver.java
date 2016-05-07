@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.thingtrack.parse.Tacho;
+
 
 
 /**
@@ -41,7 +41,7 @@ property="type")
 @Type(value= CardCurrentUse.class, name="current_usage"),
 @Type(value= CardControlActivityDataRecord.class, name="control_activity_data"),
 @Type(value= SpecificConditionRecord.class, name="specific_conditions"),
-@Type(value= Tacho.class, name="tacho")
+
 
 })
 
