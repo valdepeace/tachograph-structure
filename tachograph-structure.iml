@@ -57,4 +57,5 @@
     <orderEntry type="library" name="jackson-core-2.5.1" level="project" />
     <orderEntry type="library" name="jackson-databind-2.5.1" level="project" />
   </component>
+  <component name="POM File Configuration" pomFile="" />
 </module>

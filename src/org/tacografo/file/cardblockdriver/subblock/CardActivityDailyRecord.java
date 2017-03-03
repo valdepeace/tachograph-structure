@@ -9,6 +9,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import org.tacografo.file.cardblockdriver.Sizes;
+import org.tacografo.tiposdatos.BCDString;
 import org.tacografo.tiposdatos.RealTime;
 import org.tacografo.tiposdatos.Number;
 
@@ -77,7 +78,9 @@ public class CardActivityDailyRecord {
 		this.activityRecordLength= Number.getShort_16(Arrays.copyOfRange(bytes, start, start+=Sizes.ACTIVITYRECORDLENGTH.getMax()));
 		this.activityRecordDate = RealTime.getRealTime(Arrays.copyOfRange(bytes, start, start+=Sizes.ACTIVITYRECORDDATE.getMax()));
 		//DailyPresenceCounter adpc=new DailyPresenceCounter(Arrays.copyOfRange(bytes, start, start+=2));
-		this.activityDailyPresenceCounter = Number.getShort_16(Arrays.copyOfRange(bytes, start, start+=Sizes.ACTIVITYDAILYPRESENCECOUNTER.getMax()));	
+		String adpc= BCDString.BCDtoString(Arrays.copyOfRange(bytes, start, start+=Sizes.ACTIVITYDAILYPRESENCECOUNTER.getMax()));
+		this.activityDailyPresenceCounter = Integer.parseInt(adpc);
+		//this.activityDailyPresenceCounter = Number.getShort_16(Arrays.copyOfRange(bytes, start, start+=Sizes.ACTIVITYDAILYPRESENCECOUNTER.getMax()));
 		//Distance d=new Distance(Arrays.copyOfRange(bytes, start, start+=2));
 		this.activityDayDistance=Number.getShort_16(Arrays.copyOfRange(bytes, start, start+=Sizes.ACTIVITYDAYDISTANCE.getMax()));	
 		this.activityChangeInfo=new ArrayList<ActivityChangeInfo>();
