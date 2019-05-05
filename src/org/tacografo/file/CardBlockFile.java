@@ -4,6 +4,7 @@
 package org.tacografo.file;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
 import org.tacografo.file.cardblockdriver.CardCertificate;
@@ -24,6 +25,11 @@ import org.tacografo.file.cardblockdriver.LastCardDownload;
 import org.tacografo.file.cardblockdriver.MemberStateCertificate;
 import org.tacografo.file.cardblockdriver.SpecificConditionRecord;
 import org.tacografo.file.cardblockdriver.subblock.*;
+import org.tacografo.file.certificate.CertificateContent;
+import org.tacografo.file.certificate.KeyIdentifier;
+import org.tacografo.file.certificate.PublicKey;
+import org.tacografo.file.certificate.Signature;
+import org.tacografo.file.error.*;
 import org.tacografo.tiposdatos.Number;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -122,6 +128,8 @@ public class CardBlockFile {
 						if (block != null) {
 							this.listBlock.put(block.getFID(), (Block) block);							
 							
+						}else{
+							this.listBlock.get(nameBlock(fid)).setSignature(new Signature(datos));
 						}
 					}
 				}else{
@@ -139,7 +147,6 @@ public class CardBlockFile {
 		
 		
 	}
-
 
 	/**
 	 * Metodo encargado de asignar a cada propiedad que seran los diferentes bloques que 
@@ -190,8 +197,64 @@ public class CardBlockFile {
 	}
 
 
+	private String nameBlock(int fid){
+		String str="";
+		switch (fid) {
+			case 0x0002:
+				str=Fid.EF_ICC.toString();
+				break;
+			case 0x0005:
+				str=Fid.EF_IC.toString();
+				break;
+			case 0x0501:
+				str=Fid.EF_APPLICATION_IDENTIFICATION.toString();
+				break;
+			case 0xc100:
+				str=Fid.EF_CARD_CERTIFICATE.toString();
+				break;
+			case 0xc108:
+				str=Fid.EF_CA_CERTIFICATE.toString();
+				break;
+			case 0x0520:
+				str=Fid.EF_IDENTIFICATION.toString();
+				break;
+			case 0x050E:
+				str=Fid.EF_CARD_DOWNLOAD.toString();
+				break;
+			case 0x0521:
+				str=Fid.EF_DRIVING_LICENSE_INFO.toString();
+				break;
+			case 0x0502:
+				str=Fid.EF_EVENTS_DATA.toString();
+				break;
+			case 0x0503: // Faults data
+				str=Fid.EF_FAULTS_DATA.toString();
+				break;
+			case 0x0504: // Driver activity data
+				str=Fid.EF_DRIVER_ACTIVITY_DATA.toString();
+				break;
+			case 0x0505:// vehicles uses
+				str=Fid.EF_VEHICLES_USED.toString();
+				break;
+			case 0x0506: // Places
+				str=Fid.EF_PLACES.toString();
+				break;
+			case 0x0507: // Currents usage
+				str=Fid.EF_CURRENT_USAGE.toString();
+				break;
+			case 0x0508: // Control activity data
+				str=Fid.EF_CONTROL_ACTIVITY_DATA.toString();
+				break;
+			case 0x0522:
+				str=Fid.EF_SPECIFIC_CONDITIONS.toString();
+				break;
+			default:
+				break;
+		}
+		return str;
+	}
 
-	
+
 	/**
 	 * Comprueba si el identificador de fichero existe
 	 * @param fid

@@ -3,17 +3,19 @@
  */
 package org.tacografo.file;
 
-import java.io.DataInputStream;
-import java.io.EOFException;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
+import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.tacografo.file.error.ErrorFile;
+import org.tacografo.file.cardblockdriver.DriverCardApplicationIdentification;
+import org.tacografo.file.certificate.CertificateContent;
+import org.tacografo.file.certificate.KeyIdentifier;
+import org.tacografo.file.certificate.PublicKey;
+import org.tacografo.file.error.*;
 
 /**
  * Clase encargada de interpretar los bytes de los ficheros de una tarjeta del tacografo
@@ -38,6 +40,10 @@ public class FileTGD {
 	private VuBlockFile vuBlockFile;
 	
 	private CardBlockFile cardBlockFile;
+
+	private Exception exceptionVerify;
+
+	private String pathErcaKey;
 
 	public FileTGD() {
 
@@ -98,6 +104,110 @@ public class FileTGD {
 		}else{
 			this.cardBlockFile=new CardBlockFile(datos); 
 		}
+		try{
+			this.verifyCertificate();
+		}catch (IOException | NoSuchAlgorithmException | ExceptionSignatureContent | ExceptionSignatureHash
+				|ExceptionContentCertificateHash | ExceptionContentCertificateOpen | ExceptionBlockRequired e){
+			this.exceptionVerify = e;
+		}
+	}
+
+	public void verifyCertificate() throws IOException, NoSuchAlgorithmException, ExceptionSignatureContent, ExceptionSignatureHash, ExceptionContentCertificateHash, ExceptionContentCertificateOpen, ExceptionBlockRequired {
+
+		DriverCardApplicationIdentification dai;
+		ArrayList<String> require_block;
+		CertificateContent ca_certificateContent;
+		CertificateContent device_certificateContent = null;
+		PublicKey ercaKey = this.loadErcaKey();
+		int start = 0;
+
+		if (this.getVuBlockFile() != null) {
+			ca_certificateContent = new CertificateContent(this.vuBlockFile.getResumen().getMemberStateCertificate(), ercaKey,"ca certificate");
+			device_certificateContent = new CertificateContent(this.vuBlockFile.getResumen().getVUcertificate(), ca_certificateContent.getPublicKey(),"card certificate");
+			//dai= (DriverCardApplicationIdentification) this.cardBlockFile.getListBlock().get("EF_APPLICATION_IDENTIFICATION");
+			require_block = new ArrayList<String>(Arrays.asList(
+					"VU_RESUMEN",
+					"VU_ACTIVITY",
+					"VU_EVENT_FAULT",
+					"VU_SPEED",
+					"VU_TECHNICAL"
+			));
+		} else {
+			ca_certificateContent = new CertificateContent(this.cardBlockFile.getCa_certificate().getCertificate(), ercaKey,"ca certificate");
+			device_certificateContent = new CertificateContent(this.cardBlockFile.getCard_certificate().getCertificate(), ca_certificateContent.getPublicKey(),"vu certificate");
+			//dai= (DriverCardApplicationIdentification) this.cardBlockFile.getListBlock().get("EF_APPLICATION_IDENTIFICATION");
+			require_block = new ArrayList<String>(Arrays.asList(
+					"EF_APPLICATION_IDENTIFICATION",
+					//"EF_CARD_CERTIFICATE",
+					//"EF_CA_CERTIFICATE",
+					"EF_IDENTIFICATION",
+					//"EF_DRIVING_LICENSE_INFO",
+					"EF_EVENTS_DATA",
+					"EF_FAULTS_DATA",
+					"EF_DRIVER_ACTIVITY_DATA",
+					"EF_VEHICLES_USED",
+					"EF_PLACES",
+					"EF_CONTROL_ACTIVITY_DATA",
+					"EF_SPECIFIC_CONDITIONS"
+			));
+
+		}
+		byte[] bytes;
+
+		for (int i = 0; i < require_block.size(); i++) {
+			if (this.vuBlockFile != null) {
+				if (require_block.get(i).equals("VU_ACTIVITY")) {
+					for (int j = 0; j < this.vuBlockFile.getListActivity().getActivity().size(); j++) {
+						bytes = this.vuBlockFile.getListActivity().getActivity().get(j).getDatos();
+						// error verificacion signature del bloque
+						this.vuBlockFile.getListActivity().getActivity().get(j).getSignature().verify(bytes, device_certificateContent.getPublicKey(),require_block.get(i));
+					}
+				} else {
+					bytes = Arrays.copyOfRange(this.vuBlockFile.getListBlock().get(require_block.get(i)).getDatos(), 0, this.vuBlockFile.getListBlock().get(require_block.get(i)).getDatos().length);
+					// error verificacion signature del bloque
+					this.vuBlockFile.getListBlock().get(require_block.get(i)).getSignature().verify(bytes, device_certificateContent.getPublicKey(),require_block.get(i));
+					if (this.vuBlockFile.getListBlock().get(require_block.get(i)) == null) {
+						Throwable cause = new Throwable("Block required " + require_block.get(i));
+						throw new ExceptionBlockRequired("Block required " + require_block.get(i), cause);
+					}
+				}
+			} else {
+				if (this.cardBlockFile.getListBlock().get(require_block.get(i)) == null) {
+					Throwable cause = new Throwable("Block required " + require_block.get(i));
+					throw new ExceptionBlockRequired("Block required " + require_block.get(i), cause);
+				} else {
+					// error verificacion signature del bloque
+
+					this.cardBlockFile.getListBlock().get(require_block.get(i))
+							.getSignature()
+							.verify(this.cardBlockFile.getListBlock().get(require_block.get(i)).getDatos(),	device_certificateContent.getPublicKey(), require_block.get(i));
+					if (this.cardBlockFile.getListBlock().get(require_block.get(i)).getDatos().length < Sizes.valueOf(require_block.get(i)).getMin() ||
+							this.cardBlockFile.getListBlock().get(require_block.get(i)).getDatos().length > Sizes.valueOf(require_block.get(i)).getMax())
+						throw new Error("Error length bytes in block " + require_block.get(i));
+				}
+			}
+		}
+
+
+	}
+
+	private PublicKey loadErcaKey() throws IOException {
+		//load EC_PK public key
+		int start=0;
+		File f;
+		if(this.pathErcaKey==null){
+			f = new File("EC_PK.bin");
+		}else{
+			f = new File(this.pathErcaKey);
+		}
+		FileInputStream fis = new FileInputStream(f);
+		DataInputStream dis = new DataInputStream(fis);
+		byte[] ercaKey_bytes = new byte[(int) f.length()];
+		dis.readFully(ercaKey_bytes);
+		dis.close();
+		KeyIdentifier ercaKey_Keyidentifier = new KeyIdentifier(Arrays.copyOfRange(ercaKey_bytes, start, start+=8));
+		PublicKey ercaKey=new PublicKey(Arrays.copyOfRange(ercaKey_bytes, start, start+=136));
+		return ercaKey;
 	}
 
 	/**

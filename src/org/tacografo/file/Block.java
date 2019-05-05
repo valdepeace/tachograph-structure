@@ -6,6 +6,7 @@ package org.tacografo.file;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.tacografo.file.certificate.Signature;
 
 /**
  * @author Andres Carmona Gil
@@ -21,6 +22,7 @@ public abstract class Block {
 	@JsonIgnore
 	private byte[] datos;
 
+	private Signature signature;
 	
 	
 	public String getTRED() {
@@ -118,6 +120,15 @@ public abstract class Block {
 			e.printStackTrace();
 		}		
 		return str;
+	}
+
+
+	public Signature getSignature() {
+		return signature;
+	}
+
+	public void setSignature(Signature signature) {
+		this.signature = signature;
 	}
 	
 }
