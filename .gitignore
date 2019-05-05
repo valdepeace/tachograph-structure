@@ -1,13 +1,4 @@
-/76a.TGD
-/76b.TGD
-/76c.TGD
-/76d.TGD
-
-/*.TGD
-/.idea
-.idea
-/*.DDD
-.idea/workspace.xml
-.idea/misc.xml
-bin
-F__100000053533501204051503.C1B
+.idea/*
+./tachographStructure/src/main/resources/tgdFiles/*
+target/classes/*
+tachographStructure/target/classes/*
