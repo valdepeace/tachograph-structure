@@ -63,7 +63,7 @@ public class CardVehicleRecord{
 		this.vehicleFirstUse= RealTime.getRealTime(Arrays.copyOfRange(bytes, start, start+=DriverCardSizes.VEHICLEFIRSTUSE.getMax()));
 		this.vehicleLastUse=RealTime.getRealTime(Arrays.copyOfRange(bytes, start, start+=DriverCardSizes.VEHICLELASTUSE.getMax()));
 		this.vehicleRegistration=new VehicleRegistrationIdentification(Arrays.copyOfRange(bytes, start, start+=DriverCardSizes.VEHICLEREGISTRATION.getMax()));
-		VuDataBlockCounter vudatablockcounter = new VuDataBlockCounter(Arrays.copyOfRange(bytes, start, start+=DriverCardSizes.VEHICLEREGISTRATION.getMax()));
+		VuDataBlockCounter vudatablockcounter = new VuDataBlockCounter(Arrays.copyOfRange(bytes, start, start+=DriverCardSizes.VUDATABLOCKCOUNTER.getMax()));
 		this.vuDataBlockCounter=Integer.valueOf(vudatablockcounter.getVuDataBlockCounter());
 		
 	}

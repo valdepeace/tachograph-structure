@@ -5,7 +5,7 @@ import java.io.FileWriter;
 
 /**
  * This class used for call from terminal:
- * $/: java -cp cardReader.jar com.tachographStructure.file.App get_json "path to .tgd"
+ * $/: java -cp tachographStructure.jar com.tachographStructure.file.App get_json "path to .tgd"
  */
 public class App {
     public static void main(String[] args) {

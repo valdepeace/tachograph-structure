@@ -26,7 +26,12 @@ public class VuDataBlockCounter {
 	 * @param datos array de bytes
 	 */
 	public VuDataBlockCounter(byte[] datos){
-		this.vuDataBlockCounter=BCDString.BCDtoString(datos).replace("0", "");
+		if(datos[0] == 0){
+			this.vuDataBlockCounter=BCDString.BCDtoString(datos);
+		}else{
+			this.vuDataBlockCounter=BCDString.BCDtoString(datos).replace("0", "");
+		}
+
 	}
 
 	/**
