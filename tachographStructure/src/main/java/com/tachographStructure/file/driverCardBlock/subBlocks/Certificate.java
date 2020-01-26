@@ -6,19 +6,17 @@ package com.tachographStructure.file.driverCardBlock.subBlocks;
 import com.tachographStructure.helpers.OctetString;
 
 /**
- * 
- * 2.32. Certificate
- * El certificado de una clave p�blica expedido por una autoridad de certificaci�n.
- * 
- * Certificate ::= OCTET STRING (SIZE(194))
- * 
- * Asignaci�n de valor: firma digital con recuperaci�n parcial del contenido del certificado, seg�n lo dispuesto en el
- * 
- * Ap�ndice 11 Mecanismos de seguridad comunes: firma (128 bytes) || resto de la clave p�blica (58 bytes) || referencia
- * a la autoridad de certificaci�n (8 bytes).
+ *
+ * The certificate of a public key issued by a Certification Authority.
+ * Generation 1:
+ * Value assignment: digital signature with partial recovery of a CertificateContent according to Appendix 11
+ * common security mechanisms: Signature (128 bytes) || Public Key remainder (58 bytes) || Certification Authority
+ * Reference (8 bytes).
+ * Generation 2:
+ * Value assignment: See Appendix 11
  *
  * @author Andres Carmona Gil
- * @version 0.0.1
+ * @version 0.0.2
  *
  */
 public class Certificate {

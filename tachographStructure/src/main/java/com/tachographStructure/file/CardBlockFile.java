@@ -95,24 +95,33 @@ public class CardBlockFile {
 			int start=0;
 			while( start < bytes.length){
 				int fid = Number.getNumber(Arrays.copyOfRange(bytes, start, start += 2));
-				System.out.println("fid: " + fid + " star:"+ start + " lenght: " + (bytes.length - start));
 				if(this.existe_Fid(fid)){
 					byte tipo = bytes[start];
 					start += 1;
 					Integer longitud = (int) Number.getNumber(Arrays.copyOfRange(bytes, start, start += 2));
 					byte[] datos = new byte[longitud];
 					datos = Arrays.copyOfRange(bytes, start, start += longitud);
+					System.out.println("tipo: " + tipo + " fid: " + fid + " star:"+ start + " lenght: " + datos.length);
 					// tipo de archivo 0 = bloque de dato -- 1 = certificado
-					if (tipo == 0) {
-						Block block = (Block) FactoriaBloques.getFactoria(fid, datos);
-						if (block != null) {
-							this.listBlock.put(block.getFID(), (Block) block);							
-							
-						}else{
+					switch (tipo){
+						case 0:
+							Block block = (Block) FactoriaBloques.getFactoria(fid, datos);
+							if (block != null) {
+								this.listBlock.put(block.getFID(), (Block) block);
+
+							}else{
+								this.listBlock.get(nameBlock(fid)).setSignature(new Signature(datos));
+							}
+							break;
+						case 1:
 							this.listBlock.get(nameBlock(fid)).setSignature(new Signature(datos));
-						}
-					}else{
-						this.listBlock.get(nameBlock(fid)).setSignature(new Signature(datos));
+							break;
+						case 2:
+							System.out.println(fid); // g2 generation block
+							break;
+						case 3:
+							// g2 sign firm
+							break;
 					}
 				}else{
 					//throw new Error("Block not found");
@@ -146,7 +155,7 @@ public class CardBlockFile {
 		this.application_identification = (DriverCardApplicationIdentification) this.listBlock
 				.get(Fid.EF_APPLICATION_IDENTIFICATION.toString());				
 		this.card_certificate = (CardCertificate) this.listBlock
-				.get(Fid.EF_CARD_CERTIFICATE.toString());
+				.get(Fid.EF_CARDMA_CERTIFICATE.toString());
 		this.ca_certificate = (MemberStateCertificate) this.listBlock
 				.get(Fid.EF_CA_CERTIFICATE.toString());
 		this.identification = (CardIdentification) this.listBlock
@@ -194,7 +203,7 @@ public class CardBlockFile {
 				str=Fid.EF_APPLICATION_IDENTIFICATION.toString();
 				break;
 			case 0xc100:
-				str=Fid.EF_CARD_CERTIFICATE.toString();
+				str=Fid.EF_CARDMA_CERTIFICATE.toString();
 				break;
 			case 0xc108:
 				str=Fid.EF_CA_CERTIFICATE.toString();

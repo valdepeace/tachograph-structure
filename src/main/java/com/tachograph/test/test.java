@@ -22,7 +22,10 @@ public class test {
          */
         String jsonData;
         String errorCheckJson;
-        FileTGD tgd1=new FileTGD("f:\\C_20191028_1251_2569211799391000.ddd");
+        //F__100000039533701912171350.C1B
+        //F__100000059028801912171315.C1B
+        //F__FK_828_ND____1912131401.V1B
+        FileTGD tgd1=new FileTGD("d:\\F__100000039533701912171350.C1B");
         try {
             //jsonData = FileTGD.generateJSONFromBinaryFile("/Volumes/SIN TITULO/V_0364 HRT_E_20170104_1134.tgd");
             //jsonData = FileTGD.generateJSONFromBinaryFile("f:\\C_20191028_1251_2569211799391000.ddd");
