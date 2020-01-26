@@ -42,7 +42,7 @@ public class ReadRecursive {
         ByteArrayOutputStream fileTGD = new ByteArrayOutputStream();
         for (Fid fid : Fid.values()) {
             System.out.println(fid.getId());
-            if(!fid.getId().equals("3f,00") && !fid.getId().equals("05,00")){
+            if(!fid.getId().equals("3f,00") && !fid.getId().equals("05,00") && !fid.getId().equals("05,22")){
                 b = readCard(r, channel, fid.getId());
                 //Prepara la cabeceras del fichero
                 byte[] htba = OperationHelper.hexToByteAr(fid.getId());

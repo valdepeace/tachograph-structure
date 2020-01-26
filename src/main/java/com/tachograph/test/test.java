@@ -11,19 +11,23 @@ public class test {
         //FileTGD tgd=new FileTGD("C_0000000790345011_P_20151203_2006-ERROR.TGD");
         //FileTGD tgd2=new FileTGD("c-ERROR.TGD");
         //FileTGD tgd1=new FileTGD("C_E48351403K000001_E_20150216_2117.TGD");
-        FileTGD tgd1=new FileTGD("f:\\a.TGD");
+        //FileTGD tgd1=new FileTGD("f:\\a.TGD");
         //FileTGD tgd1=new FileTGD("e:\\C_20180622_1217_D_BOEHLER_10000004823750.C1B");
         //FileTGD tgd1=new FileTGD("F:\\Personal\\tachograph-structure\\D_Agafontsev_Nikolay_RUD00000179546_01.02.2016_555.DDD");
-
+        //FileTGD tgd1=new FileTGD();
+        //tgd1.readSmardCard();
+        //tgd1.generateDriverBinaryFile("f:/");
         /**
          * Comprobación de fichero Conductor y Vehiculo
          */
         String jsonData;
         String errorCheckJson;
+        FileTGD tgd1=new FileTGD("f:\\C_20191028_1251_2569211799391000.ddd");
         try {
             //jsonData = FileTGD.generateJSONFromBinaryFile("/Volumes/SIN TITULO/V_0364 HRT_E_20170104_1134.tgd");
-            //jsonData = FileTGD.generateJSONFromBinaryFile("f:\\b.tgd");
-            jsonData = FileTGD.generateJSONFromBinaryFile("F:\\Personal\\tachograph-structure\\D_Agafontsev_Nikolay_RUD00000179546_01.02.2016_555.DDD");
+            //jsonData = FileTGD.generateJSONFromBinaryFile("f:\\C_20191028_1251_2569211799391000.ddd");
+            //jsonData = FileTGD.generateJSONFromBinaryFile("F:\\Personal\\tachograph-structure\\D_Agafontsev_Nikolay_RUD00000179546_01.02.2016_555.DDD");
+
         } catch (Exception e){
             errorCheckJson = e.toString();
         }

@@ -181,7 +181,8 @@ public class FileTGD {
 	private void read_block(DataInputStream entrada) throws Exception{
 		byte[] datos = new byte[entrada.available()];// = new byte[longitud];				
 		entrada.read(datos,0, entrada.available());
-		if (datos[0]==0x76){			
+		//if (datos[0]==0x76){
+		if(false){
 			this.vuBlockFile=new VuBlockFile(datos);
 		}else{
 			this.cardBlockFile=new CardBlockFile(datos); 

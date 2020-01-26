@@ -95,6 +95,7 @@ public class CardBlockFile {
 			int start=0;
 			while( start < bytes.length){
 				int fid = Number.getNumber(Arrays.copyOfRange(bytes, start, start += 2));
+				System.out.println("fid: " + fid + " star:"+ start + " lenght: " + (bytes.length - start));
 				if(this.existe_Fid(fid)){
 					byte tipo = bytes[start];
 					start += 1;
@@ -114,7 +115,9 @@ public class CardBlockFile {
 						this.listBlock.get(nameBlock(fid)).setSignature(new Signature(datos));
 					}
 				}else{
-					throw new Error("Block not found");
+					//throw new Error("Block not found");
+					//TODO error not find fid or bytes insert bad in header?
+					System.out.println(fid);
 				}
 				
 			}
